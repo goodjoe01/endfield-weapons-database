@@ -6,6 +6,7 @@ import {
   getUniqueDomains,
   getUniqueAttributeStats,
   getUniqueSkillStats,
+  getUniqueWeaponTypes,
 } from '@/lib/weapons-utils';
 import { ChevronDown } from 'lucide-react';
 
@@ -27,6 +28,7 @@ export function FilterPanel({
   const domains = getUniqueDomains(weapons);
   const attributeStats = getUniqueAttributeStats(weapons);
   const skillStats = getUniqueSkillStats(weapons).filter(s => s && s.trim());
+  const weaponTypes = getUniqueWeaponTypes(weapons);
 
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
@@ -38,6 +40,16 @@ export function FilterPanel({
       newRarity.delete(rarity);
     }
     onFilterChange({ ...filters, rarity: newRarity });
+  };
+
+  const handleWeaponTypeChange = (type: string, checked: boolean) => {
+    const newTypes = new Set(filters.weaponType);
+    if (checked) {
+      newTypes.add(type);
+    } else {
+      newTypes.delete(type);
+    }
+    onFilterChange({ ...filters, weaponType: newTypes });
   };
 
   const handleDomainChange = (domain: string, checked: boolean) => {
@@ -73,6 +85,7 @@ export function FilterPanel({
   const handleClearFilters = () => {
     onFilterChange({
       rarity: new Set(),
+      weaponType: new Set(),
       domains: new Set(),
       attributeStats: new Set(),
       skillStats: new Set(),
@@ -83,6 +96,7 @@ export function FilterPanel({
 
   const hasActiveFilters =
     filters.rarity.size > 0 ||
+    filters.weaponType.size > 0 ||
     filters.domains.size > 0 ||
     filters.attributeStats.size > 0 ||
     filters.skillStats.size > 0;
@@ -110,13 +124,69 @@ export function FilterPanel({
             }`}
           />
         </button>
-        {isExpanded && <div className="px-4 pb-3 space-y-2">{children}</div>}
+        {isExpanded && <div className="px-4 pb-3 space-y-2 flex flex-col">{children}</div>}
       </div>
     );
   };
 
   return (
     <div className="border-b border-border bg-card">
+      {/* Top Filter Bar - Rarity and Weapon Type */}
+      <div className="border-b border-border px-4 py-4">
+        <div className="flex flex-wrap gap-3 items-center">
+          {/* Rarity Filters */}
+          <div className="flex gap-2 items-center flex-wrap">
+            {[3, 4, 5, 6].map(rarity => (
+              <button
+                key={rarity}
+                onClick={() =>
+                  handleRarityChange(rarity, !filters.rarity.has(rarity))
+                }
+                className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${
+                  filters.rarity.has(rarity)
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
+                }`}
+              >
+                ★ {rarity}★
+              </button>
+            ))}
+          </div>
+
+          {/* Weapon Type Filters */}
+          {weaponTypes.length > 0 && (
+            <div className="flex gap-2 items-center flex-wrap pl-4 border-l border-border">
+              {weaponTypes.map(type => (
+                <button
+                  key={type}
+                  onClick={() =>
+                    handleWeaponTypeChange(type, !filters.weaponType.has(type))
+                  }
+                  className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${
+                    filters.weaponType.has(type)
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Clear Button */}
+          {hasActiveFilters && (
+            <button
+              onClick={handleClearFilters}
+              className="ml-auto text-xs font-medium text-muted-foreground hover:text-foreground"
+            >
+              Clear All
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Toggle for Mobile */}
       <div className="px-4 py-3 flex items-center justify-between lg:hidden">
         <button
           onClick={() => onToggle(!isOpen)}
@@ -124,96 +194,63 @@ export function FilterPanel({
         >
           {isOpen ? 'Hide Filters' : 'Show Filters'}
         </button>
-        {hasActiveFilters && (
-          <button
-            onClick={handleClearFilters}
-            className="text-xs text-muted-foreground hover:text-foreground"
-          >
-            Clear All
-          </button>
-        )}
       </div>
 
+      {/* Vertical Expandable Filters */}
       {isOpen && (
-        <div className="border-t border-border lg:border-t-0">
-          {/* Rarity Filter */}
-          <ExpandableSection title="Rarity" sectionId="rarity">
-            <div className="space-y-2">
-              {[3, 4, 5, 6].map(rarity => (
-                <label
-                  key={rarity}
-                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-                >
-                  <input
-                    type="checkbox"
-                    checked={filters.rarity.has(rarity)}
-                    onChange={e => handleRarityChange(rarity, e.target.checked)}
-                    className="rounded border-input"
-                  />
-                  <span className="text-sm text-muted-foreground">{rarity}-Star</span>
-                </label>
-              ))}
-            </div>
-          </ExpandableSection>
-
+        <div className="border-t border-border">
           {/* Energy Alluvium (Domains) Filter */}
           <ExpandableSection title="Energy Alluvium" sectionId="domains">
-            <div className="space-y-2 max-h-48 overflow-y-auto">
-              {domains.map(domain => (
-                <label
-                  key={domain}
-                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-                >
-                  <input
-                    type="checkbox"
-                    checked={filters.domains.has(domain)}
-                    onChange={e => handleDomainChange(domain, e.target.checked)}
-                    className="rounded border-input"
-                  />
-                  <span className="text-sm text-muted-foreground truncate">{domain}</span>
-                </label>
-              ))}
-            </div>
+            {domains.map(domain => (
+              <label
+                key={domain}
+                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+              >
+                <input
+                  type="checkbox"
+                  checked={filters.domains.has(domain)}
+                  onChange={e => handleDomainChange(domain, e.target.checked)}
+                  className="rounded border-input"
+                />
+                <span className="text-sm text-muted-foreground truncate">{domain}</span>
+              </label>
+            ))}
           </ExpandableSection>
 
           {/* Attribute Stats Filter */}
           <ExpandableSection title="Attribute Stats" sectionId="attributeStats">
-            <div className="space-y-2 max-h-48 overflow-y-auto">
-              {attributeStats.map(attr => (
-                <label
-                  key={attr}
-                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-                >
-                  <input
-                    type="checkbox"
-                    checked={filters.attributeStats.has(attr)}
-                    onChange={e => handleAttributeChange(attr, e.target.checked)}
-                    className="rounded border-input"
-                  />
-                  <span className="text-sm text-muted-foreground truncate">{attr}</span>
-                </label>
-              ))}
-            </div>
+            {attributeStats.map(attr => (
+              <label
+                key={attr}
+                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+              >
+                <input
+                  type="checkbox"
+                  checked={filters.attributeStats.has(attr)}
+                  onChange={e => handleAttributeChange(attr, e.target.checked)}
+                  className="rounded border-input"
+                />
+                <span className="text-sm text-muted-foreground truncate">{attr}</span>
+              </label>
+            ))}
           </ExpandableSection>
 
           {/* Skill Stats Filter */}
           <ExpandableSection title="Skill Stats" sectionId="skillStats">
-            <div className="space-y-2 max-h-48 overflow-y-auto">
-              {skillStats.map(skill => (
-                <label
-                  key={skill}
-                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-                >
-                  <input
-                    type="checkbox"
-                    checked={filters.skillStats.has(skill)}
-                    onChange={e => handleSkillChange(skill, e.target.checked)}
-                    className="rounded border-input"
-                  />
-                  <span className="text-sm text-muted-foreground truncate">{skill}</span>
-                </label>
-              ))}
-            </div>
+            {skillStats.map(skill => (
+              <label
+                key={skill}
+                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+              >
+                <input
+                  type="checkbox"
+                  checked={filters.skillStats.has(skill)}
+                  onChange={e => handleSkillChange(skill, e.target.checked)}
+                  className="rounded border-input"
+                />
+                <span className="text-sm text-muted-foreground truncate">{skill}</span>
+              </label>
+            ))}
           </ExpandableSection>
 
           {/* Show Maxed Weapons */}
@@ -230,18 +267,6 @@ export function FilterPanel({
               <span className="text-sm text-muted-foreground">Show maxed weapons</span>
             </label>
           </div>
-        </div>
-      )}
-
-      {/* Desktop Clear Button */}
-      {hasActiveFilters && (
-        <div className="hidden lg:block border-t border-border px-4 py-2">
-          <button
-            onClick={handleClearFilters}
-            className="text-xs font-medium text-muted-foreground hover:text-foreground"
-          >
-            Clear All Filters
-          </button>
         </div>
       )}
     </div>

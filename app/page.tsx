@@ -19,6 +19,7 @@ export default function WeaponsPage() {
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
+    weaponType: new Set(),
     domains: new Set(),
     attributeStats: new Set(),
     skillStats: new Set(),
@@ -133,7 +134,16 @@ export default function WeaponsPage() {
           {viewMode === 'card' && (
             <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3">
               {filteredWeapons.map(weapon => (
-                <WeaponCard key={weapon.id} weapon={weapon} />
+                <WeaponCard
+                  key={weapon.id}
+                  weapon={weapon}
+                  onMaxedChange={(isMaxed) => {
+                    // Auto-hide maxed weapon if showMaxedWeapons is false and weapon is marked as maxed
+                    if (isMaxed && !filters.showMaxedWeapons) {
+                      setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
+                    }
+                  }}
+                />
               ))}
             </div>
           )}
@@ -149,6 +159,7 @@ export default function WeaponsPage() {
                 onClick={() =>
                   setFilters({
                     rarity: new Set(),
+                    weaponType: new Set(),
                     domains: new Set(),
                     attributeStats: new Set(),
                     skillStats: new Set(),

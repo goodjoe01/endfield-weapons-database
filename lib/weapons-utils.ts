@@ -18,6 +18,13 @@ export function filterWeapons(weapons: Weapon[], filters: FilterState): Weapon[]
       return false;
     }
 
+    // Weapon type filter
+    if (filters.weaponType.size > 0) {
+      if (!weapon.weaponType || !filters.weaponType.has(weapon.weaponType)) {
+        return false;
+      }
+    }
+
     // Domains filter (Energy Alluvium)
     if (filters.domains.size > 0) {
       const hasMatchingDomain = weapon.domains.some(d => filters.domains.has(d));
@@ -70,6 +77,14 @@ export function getUniqueSkillStats(weapons: Weapon[]): string[] {
   const stats = new Set<string>();
   weapons.forEach(w => stats.add(w.skillStats));
   return Array.from(stats).sort();
+}
+
+export function getUniqueWeaponTypes(weapons: Weapon[]): string[] {
+  const types = new Set<string>();
+  weapons.forEach(w => {
+    if (w.weaponType) types.add(w.weaponType);
+  });
+  return Array.from(types).sort();
 }
 
 export function getRarityColor(rarity: number): string {

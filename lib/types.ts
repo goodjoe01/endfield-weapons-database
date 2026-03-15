@@ -3,6 +3,7 @@ export interface Weapon {
   name: string;
   rarity: 3 | 4 | 5 | 6;
   image: string;
+  weaponType?: string;
   domains: string[];
   attributeStats: string;
   secondaryStats: string;
@@ -12,6 +13,7 @@ export interface Weapon {
 
 export interface FilterState {
   rarity: Set<number>;
+  weaponType: Set<string>;
   domains: Set<string>;
   attributeStats: Set<string>;
   skillStats: Set<string>;

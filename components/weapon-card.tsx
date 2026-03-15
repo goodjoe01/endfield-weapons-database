@@ -5,33 +5,43 @@ import { getRarityColor, getRarityLabel, getRarityBackgroundColor } from '@/lib/
 import { isWeaponMaxed, toggleWeaponMaxed } from '@/lib/maxed-weapons';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Check } from 'lucide-react';
 
 interface WeaponCardProps {
   weapon: Weapon;
+  onMaxedChange?: (isMaxed: boolean) => void;
 }
 
-export function WeaponCard({ weapon }: WeaponCardProps) {
+export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
   const [imageError, setImageError] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [isMaxed, setIsMaxed] = useState(() => isWeaponMaxed(weapon.name));
 
-  const handleToggleMaxed = () => {
+  const handleToggleMaxed = (e: React.MouseEvent) => {
+    e.stopPropagation();
     toggleWeaponMaxed(weapon.name);
-    setIsMaxed(!isMaxed);
+    const newMaxed = !isMaxed;
+    setIsMaxed(newMaxed);
+    onMaxedChange?.(newMaxed);
   };
 
   const bgGradient = getRarityBackgroundColor(weapon.rarity);
 
   return (
-    <div className={`relative flex flex-col gap-2 bg-gradient-to-br ${bgGradient} border border-border rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200`}>
-      {/* Maxed Badge */}
+    <div
+      className={`relative flex flex-col gap-2 bg-gradient-to-br ${bgGradient} border border-border rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 cursor-pointer`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      {/* MAXED Button */}
       <button
         onClick={handleToggleMaxed}
-        className="absolute top-2 right-2 z-20 p-1.5 bg-black/60 hover:bg-black/80 rounded-full transition-colors"
-        title={isMaxed ? 'Remove maxed' : 'Mark as maxed'}
+        className={`absolute top-2 right-2 z-20 px-3 py-1 font-bold text-xs uppercase transition-colors ${
+          isMaxed
+            ? 'bg-yellow-400 text-black hover:bg-yellow-300'
+            : 'bg-black/60 text-white hover:bg-black/80'
+        }`}
       >
-        <Check className={`h-4 w-4 ${isMaxed ? 'text-green-400' : 'text-gray-400'}`} />
+        Maxed
       </button>
 
       {/* Image Container */}
@@ -65,7 +75,10 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
         {showTooltip && (
           <div className="absolute inset-0 bg-black/95 backdrop-blur-sm rounded-lg p-3 z-30 flex flex-col gap-2 text-xs text-foreground">
             <button
-              onClick={() => setShowTooltip(false)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowTooltip(false);
+              }}
               className="absolute top-1 right-1 text-muted-foreground hover:text-foreground"
             >
               ✕
@@ -90,15 +103,6 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
             )}
           </div>
         )}
-
-        {/* Hover Trigger Zone */}
-        <div
-          onMouseEnter={() => setShowTooltip(true)}
-          onMouseLeave={() => setShowTooltip(false)}
-          className="h-12 cursor-pointer flex items-center justify-center text-xs text-muted-foreground bg-black/20 rounded hover:bg-black/40 transition-colors"
-        >
-          {showTooltip ? 'Viewing details...' : 'Hover for details'}
-        </div>
       </div>
     </div>
   );
