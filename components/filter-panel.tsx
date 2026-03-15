@@ -55,11 +55,9 @@ export function FilterPanel({
   };
 
   const handleDomainChange = (domain: string, checked: boolean) => {
-    const newDomains = new Set(filters.domains);
+    const newDomains = new Set<string>();
     if (checked) {
       newDomains.add(domain);
-    } else {
-      newDomains.delete(domain);
     }
     onFilterChange({ ...filters, domains: newDomains });
   };
@@ -67,6 +65,9 @@ export function FilterPanel({
   const handleAttributeChange = (attr: string, checked: boolean) => {
     const newAttrs = new Set(filters.attributeStats);
     if (checked) {
+      if (newAttrs.size >= 3) {
+        newAttrs.delete(Array.from(newAttrs)[0]);
+      }
       newAttrs.add(attr);
     } else {
       newAttrs.delete(attr);
@@ -75,21 +76,17 @@ export function FilterPanel({
   };
 
   const handleSecondaryChange = (stat: string, checked: boolean) => {
-    const newStats = new Set(filters.secondaryStats);
+    const newStats = new Set<string>();
     if (checked) {
       newStats.add(stat);
-    } else {
-      newStats.delete(stat);
     }
     onFilterChange({ ...filters, secondaryStats: newStats });
   };
 
   const handleSkillChange = (skill: string, checked: boolean) => {
-    const newSkills = new Set(filters.skillStats);
+    const newSkills = new Set<string>();
     if (checked) {
       newSkills.add(skill);
-    } else {
-      newSkills.delete(skill);
     }
     onFilterChange({ ...filters, skillStats: newSkills });
   };
