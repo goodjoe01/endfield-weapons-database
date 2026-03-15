@@ -64,7 +64,7 @@ export default function WeaponsPage() {
     <main className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-full mx-auto px-4 py-6">
+        <div className="max-w-7xl mx-auto px-4 py-6">
           <h1 className="text-4xl font-bold text-foreground mb-4">Weapons Database</h1>
           <p className="text-muted-foreground mb-6">
             Browse and filter {weapons.length} weapons by rarity, domains, attributes, and skills.
@@ -77,7 +77,7 @@ export default function WeaponsPage() {
         </div>
       </header>
 
-      <div className="max-w-full mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
