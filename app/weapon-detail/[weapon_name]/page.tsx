@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { use } from 'react';
 import { Weapon } from '@/lib/types';
 import { loadWeapons, getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
 import { WeaponDetailContent } from '@/components/weapon-detail-content';
@@ -8,12 +9,13 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 interface WeaponDetailPageProps {
-  params: {
+  params: Promise<{
     weapon_name: string;
-  };
+  }>;
 }
 
-export default function WeaponDetailPage({ params }: WeaponDetailPageProps) {
+export default function WeaponDetailPage({ params: paramsPromise }: WeaponDetailPageProps) {
+  const params = use(paramsPromise);
   const [weapon, setWeapon] = useState<Weapon | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
