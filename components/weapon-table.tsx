@@ -5,7 +5,7 @@ import { getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
 import { useState } from 'react';
 import { ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface WeaponTableProps {
   weapons: Weapon[];
@@ -100,10 +100,13 @@ export function WeaponTable({ weapons }: WeaponTableProps) {
 
 function TableRow({ weapon }: { weapon: Weapon }) {
   const [imageError, setImageError] = useState(false);
+  const router = useRouter();
 
   return (
-    <Link href={`/weapon-detail/${weapon.id}`}>
-      <tr className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer">
+    <tr 
+      className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
+      onClick={() => router.push(`/weapon-detail/${weapon.id}`)}
+    >
         {/* Image Column */}
         <td className="px-4 py-3">
           <div className="w-14 h-14 bg-black/40 rounded overflow-hidden">
@@ -148,6 +151,5 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
       </tr>
-    </Link>
-  );
+    );
 }
