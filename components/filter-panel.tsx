@@ -171,12 +171,12 @@ export function FilterPanel({
           />
         </button>
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded shadow-lg z-50 max-h-64 overflow-y-auto">
+          <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded shadow-lg z-50 max-h-64 overflow-y-auto min-w-max">
             <div className="p-2 space-y-1">
               {/* None option */}
               <button
                 onClick={onClear}
-                className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted/50 transition-colors text-muted-foreground"
+                className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted/50 transition-colors text-muted-foreground whitespace-nowrap"
               >
                 None
               </button>
@@ -184,13 +184,13 @@ export function FilterPanel({
               {options.map(option => (
                 <label
                   key={option}
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-muted/50 rounded transition-colors"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-muted/50 rounded transition-colors whitespace-nowrap"
                 >
                   <input
                     type="checkbox"
                     checked={values.has(option)}
                     onChange={e => onAddValue(option, e.target.checked)}
-                    className="rounded border-input"
+                    className="rounded border-input flex-shrink-0"
                   />
                   <span className="text-sm text-foreground">{option}</span>
                 </label>
