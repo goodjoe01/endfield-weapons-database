@@ -5,6 +5,7 @@ import { getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
 import { useState } from 'react';
 import { ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface WeaponTableProps {
   weapons: Weapon[];
@@ -101,50 +102,52 @@ function TableRow({ weapon }: { weapon: Weapon }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-      {/* Image Column */}
-      <td className="px-4 py-3">
-        <div className="w-14 h-14 bg-black/40 rounded overflow-hidden">
-          {!imageError ? (
-            <Image
-              src={weapon.image}
-              alt={weapon.name}
-              width={56}
-              height={56}
-              className="w-full h-full object-cover"
-              onError={() => setImageError(true)}
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
-              No img
-            </div>
-          )}
-        </div>
-      </td>
-      <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
-      <td className="px-4 py-3">
-        <span
-          className={`inline-flex px-2 py-1 ${getRarityColor(
-            weapon.rarity,
-          )} text-white text-xs font-semibold rounded`}
-        >
-          {getRarityLabel(weapon.rarity)}
-        </span>
-      </td>
-      <td className="px-4 py-3 text-muted-foreground">{weapon.attributeStats}</td>
-      <td className="px-4 py-3 text-muted-foreground">{weapon.skillStats}</td>
-      <td className="px-4 py-3">
-        <div className="flex gap-1 flex-wrap">
-          {weapon.domains.map(domain => (
-            <span
-              key={domain}
-              className="inline-block px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded"
-            >
-              {domain}
-            </span>
-          ))}
-        </div>
-      </td>
-    </tr>
+    <Link href={`/weapon-detail/${weapon.id}`}>
+      <tr className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer">
+        {/* Image Column */}
+        <td className="px-4 py-3">
+          <div className="w-14 h-14 bg-black/40 rounded overflow-hidden">
+            {!imageError ? (
+              <Image
+                src={weapon.image}
+                alt={weapon.name}
+                width={56}
+                height={56}
+                className="w-full h-full object-cover"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
+                No img
+              </div>
+            )}
+          </div>
+        </td>
+        <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
+        <td className="px-4 py-3">
+          <span
+            className={`inline-flex px-2 py-1 ${getRarityColor(
+              weapon.rarity,
+            )} text-white text-xs font-semibold rounded`}
+          >
+            {getRarityLabel(weapon.rarity)}
+          </span>
+        </td>
+        <td className="px-4 py-3 text-muted-foreground">{weapon.attributeStats}</td>
+        <td className="px-4 py-3 text-muted-foreground">{weapon.skillStats}</td>
+        <td className="px-4 py-3">
+          <div className="flex gap-1 flex-wrap">
+            {weapon.domains.map(domain => (
+              <span
+                key={domain}
+                className="inline-block px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded"
+              >
+                {domain}
+              </span>
+            ))}
+          </div>
+        </td>
+      </tr>
+    </Link>
   );
 }
