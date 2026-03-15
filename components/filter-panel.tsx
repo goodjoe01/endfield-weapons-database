@@ -7,6 +7,7 @@ import {
   getUniqueAttributeStats,
   getUniqueSkillStats,
 } from '@/lib/weapons-utils';
+import { ChevronDown } from 'lucide-react';
 
 interface FilterPanelProps {
   weapons: Weapon[];
@@ -25,7 +26,9 @@ export function FilterPanel({
 }: FilterPanelProps) {
   const domains = getUniqueDomains(weapons);
   const attributeStats = getUniqueAttributeStats(weapons);
-  const skillStats = getUniqueSkillStats(weapons);
+  const skillStats = getUniqueSkillStats(weapons).filter(s => s && s.trim());
+
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const handleRarityChange = (rarity: number, checked: boolean) => {
     const newRarity = new Set(filters.rarity);
@@ -74,6 +77,7 @@ export function FilterPanel({
       attributeStats: new Set(),
       skillStats: new Set(),
       searchQuery: '',
+      showMaxedWeapons: false,
     });
   };
 
@@ -83,8 +87,36 @@ export function FilterPanel({
     filters.attributeStats.size > 0 ||
     filters.skillStats.size > 0;
 
+  const ExpandableSection = ({
+    title,
+    sectionId,
+    children,
+  }: {
+    title: string;
+    sectionId: string;
+    children: React.ReactNode;
+  }) => {
+    const isExpanded = expandedSection === sectionId;
+    return (
+      <div className="border-b border-border last:border-b-0">
+        <button
+          onClick={() => setExpandedSection(isExpanded ? null : sectionId)}
+          className="w-full flex items-center justify-between gap-2 px-4 py-3 hover:bg-muted/50 transition-colors"
+        >
+          <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+          <ChevronDown
+            className={`h-4 w-4 text-muted-foreground transition-transform ${
+              isExpanded ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+        {isExpanded && <div className="px-4 pb-3 space-y-2">{children}</div>}
+      </div>
+    );
+  };
+
   return (
-    <div className="border-b border-border bg-background">
+    <div className="border-b border-border bg-card">
       <div className="px-4 py-3 flex items-center justify-between lg:hidden">
         <button
           onClick={() => onToggle(!isOpen)}
@@ -103,13 +135,15 @@ export function FilterPanel({
       </div>
 
       {isOpen && (
-        <div className="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="border-t border-border lg:border-t-0">
           {/* Rarity Filter */}
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">Rarity</h3>
+          <ExpandableSection title="Rarity" sectionId="rarity">
             <div className="space-y-2">
               {[3, 4, 5, 6].map(rarity => (
-                <label key={rarity} className="flex items-center gap-2 cursor-pointer">
+                <label
+                  key={rarity}
+                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+                >
                   <input
                     type="checkbox"
                     checked={filters.rarity.has(rarity)}
@@ -120,14 +154,16 @@ export function FilterPanel({
                 </label>
               ))}
             </div>
-          </div>
+          </ExpandableSection>
 
-          {/* Domains Filter */}
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">Energy Alluvium</h3>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
+          {/* Energy Alluvium (Domains) Filter */}
+          <ExpandableSection title="Energy Alluvium" sectionId="domains">
+            <div className="space-y-2 max-h-48 overflow-y-auto">
               {domains.map(domain => (
-                <label key={domain} className="flex items-center gap-2 cursor-pointer">
+                <label
+                  key={domain}
+                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+                >
                   <input
                     type="checkbox"
                     checked={filters.domains.has(domain)}
@@ -138,14 +174,16 @@ export function FilterPanel({
                 </label>
               ))}
             </div>
-          </div>
+          </ExpandableSection>
 
           {/* Attribute Stats Filter */}
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">Attribute Stats</h3>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
+          <ExpandableSection title="Attribute Stats" sectionId="attributeStats">
+            <div className="space-y-2 max-h-48 overflow-y-auto">
               {attributeStats.map(attr => (
-                <label key={attr} className="flex items-center gap-2 cursor-pointer">
+                <label
+                  key={attr}
+                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+                >
                   <input
                     type="checkbox"
                     checked={filters.attributeStats.has(attr)}
@@ -156,14 +194,16 @@ export function FilterPanel({
                 </label>
               ))}
             </div>
-          </div>
+          </ExpandableSection>
 
           {/* Skill Stats Filter */}
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">Skill Stats</h3>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
+          <ExpandableSection title="Skill Stats" sectionId="skillStats">
+            <div className="space-y-2 max-h-48 overflow-y-auto">
               {skillStats.map(skill => (
-                <label key={skill} className="flex items-center gap-2 cursor-pointer">
+                <label
+                  key={skill}
+                  className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+                >
                   <input
                     type="checkbox"
                     checked={filters.skillStats.has(skill)}
@@ -174,6 +214,21 @@ export function FilterPanel({
                 </label>
               ))}
             </div>
+          </ExpandableSection>
+
+          {/* Show Maxed Weapons */}
+          <div className="border-b border-border px-4 py-3">
+            <label className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors">
+              <input
+                type="checkbox"
+                checked={filters.showMaxedWeapons}
+                onChange={e =>
+                  onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+                }
+                className="rounded border-input"
+              />
+              <span className="text-sm text-muted-foreground">Show maxed weapons</span>
+            </label>
           </div>
         </div>
       )}

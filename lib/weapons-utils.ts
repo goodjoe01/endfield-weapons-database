@@ -6,6 +6,7 @@ export async function loadWeapons(): Promise<Weapon[]> {
   const data = await response.json();
   return data.map((weapon: any) => ({
     ...weapon,
+    rarity: parseInt(weapon.rarity, 10),
     id: weapon.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
@@ -74,15 +75,30 @@ export function getUniqueSkillStats(weapons: Weapon[]): string[] {
 export function getRarityColor(rarity: number): string {
   switch (rarity) {
     case 3:
-      return 'bg-blue-500';
+      return 'bg-gray-500';
     case 4:
       return 'bg-purple-500';
     case 5:
-      return 'bg-orange-500';
-    case 6:
       return 'bg-yellow-500';
+    case 6:
+      return 'bg-orange-500';
     default:
       return 'bg-gray-500';
+  }
+}
+
+export function getRarityBackgroundColor(rarity: number): string {
+  switch (rarity) {
+    case 3:
+      return 'from-gray-700 to-gray-800';
+    case 4:
+      return 'from-purple-700 to-purple-800';
+    case 5:
+      return 'from-yellow-600 to-yellow-700';
+    case 6:
+      return 'from-orange-600 to-orange-700';
+    default:
+      return 'from-gray-700 to-gray-800';
   }
 }
 

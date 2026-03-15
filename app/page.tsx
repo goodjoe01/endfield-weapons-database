@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Weapon, FilterState, ViewMode } from '@/lib/types';
 import { loadWeapons, filterWeapons } from '@/lib/weapons-utils';
+import { getMaxedWeapons } from '@/lib/maxed-weapons';
 import { FilterPanel } from '@/components/filter-panel';
 import { SearchBar } from '@/components/search-bar';
 import { WeaponCard } from '@/components/weapon-card';
@@ -22,6 +23,7 @@ export default function WeaponsPage() {
     attributeStats: new Set(),
     skillStats: new Set(),
     searchQuery: '',
+    showMaxedWeapons: false,
   });
 
   useEffect(() => {
@@ -38,7 +40,14 @@ export default function WeaponsPage() {
   }, []);
 
   useEffect(() => {
-    const filtered = filterWeapons(weapons, filters);
+    let filtered = filterWeapons(weapons, filters);
+
+    // Filter out maxed weapons if showMaxedWeapons is false
+    if (!filters.showMaxedWeapons) {
+      const maxedWeapons = getMaxedWeapons();
+      filtered = filtered.filter(w => !maxedWeapons.has(w.name));
+    }
+
     setFilteredWeapons(filtered);
   }, [weapons, filters]);
 
@@ -54,7 +63,7 @@ export default function WeaponsPage() {
     <main className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="max-w-full mx-auto px-4 py-6">
           <h1 className="text-4xl font-bold text-foreground mb-4">Weapons Database</h1>
           <p className="text-muted-foreground mb-6">
             Browse and filter {weapons.length} weapons by rarity, domains, attributes, and skills.
@@ -67,7 +76,7 @@ export default function WeaponsPage() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-full mx-auto px-4 py-6">
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
@@ -122,7 +131,7 @@ export default function WeaponsPage() {
         {/* Weapons Display */}
         <div className="pb-12">
           {viewMode === 'card' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3">
               {filteredWeapons.map(weapon => (
                 <WeaponCard key={weapon.id} weapon={weapon} />
               ))}
@@ -144,6 +153,7 @@ export default function WeaponsPage() {
                     attributeStats: new Set(),
                     skillStats: new Set(),
                     searchQuery: '',
+                    showMaxedWeapons: false,
                   })
                 }
                 className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"

@@ -16,6 +16,7 @@ export interface FilterState {
   attributeStats: Set<string>;
   skillStats: Set<string>;
   searchQuery: string;
+  showMaxedWeapons: boolean;
 }
 
 export type ViewMode = 'list' | 'card' | 'table';
