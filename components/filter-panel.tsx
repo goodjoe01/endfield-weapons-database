@@ -97,6 +97,7 @@ export function FilterPanel({
       weaponType: new Set(),
       domains: new Set(),
       attributeStats: new Set(),
+      secondaryStats: new Set(),
       skillStats: new Set(),
       searchQuery: '',
       showMaxedWeapons: false,
@@ -108,7 +109,7 @@ export function FilterPanel({
     filters.weaponType.size > 0 ||
     filters.domains.size > 0 ||
     filters.attributeStats.size > 0 ||
-    filters.secondaryStats.size > 0 ||
+    (filters.secondaryStats?.size ?? 0) > 0 ||
     filters.skillStats.size > 0;
 
   const ExpandableSection = ({
