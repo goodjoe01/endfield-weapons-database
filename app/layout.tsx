@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Weapons Database',
+  description: 'Browse and filter weapons by rarity, domains, attributes, and skills',
   generator: 'v0.app',
   icons: {
     icon: [
