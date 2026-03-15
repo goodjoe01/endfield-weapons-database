@@ -9,6 +9,7 @@ import {
   getUniqueSkillStats,
   getUniqueWeaponTypes,
 } from '@/lib/weapons-utils';
+import { ChevronDown } from 'lucide-react';
 
 interface FilterPanelProps {
   weapons: Weapon[];
@@ -30,6 +31,8 @@ export function FilterPanel({
   const secondaryStats = getUniqueSecondaryStats(weapons);
   const skillStats = getUniqueSkillStats(weapons).filter(s => s && s.trim());
   const weaponTypes = getUniqueWeaponTypes(weapons);
+
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const handleRarityChange = (rarity: number, checked: boolean) => {
     const newRarity = new Set(filters.rarity);
@@ -56,12 +59,22 @@ export function FilterPanel({
     onFilterChange({ ...filters, domains: newDomains });
   };
 
-  const handleAttributeChange = (attr: string) => {
-    if (attr === '') {
-      onFilterChange({ ...filters, attributeStats: new Set() });
+  const handleAttributeChange = (attr: string, checked: boolean) => {
+    const newAttrs = new Set(filters.attributeStats);
+    if (checked) {
+      if (newAttrs.size >= 3) {
+        newAttrs.delete(Array.from(newAttrs)[0]);
+      }
+      newAttrs.add(attr);
     } else {
-      onFilterChange({ ...filters, attributeStats: new Set([attr]) });
+      newAttrs.delete(attr);
     }
+    onFilterChange({ ...filters, attributeStats: newAttrs });
+  };
+
+  const handleAttributeClear = () => {
+    onFilterChange({ ...filters, attributeStats: new Set() });
+    setOpenDropdown(null);
   };
 
   const handleSecondaryChange = (stat: string) => {
@@ -129,6 +142,66 @@ export function FilterPanel({
     </div>
   );
 
+  const FilterMultiSelect = ({
+    label,
+    values,
+    options,
+    onAddValue,
+    onRemoveValue,
+    onClear,
+  }: {
+    label: string;
+    values: Set<string>;
+    options: string[];
+    onAddValue: (val: string, checked: boolean) => void;
+    onRemoveValue?: (val: string) => void;
+    onClear?: () => void;
+  }) => {
+    const isOpen = openDropdown === label;
+    return (
+      <div className="relative flex flex-col gap-1">
+        <label className="text-xs font-semibold text-foreground">{label}</label>
+        <button
+          onClick={() => setOpenDropdown(isOpen ? null : label)}
+          className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
+        >
+          <span>{values.size === 0 ? 'None' : `${values.size} selected`}</span>
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+        {isOpen && (
+          <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded shadow-lg z-50 max-h-64 overflow-y-auto">
+            <div className="p-2 space-y-1">
+              {/* None option */}
+              <button
+                onClick={onClear}
+                className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted/50 transition-colors text-muted-foreground"
+              >
+                None
+              </button>
+              {/* Options */}
+              {options.map(option => (
+                <label
+                  key={option}
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-muted/50 rounded transition-colors"
+                >
+                  <input
+                    type="checkbox"
+                    checked={values.has(option)}
+                    onChange={e => onAddValue(option, e.target.checked)}
+                    className="rounded border-input"
+                  />
+                  <span className="text-sm text-foreground">{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="border-b border-border bg-card">
       {/* Top Filter Bar - Rarity and Weapon Type */}
@@ -187,12 +260,13 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="px-4 py-4 flex flex-wrap gap-4 items-end">
-        <FilterSelect
+      <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
+        <FilterMultiSelect
           label="Attribute Stats"
-          value={Array.from(filters.attributeStats)[0] ?? ''}
+          values={filters.attributeStats}
           options={attributeStats}
-          onChange={handleAttributeChange}
+          onAddValue={handleAttributeChange}
+          onClear={handleAttributeClear}
         />
         <FilterSelect
           label="Secondary Stats"
