@@ -5,6 +5,7 @@ import { FilterState, Weapon } from '@/lib/types';
 import {
   getUniqueDomains,
   getUniqueAttributeStats,
+  getUniqueSecondaryStats,
   getUniqueSkillStats,
   getUniqueWeaponTypes,
 } from '@/lib/weapons-utils';
@@ -27,6 +28,7 @@ export function FilterPanel({
 }: FilterPanelProps) {
   const domains = getUniqueDomains(weapons);
   const attributeStats = getUniqueAttributeStats(weapons);
+  const secondaryStats = getUniqueSecondaryStats(weapons);
   const skillStats = getUniqueSkillStats(weapons).filter(s => s && s.trim());
   const weaponTypes = getUniqueWeaponTypes(weapons);
 
@@ -72,6 +74,16 @@ export function FilterPanel({
     onFilterChange({ ...filters, attributeStats: newAttrs });
   };
 
+  const handleSecondaryChange = (stat: string, checked: boolean) => {
+    const newStats = new Set(filters.secondaryStats);
+    if (checked) {
+      newStats.add(stat);
+    } else {
+      newStats.delete(stat);
+    }
+    onFilterChange({ ...filters, secondaryStats: newStats });
+  };
+
   const handleSkillChange = (skill: string, checked: boolean) => {
     const newSkills = new Set(filters.skillStats);
     if (checked) {
@@ -99,6 +111,7 @@ export function FilterPanel({
     filters.weaponType.size > 0 ||
     filters.domains.size > 0 ||
     filters.attributeStats.size > 0 ||
+    filters.secondaryStats.size > 0 ||
     filters.skillStats.size > 0;
 
   const ExpandableSection = ({
@@ -231,6 +244,24 @@ export function FilterPanel({
                   className="rounded border-input"
                 />
                 <span className="text-sm text-muted-foreground truncate">{attr}</span>
+              </label>
+            ))}
+          </ExpandableSection>
+
+          {/* Secondary Stats Filter */}
+          <ExpandableSection title="Secondary Stats" sectionId="secondaryStats">
+            {secondaryStats.map(stat => (
+              <label
+                key={stat}
+                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
+              >
+                <input
+                  type="checkbox"
+                  checked={filters.secondaryStats.has(stat)}
+                  onChange={e => handleSecondaryChange(stat, e.target.checked)}
+                  className="rounded border-input"
+                />
+                <span className="text-sm text-muted-foreground truncate">{stat}</span>
               </label>
             ))}
           </ExpandableSection>

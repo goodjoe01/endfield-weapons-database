@@ -16,6 +16,7 @@ export interface FilterState {
   weaponType: Set<string>;
   domains: Set<string>;
   attributeStats: Set<string>;
+  secondaryStats: Set<string>;
   skillStats: Set<string>;
   searchQuery: string;
   showMaxedWeapons: boolean;

@@ -36,6 +36,11 @@ export function filterWeapons(weapons: Weapon[], filters: FilterState): Weapon[]
       return false;
     }
 
+    // Secondary stats filter
+    if (filters.secondaryStats.size > 0 && !filters.secondaryStats.has(weapon.secondaryStats)) {
+      return false;
+    }
+
     // Skill stats filter
     if (filters.skillStats.size > 0 && !filters.skillStats.has(weapon.skillStats)) {
       return false;
@@ -70,6 +75,16 @@ export function getUniqueDomains(weapons: Weapon[]): string[] {
 export function getUniqueAttributeStats(weapons: Weapon[]): string[] {
   const stats = new Set<string>();
   weapons.forEach(w => stats.add(w.attributeStats));
+  return Array.from(stats).sort();
+}
+
+export function getUniqueSecondaryStats(weapons: Weapon[]): string[] {
+  const stats = new Set<string>();
+  weapons.forEach(w => {
+    if (w.secondaryStats && w.secondaryStats.trim()) {
+      stats.add(w.secondaryStats);
+    }
+  });
   return Array.from(stats).sort();
 }
 
