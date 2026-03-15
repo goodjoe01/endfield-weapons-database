@@ -130,9 +130,9 @@ export default function WeaponsPage() {
         </div>
 
         {/* Weapons Display */}
-        <div className="pb-12">
+        <div className="pb-12 overflow-visible">
           {viewMode === 'card' && (
-            <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible pt-12">
               {filteredWeapons.map(weapon => (
                 <WeaponCard
                   key={weapon.id}
