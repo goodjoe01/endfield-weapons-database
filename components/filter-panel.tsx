@@ -123,7 +123,11 @@ export function FilterPanel({
       <label className="text-xs font-semibold text-foreground">{label}</label>
       <select
         value={value}
-        onChange={e => onChange(e.target.value)}
+        onChange={e => {
+          onChange(e.target.value);
+          setOpenDropdown(null);
+        }}
+        onFocus={() => setOpenDropdown(null)}
         className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
@@ -171,8 +175,8 @@ export function FilterPanel({
           />
         </button>
         {isOpen && (
-          <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded shadow-lg z-50 max-h-64 overflow-y-auto min-w-max">
-            <div className="p-2 space-y-1">
+          <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded shadow-lg z-50 min-w-max">
+            <div className="p-2 space-y-1 max-h-80 overflow-y-auto">
               {/* None option */}
               <button
                 onClick={onClear}
