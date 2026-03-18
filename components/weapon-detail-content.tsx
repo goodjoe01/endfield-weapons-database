@@ -55,6 +55,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
               alt={weapon.name}
               fill
               className="object-cover"
+              loading="eager"
               onError={() => setImageError(true)}
             />
           ) : (

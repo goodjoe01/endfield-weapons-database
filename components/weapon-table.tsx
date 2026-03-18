@@ -76,6 +76,7 @@ export function WeaponTable({ weapons }: WeaponTableProps) {
             <th className="px-4 py-3 text-left">
               <SortHeader label="Name" field="name" />
             </th>
+            <th className="px-4 py-3 text-left">Weapon Type</th>
             <th className="px-4 py-3 text-left">
               <SortHeader label="Rarity" field="rarity" />
             </th>
@@ -127,6 +128,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
         <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
+        <td className="px-4 py-3 text-muted-foreground">{weapon.weaponType}</td>
         <td className="px-4 py-3">
           <span
             className={`inline-flex px-2 py-1 ${getRarityColor(

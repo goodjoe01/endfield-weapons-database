@@ -6,8 +6,8 @@ export async function loadWeapons(): Promise<Weapon[]> {
   const data = await response.json();
   return data.map((weapon: any) => ({
     ...weapon,
-    rarity: parseInt(weapon.rarity, 10),
-    id: weapon.name.toLowerCase().replace(/\s+/g, '-'),
+    rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
+    id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
 
@@ -51,6 +51,7 @@ export function filterWeapons(weapons: Weapon[], filters: FilterState): Weapon[]
       const query = filters.searchQuery.toLowerCase();
       const searchableFields = [
         weapon.name,
+        weapon.weaponType,
         weapon.attributeStats,
         weapon.skillStats,
         weapon.description,

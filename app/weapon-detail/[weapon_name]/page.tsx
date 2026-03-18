@@ -72,6 +72,8 @@ export default function WeaponDetailPage({ params: paramsPromise }: WeaponDetail
             </Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground">{weapon.name}</span>
+            {weapon.weaponType && <span className="text-muted-foreground">•</span>}
+            {weapon.weaponType && <span className="text-foreground">{weapon.weaponType}</span>}
             {weapon.rarity && <span className="text-foreground ml-auto">★ {weapon.rarity}★</span>}
           </div>
         </div>

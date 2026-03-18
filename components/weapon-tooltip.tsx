@@ -25,6 +25,11 @@ export function WeaponTooltip({ weapon, isVisible }: WeaponTooltipProps) {
   return (
     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50 pointer-events-none">
       <div className="bg-gray-900 border-2 border-orange-600 rounded-lg p-4 w-96 shadow-2xl">
+        {/* Weapon Type Section */}
+        <div className="mb-3 pb-2 border-b border-orange-600/50">
+          <p className="text-orange-400 font-semibold text-sm">{weapon.weaponType}</p>
+        </div>
+
         {/* Stats Section */}
         <div className="border-b-2 border-orange-600 pb-3 mb-3">
           <h4 className="text-orange-600 font-bold text-sm mb-2">STATS</h4>
