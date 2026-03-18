@@ -1,7 +1,7 @@
 'use client';
 
 import { Weapon } from '@/lib/types';
-import { getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
+import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
 import { useState } from 'react';
 import { ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
@@ -129,7 +129,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
         <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
-        <td className="px-4 py-3 text-muted-foreground">{weapon.weaponType}</td>
+        <td className="px-4 py-3 text-muted-foreground">{getDisplayWeaponType(weapon.weaponType)}</td>
         <td className="px-4 py-3">
           <span
             className={`inline-flex px-2 py-1 ${getRarityColor(

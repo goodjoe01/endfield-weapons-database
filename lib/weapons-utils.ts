@@ -1,5 +1,17 @@
 import { Weapon, FilterState } from './types';
 
+const WEAPON_TYPE_DISPLAY_NAMES: Record<string, string> = {
+  'Caster': 'Arts Unit',
+  'Pistol': 'Handcannon',
+  'Lance': 'Polearm',
+  'Sword': 'Sword',
+  'Greatsword': 'Great Sword',
+};
+
+export function getDisplayWeaponType(weaponType: string): string {
+  return WEAPON_TYPE_DISPLAY_NAMES[weaponType] || weaponType;
+}
+
 export async function loadWeapons(): Promise<Weapon[]> {
   const response = await fetch('/data/weapons.json');
   if (!response.ok) throw new Error('Failed to load weapons');

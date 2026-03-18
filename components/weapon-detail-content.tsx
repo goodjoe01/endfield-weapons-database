@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Weapon } from '@/lib/types';
-import { getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
+import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
 import Image from 'next/image';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
@@ -110,7 +110,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
           <div>
             <span className="text-foreground font-semibold">Weapon Type:</span>
-            <span className="text-muted-foreground ml-2">{weapon.weaponType || 'N/A'}</span>
+            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType) : 'N/A'}</span>
           </div>
           <div>
             <span className="text-foreground font-semibold">Max Level:</span>

@@ -8,6 +8,7 @@ import {
   getUniqueSecondaryStats,
   getUniqueSkillStats,
   getUniqueWeaponTypes,
+  getDisplayWeaponType,
 } from '@/lib/weapons-utils';
 import { ChevronDown } from 'lucide-react';
 
@@ -245,7 +246,7 @@ export function FilterPanel({
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                   }`}
                 >
-                  {type}
+                  {getDisplayWeaponType(type)}
                 </button>
               ))}
             </div>
