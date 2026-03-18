@@ -4,14 +4,17 @@ import { useEffect, useState } from 'react';
 import { Weapon, FilterState, ViewMode } from '@/lib/types';
 import { loadWeapons, filterWeapons } from '@/lib/weapons-utils';
 import { getMaxedWeapons } from '@/lib/maxed-weapons';
+import { useLanguage } from '@/lib/language-context';
 import { FilterPanel } from '@/components/filter-panel';
 import { SearchBar } from '@/components/search-bar';
 import { WeaponCard } from '@/components/weapon-card';
 import { WeaponList } from '@/components/weapon-list';
 import { WeaponTable } from '@/components/weapon-table';
+import { LanguageSwitcher } from '@/components/language-switcher';
 import { Layout, Grid3x3, List } from 'lucide-react';
 
 export default function WeaponsPage() {
+  const { t } = useLanguage();
   const [weapons, setWeapons] = useState<Weapon[]>([]);
   const [filteredWeapons, setFilteredWeapons] = useState<Weapon[]>([]);
   const [viewMode, setViewMode] = useState<ViewMode>('card');
@@ -66,9 +69,12 @@ export default function WeaponsPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Weapons Database</h1>
+          <div className="flex justify-between items-start mb-4">
+            <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
+            <LanguageSwitcher />
+          </div>
           <p className="text-muted-foreground mb-6">
-            Browse and filter {weapons.length} weapons by rarity, domains, attributes, and skills.
+            {t('header.description')}
           </p>
 
           {/* Search Bar */}

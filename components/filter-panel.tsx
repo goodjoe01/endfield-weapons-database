@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FilterState, Weapon } from '@/lib/types';
+import { useLanguage } from '@/lib/language-context';
 import {
   getUniqueDomains,
   getUniqueAttributeStats,
@@ -27,6 +28,7 @@ export function FilterPanel({
   isOpen,
   onToggle,
 }: FilterPanelProps) {
+  const { t } = useLanguage();
   const domains = getUniqueDomains(weapons);
   const attributeStats = getUniqueAttributeStats(weapons);
   const secondaryStats = getUniqueSecondaryStats(weapons);
@@ -258,7 +260,7 @@ export function FilterPanel({
               onClick={handleClearFilters}
               className="ml-auto text-xs font-medium text-muted-foreground hover:text-foreground"
             >
-              Clear All
+              {t('filters.clearAll')}
             </button>
           )}
         </div>
@@ -267,26 +269,26 @@ export function FilterPanel({
       {/* Horizontal Dropdown Filters */}
       <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
         <FilterMultiSelect
-          label="Attribute Stats"
+          label={t('filters.attributeStats')}
           values={filters.attributeStats}
           options={attributeStats}
           onAddValue={handleAttributeChange}
           onClear={handleAttributeClear}
         />
         <FilterSelect
-          label="Secondary Stats"
+          label={t('filters.secondaryStats')}
           value={Array.from(filters.secondaryStats)[0] ?? ''}
           options={secondaryStats}
           onChange={handleSecondaryChange}
         />
         <FilterSelect
-          label="Skill Stats"
+          label={t('filters.skillStats')}
           value={Array.from(filters.skillStats)[0] ?? ''}
           options={skillStats}
           onChange={handleSkillChange}
         />
         <FilterSelect
-          label="Energy Alluvium"
+          label={t('filters.domain')}
           value={Array.from(filters.domains)[0] ?? ''}
           options={domains}
           onChange={handleDomainChange}
@@ -303,7 +305,7 @@ export function FilterPanel({
               }
               className="rounded border-input"
             />
-            <span>Show maxed</span>
+            <span>{t('filters.showMaxed')}</span>
           </label>
         </div>
       </div>
