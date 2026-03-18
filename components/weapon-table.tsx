@@ -118,6 +118,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
                 width={56}
                 height={56}
                 className="w-full h-full object-cover"
+                loading="eager"
                 onError={() => setImageError(true)}
               />
             ) : (
