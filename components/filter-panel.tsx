@@ -8,6 +8,7 @@ import {
   getUniqueSecondaryStats,
   getUniqueSkillStats,
   getUniqueWeaponTypes,
+  getDisplayWeaponType,
 } from '@/lib/weapons-utils';
 import { ChevronDown } from 'lucide-react';
 
@@ -32,7 +33,7 @@ export function FilterPanel({
   const skillStats = getUniqueSkillStats(weapons).filter(s => s && s.trim());
   const weaponTypes = getUniqueWeaponTypes(weapons);
 
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const handleRarityChange = (rarity: number, checked: boolean) => {
     const newRarity = new Set(filters.rarity);
@@ -54,11 +55,8 @@ export function FilterPanel({
     onFilterChange({ ...filters, weaponType: newTypes });
   };
 
-  const handleDomainChange = (domain: string, checked: boolean) => {
-    const newDomains = new Set<string>();
-    if (checked) {
-      newDomains.add(domain);
-    }
+  const handleDomainChange = (domain: string) => {
+    const newDomains = domain === '' ? new Set<string>() : new Set([domain]);
     onFilterChange({ ...filters, domains: newDomains });
   };
 
@@ -75,19 +73,18 @@ export function FilterPanel({
     onFilterChange({ ...filters, attributeStats: newAttrs });
   };
 
-  const handleSecondaryChange = (stat: string, checked: boolean) => {
-    const newStats = new Set<string>();
-    if (checked) {
-      newStats.add(stat);
-    }
+  const handleAttributeClear = () => {
+    onFilterChange({ ...filters, attributeStats: new Set() });
+    setOpenDropdown(null);
+  };
+
+  const handleSecondaryChange = (stat: string) => {
+    const newStats = stat === '' ? new Set<string>() : new Set([stat]);
     onFilterChange({ ...filters, secondaryStats: newStats });
   };
 
-  const handleSkillChange = (skill: string, checked: boolean) => {
-    const newSkills = new Set<string>();
-    if (checked) {
-      newSkills.add(skill);
-    }
+  const handleSkillChange = (skill: string) => {
+    const newSkills = skill === '' ? new Set<string>() : new Set([skill]);
     onFilterChange({ ...filters, skillStats: newSkills });
   };
 
@@ -112,30 +109,100 @@ export function FilterPanel({
     (filters.secondaryStats?.size ?? 0) > 0 ||
     filters.skillStats.size > 0;
 
-  const ExpandableSection = ({
-    title,
-    sectionId,
-    children,
+  const FilterSelect = ({
+    label,
+    value,
+    options,
+    onChange,
   }: {
-    title: string;
-    sectionId: string;
-    children: React.ReactNode;
+    label: string;
+    value: string;
+    options: string[];
+    onChange: (val: string) => void;
+  }) => (
+    <div className="flex flex-col gap-1">
+      <label className="text-xs font-semibold text-foreground">{label}</label>
+      <select
+        value={value}
+        onChange={e => {
+          onChange(e.target.value);
+        }}
+        onClick={() => setOpenDropdown(null)}
+        onMouseDown={() => setOpenDropdown(null)}
+        className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right 8px center',
+          paddingRight: '28px',
+        }}
+      >
+        <option value="">None</option>
+        {options.map(option => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+
+  const FilterMultiSelect = ({
+    label,
+    values,
+    options,
+    onAddValue,
+    onRemoveValue,
+    onClear,
+  }: {
+    label: string;
+    values: Set<string>;
+    options: string[];
+    onAddValue: (val: string, checked: boolean) => void;
+    onRemoveValue?: (val: string) => void;
+    onClear?: () => void;
   }) => {
-    const isExpanded = expandedSection === sectionId;
+    const isOpen = openDropdown === label;
     return (
-      <div className="border-b border-border last:border-b-0">
+      <div className="relative flex flex-col gap-1">
+        <label className="text-xs font-semibold text-foreground">{label}</label>
         <button
-          onClick={() => setExpandedSection(isExpanded ? null : sectionId)}
-          className="w-full flex items-center justify-between gap-2 px-4 py-3 hover:bg-muted/50 transition-colors"
+          onClick={() => setOpenDropdown(isOpen ? null : label)}
+          className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
         >
-          <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+          <span>{values.size === 0 ? 'None' : `${values.size} selected`}</span>
           <ChevronDown
-            className={`h-4 w-4 text-muted-foreground transition-transform ${
-              isExpanded ? 'rotate-180' : ''
-            }`}
+            className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
           />
         </button>
-        {isExpanded && <div className="px-4 pb-3 space-y-2 flex flex-col">{children}</div>}
+        {isOpen && (
+          <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded shadow-lg z-50 min-w-max">
+            <div className="p-2 space-y-1 max-h-80 overflow-y-auto">
+              {/* None option */}
+              <button
+                onClick={onClear}
+                className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted/50 transition-colors text-muted-foreground whitespace-nowrap"
+              >
+                None
+              </button>
+              {/* Options */}
+              {options.map(option => (
+                <label
+                  key={option}
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-muted/50 rounded transition-colors whitespace-nowrap"
+                >
+                  <input
+                    type="checkbox"
+                    checked={values.has(option)}
+                    onChange={e => onAddValue(option, e.target.checked)}
+                    className="rounded border-input flex-shrink-0"
+                  />
+                  <span className="text-sm text-foreground">{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     );
   };
@@ -179,7 +246,7 @@ export function FilterPanel({
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                   }`}
                 >
-                  {type}
+                  {getDisplayWeaponType(type)}
                 </button>
               ))}
             </div>
@@ -197,107 +264,49 @@ export function FilterPanel({
         </div>
       </div>
 
-      {/* Toggle for Mobile */}
-      <div className="px-4 py-3 flex items-center justify-between lg:hidden">
-        <button
-          onClick={() => onToggle(!isOpen)}
-          className="text-sm font-medium text-foreground hover:text-primary"
-        >
-          {isOpen ? 'Hide Filters' : 'Show Filters'}
-        </button>
-      </div>
+      {/* Horizontal Dropdown Filters */}
+      <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
+        <FilterMultiSelect
+          label="Attribute Stats"
+          values={filters.attributeStats}
+          options={attributeStats}
+          onAddValue={handleAttributeChange}
+          onClear={handleAttributeClear}
+        />
+        <FilterSelect
+          label="Secondary Stats"
+          value={Array.from(filters.secondaryStats)[0] ?? ''}
+          options={secondaryStats}
+          onChange={handleSecondaryChange}
+        />
+        <FilterSelect
+          label="Skill Stats"
+          value={Array.from(filters.skillStats)[0] ?? ''}
+          options={skillStats}
+          onChange={handleSkillChange}
+        />
+        <FilterSelect
+          label="Energy Alluvium"
+          value={Array.from(filters.domains)[0] ?? ''}
+          options={domains}
+          onChange={handleDomainChange}
+        />
 
-      {/* Vertical Expandable Filters */}
-      {isOpen && (
-        <div className="border-t border-border">
-          {/* Energy Alluvium (Domains) Filter */}
-          <ExpandableSection title="Energy Alluvium" sectionId="domains">
-            {domains.map(domain => (
-              <label
-                key={domain}
-                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={filters.domains.has(domain)}
-                  onChange={e => handleDomainChange(domain, e.target.checked)}
-                  className="rounded border-input"
-                />
-                <span className="text-sm text-muted-foreground truncate">{domain}</span>
-              </label>
-            ))}
-          </ExpandableSection>
-
-          {/* Attribute Stats Filter */}
-          <ExpandableSection title="Attribute Stats" sectionId="attributeStats">
-            {attributeStats.map(attr => (
-              <label
-                key={attr}
-                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={filters.attributeStats.has(attr)}
-                  onChange={e => handleAttributeChange(attr, e.target.checked)}
-                  className="rounded border-input"
-                />
-                <span className="text-sm text-muted-foreground truncate">{attr}</span>
-              </label>
-            ))}
-          </ExpandableSection>
-
-          {/* Secondary Stats Filter */}
-          <ExpandableSection title="Secondary Stats" sectionId="secondaryStats">
-            {secondaryStats.map(stat => (
-              <label
-                key={stat}
-                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={filters.secondaryStats.has(stat)}
-                  onChange={e => handleSecondaryChange(stat, e.target.checked)}
-                  className="rounded border-input"
-                />
-                <span className="text-sm text-muted-foreground truncate">{stat}</span>
-              </label>
-            ))}
-          </ExpandableSection>
-
-          {/* Skill Stats Filter */}
-          <ExpandableSection title="Skill Stats" sectionId="skillStats">
-            {skillStats.map(skill => (
-              <label
-                key={skill}
-                className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={filters.skillStats.has(skill)}
-                  onChange={e => handleSkillChange(skill, e.target.checked)}
-                  className="rounded border-input"
-                />
-                <span className="text-sm text-muted-foreground truncate">{skill}</span>
-              </label>
-            ))}
-          </ExpandableSection>
-
-          {/* Show Maxed Weapons */}
-          <div className="border-b border-border px-4 py-3">
-            <label className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors">
-              <input
-                type="checkbox"
-                checked={filters.showMaxedWeapons}
-                onChange={e =>
-                  onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
-                }
-                className="rounded border-input"
-              />
-              <span className="text-sm text-muted-foreground">Show maxed weapons</span>
-            </label>
-          </div>
+        {/* Show Maxed Weapons */}
+        <div className="flex items-center gap-2 ml-auto">
+          <label className="text-xs font-semibold text-foreground flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.showMaxedWeapons}
+              onChange={e =>
+                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+              }
+              className="rounded border-input"
+            />
+            <span>Show maxed</span>
+          </label>
         </div>
-      )}
+      </div>
     </div>
   );
 }

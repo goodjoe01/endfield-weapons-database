@@ -1,13 +1,25 @@
 import { Weapon, FilterState } from './types';
 
+const WEAPON_TYPE_DISPLAY_NAMES: Record<string, string> = {
+  'Caster': 'Arts Unit',
+  'Pistol': 'Handcannon',
+  'Lance': 'Polearm',
+  'Sword': 'Sword',
+  'Greatsword': 'Great Sword',
+};
+
+export function getDisplayWeaponType(weaponType: string): string {
+  return WEAPON_TYPE_DISPLAY_NAMES[weaponType] || weaponType;
+}
+
 export async function loadWeapons(): Promise<Weapon[]> {
   const response = await fetch('/data/weapons.json');
   if (!response.ok) throw new Error('Failed to load weapons');
   const data = await response.json();
   return data.map((weapon: any) => ({
     ...weapon,
-    rarity: parseInt(weapon.rarity, 10),
-    id: weapon.name.toLowerCase().replace(/\s+/g, '-'),
+    rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
+    id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
 
@@ -51,6 +63,7 @@ export function filterWeapons(weapons: Weapon[], filters: FilterState): Weapon[]
       const query = filters.searchQuery.toLowerCase();
       const searchableFields = [
         weapon.name,
+        weapon.weaponType,
         weapon.attributeStats,
         weapon.skillStats,
         weapon.description,

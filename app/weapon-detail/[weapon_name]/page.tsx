@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { use } from 'react';
 import { Weapon } from '@/lib/types';
-import { loadWeapons, getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
+import { loadWeapons, getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
 import { WeaponDetailContent } from '@/components/weapon-detail-content';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
@@ -72,6 +72,8 @@ export default function WeaponDetailPage({ params: paramsPromise }: WeaponDetail
             </Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground">{weapon.name}</span>
+            {weapon.weaponType && <span className="text-muted-foreground">•</span>}
+            {weapon.weaponType && <span className="text-foreground">{getDisplayWeaponType(weapon.weaponType)}</span>}
             {weapon.rarity && <span className="text-foreground ml-auto">★ {weapon.rarity}★</span>}
           </div>
         </div>

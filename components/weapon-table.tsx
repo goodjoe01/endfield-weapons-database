@@ -1,11 +1,11 @@
 'use client';
 
 import { Weapon } from '@/lib/types';
-import { getRarityLabel, getRarityColor } from '@/lib/weapons-utils';
+import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
 import { useState } from 'react';
 import { ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface WeaponTableProps {
   weapons: Weapon[];
@@ -76,6 +76,7 @@ export function WeaponTable({ weapons }: WeaponTableProps) {
             <th className="px-4 py-3 text-left">
               <SortHeader label="Name" field="name" />
             </th>
+            <th className="px-4 py-3 text-left">Weapon Type</th>
             <th className="px-4 py-3 text-left">
               <SortHeader label="Rarity" field="rarity" />
             </th>
@@ -100,10 +101,13 @@ export function WeaponTable({ weapons }: WeaponTableProps) {
 
 function TableRow({ weapon }: { weapon: Weapon }) {
   const [imageError, setImageError] = useState(false);
+  const router = useRouter();
 
   return (
-    <Link href={`/weapon-detail/${weapon.id}`}>
-      <tr className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer">
+    <tr 
+      className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
+      onClick={() => router.push(`/weapon-detail/${weapon.id}`)}
+    >
         {/* Image Column */}
         <td className="px-4 py-3">
           <div className="w-14 h-14 bg-black/40 rounded overflow-hidden">
@@ -114,6 +118,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
                 width={56}
                 height={56}
                 className="w-full h-full object-cover"
+                loading="eager"
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -124,6 +129,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
         <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
+        <td className="px-4 py-3 text-muted-foreground">{getDisplayWeaponType(weapon.weaponType)}</td>
         <td className="px-4 py-3">
           <span
             className={`inline-flex px-2 py-1 ${getRarityColor(
@@ -148,6 +154,5 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
       </tr>
-    </Link>
-  );
+    );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { Weapon } from '@/lib/types';
-import { getRarityColor, getRarityLabel, getRarityBackgroundColor } from '@/lib/weapons-utils';
+import { getRarityColor, getRarityLabel, getRarityBackgroundColor, getDisplayWeaponType } from '@/lib/weapons-utils';
 import { isWeaponMaxed, toggleWeaponMaxed } from '@/lib/maxed-weapons';
 import { WeaponTooltip } from './weapon-tooltip';
 import Image from 'next/image';
@@ -52,6 +52,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
                   alt={weapon.name}
                   fill
                   className="object-cover"
+                  loading="eager"
                   onError={() => setImageError(true)}
                 />
               ) : (
@@ -63,6 +64,9 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
 
             {/* Content */}
             <div className="px-3 pb-3">
+              {/* Weapon Type Badge */}
+              <div className="text-xs text-muted-foreground mb-1">{getDisplayWeaponType(weapon.weaponType)}</div>
+
               {/* Rarity Badge */}
               <div className={`inline-flex w-fit px-2 py-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>
                 {getRarityLabel(weapon.rarity)}
