@@ -47,41 +47,33 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
     }
   }
 
-  // Merge data: use English as base for IDs/images/descriptions, overlay language-specific translations
-  const weaponsMap = new Map();
+  // Merge data using IMAGE as the unique key for matching
+  // This ensures consistent matching even if names or order changes
+  const weaponsMap = new Map<string, any>();
   
-  // Create map of English weapons with IDs
+  // Create map of English weapons using image as key
   enData.forEach((weapon: any) => {
     const id = weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-');
-    weaponsMap.set(id, {
-      ...weapon,
-      id,
-      rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
-    });
+    const imageKey = weapon.image || weapon.imageCloud;
+    
+    if (imageKey) {
+      weaponsMap.set(imageKey, {
+        ...weapon,
+        id,
+        rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
+      });
+    }
   });
 
-  // Overlay language-specific translations
+  // Overlay language-specific translations using image as key
   if (language === 'es' && langData !== enData) {
-    langData.forEach((langWeapon: any, index: number) => {
-      // Try to find matching weapon by checking English data at same index first
-      let matchedEntry = null;
+    langData.forEach((langWeapon: any) => {
+      const imageKey = langWeapon.image || langWeapon.imageCloud;
       
-      if (enData[index]) {
-        const enWeapon = enData[index];
-        const id = enWeapon.id || enWeapon.name.toLowerCase().replace(/\s+/g, '-');
-        matchedEntry = weaponsMap.get(id);
-      }
-
-      // Fallback: find by name comparison
-      if (!matchedEntry) {
-        const engName = langWeapon.name?.toLowerCase() || '';
-        matchedEntry = Array.from(weaponsMap.values()).find(
-          (w: any) => w.name.toLowerCase().includes(engName) || engName.includes(w.name.toLowerCase())
-        );
-      }
-
-      // Apply translations
-      if (matchedEntry) {
+      if (imageKey && weaponsMap.has(imageKey)) {
+        const matchedEntry = weaponsMap.get(imageKey)!;
+        
+        // Apply translations while preserving English data for non-translatable fields
         matchedEntry.name = langWeapon.name || matchedEntry.name;
         matchedEntry.domains = langWeapon.domains || matchedEntry.domains;
         matchedEntry.attributeStats = langWeapon.attributeStats || matchedEntry.attributeStats;
