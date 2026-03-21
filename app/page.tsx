@@ -138,7 +138,7 @@ export default function WeaponsPage() {
               <Layout className="h-5 w-5" />
             </button>
           </div>
-        </div> */
+        </div> */}
 
         {/* Weapons Display - ONLY CARD VIEW */}
         <div className="pb-12 overflow-visible">
