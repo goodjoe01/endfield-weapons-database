@@ -99,7 +99,15 @@ export default function WeaponsPage() {
         />
 
         <div className="pb-12 overflow-visible">
-          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible pt-12">
+          {/* Weapons Counter */}
+          <div className="mb-6 text-sm font-medium text-foreground">
+            {language === 'en' 
+              ? `Showing ${filteredWeapons.length} of ${weapons.length} weapons`
+              : `Mostrando ${filteredWeapons.length} de ${weapons.length} armas`
+            }
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible">
             {filteredWeapons.map(weapon => (
               <WeaponCard
                 key={weapon.id}
