@@ -17,7 +17,6 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [liked, setLiked] = useState<boolean | null>(null);
-  const [activeTab, setActiveTab] = useState<'passive' | 'special' | 'potential'>('passive');
 
   const handleLike = () => {
     if (liked === true) {
@@ -119,52 +118,21 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
         </div>
 
-        {/* Effects Tabs */}
-        <div>
-          <div className="flex gap-4 mb-4 border-b border-border">
-            <button
-              onClick={() => setActiveTab('passive')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'passive'
-                  ? 'text-foreground border-b-2 border-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Passive Attribute
-            </button>
-            <button
-              onClick={() => setActiveTab('special')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'special'
-                  ? 'text-foreground border-b-2 border-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Special Attribute
-            </button>
-            <button
-              onClick={() => setActiveTab('potential')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'potential'
-                  ? 'text-foreground border-b-2 border-primary bg-yellow-400/20'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Potential Skill
-            </button>
+        {/* Effects - Attribute and Secondary Stats */}
+        <div className="space-y-4 border-t border-border pt-4">
+          {/* Passive Attribute */}
+          <div>
+            <h3 className="text-foreground font-semibold mb-2">Passive Attribute</h3>
+            <p className="text-muted-foreground text-sm">{weapon.attributeStats}</p>
           </div>
 
-          {/* Tab Content */}
-          <div className="space-y-4">
+          {/* Secondary Attribute */}
+          {weapon.secondaryStats && (
             <div>
-              <h3 className="text-foreground font-semibold mb-2">
-                {activeTab === 'passive' && 'Passive Attribute'}
-                {activeTab === 'special' && 'Special Attribute'}
-                {activeTab === 'potential' && weapon.skillStats}
-              </h3>
-              <p className="text-muted-foreground text-sm">{weapon.attributeStats}</p>
+              <h3 className="text-foreground font-semibold mb-2">Secondary Attribute</h3>
+              <p className="text-muted-foreground text-sm">{weapon.secondaryStats}</p>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Skill Description */}

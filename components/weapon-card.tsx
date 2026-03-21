@@ -65,9 +65,9 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             </div>
 
             {/* Content */}
-            <div className="px-3 pb-3">
+            <div className="px-3 pb-3 flex flex-col h-24">
               {/* Weapon Type Badge */}
-              <div className="text-xs text-gray-100 mb-1">{getDisplayWeaponType(weapon.weaponType ?? '')}</div>
+              <div className="text-xs text-gray-100 mb-1 line-clamp-1">{getDisplayWeaponType(weapon.weaponType ?? '')}</div>
 
               {/* Rarity Badge */}
               <div className={`inline-flex w-fit px-2 py-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>
@@ -75,7 +75,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
               </div>
 
               {/* Name */}
-              <h3 className="font-semibold text-foreground truncate mb-2 text-sm">{weapon.name}</h3>
+              <h3 className="font-semibold text-foreground line-clamp-2 text-sm flex-1">{weapon.name}</h3>
             </div>
           </div>
         </Link>
