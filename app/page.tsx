@@ -98,48 +98,6 @@ export default function WeaponsPage() {
           onToggle={setFilterOpen}
         />
 
-        {/* View Controls - COMMENTED OUT */}
-        {/* <div className="flex items-center justify-between py-4 border-b border-border mb-6">
-          <div className="text-sm font-medium text-foreground">
-            Showing {filteredWeapons.length} of {weapons.length} weapons
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => setViewMode('list')}
-              className={`p-2 rounded-lg transition-colors ${
-                viewMode === 'list'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-accent'
-              }`}
-              title="List View"
-            >
-              <List className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => setViewMode('card')}
-              className={`p-2 rounded-lg transition-colors ${
-                viewMode === 'card'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-accent'
-              }`}
-              title="Card View"
-            >
-              <Grid3x3 className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => setViewMode('table')}
-              className={`p-2 rounded-lg transition-colors ${
-                viewMode === 'table'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-accent'
-              }`}
-              title="Table View"
-            >
-              <Layout className="h-5 w-5" />
-            </button>
-          </div>
-        </div> */}
-
         <div className="pb-12 overflow-visible">
           <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible pt-12">
             {filteredWeapons.map(weapon => (
@@ -147,7 +105,6 @@ export default function WeaponsPage() {
                 key={weapon.id}
                 weapon={weapon}
                 onMaxedChange={(isMaxed) => {
-                  // Auto-hide maxed weapon if showMaxedWeapons is false and weapon is marked as maxed
                   if (isMaxed && !filters.showMaxedWeapons) {
                     setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
                   }
@@ -155,10 +112,6 @@ export default function WeaponsPage() {
               />
             ))}
           </div>
-
-          {/* Commented out List and Table views */}
-          {/* {viewMode === 'list' && <WeaponList weapons={filteredWeapons} />}
-          {viewMode === 'table' && <WeaponTable weapons={filteredWeapons} />} */}
 
           {filteredWeapons.length === 0 && (
             <div className="text-center py-12">

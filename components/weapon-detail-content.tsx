@@ -17,9 +17,6 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [liked, setLiked] = useState<boolean | null>(null);
-  const [selectedBreakthrough, setSelectedBreakthrough] = useState(80);
-  const [selectedTalentLevel, setSelectedTalentLevel] = useState(0);
-  const [selectedSkillLevel, setSelectedSkillLevel] = useState(0);
   const [activeTab, setActiveTab] = useState<'passive' | 'special' | 'potential'>('passive');
 
   const handleLike = () => {
@@ -43,8 +40,6 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
       setLiked(false);
     }
   };
-
-  const breakthroughLevels = [1, 20, 40, 60, 80];
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -172,67 +167,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
         </div>
 
-        {/* Breakthrough Level - COMMENTED OUT */}
-        {/* <div>
-          <h3 className="text-foreground font-semibold mb-3">Breakthrough Level:</h3>
-          <div className="flex gap-2">
-            {breakthroughLevels.map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedBreakthrough(level)}
-                className={`px-3 py-2 rounded font-semibold transition-colors ${
-                  selectedBreakthrough === level
-                    ? 'bg-yellow-400 text-black'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                {level}
-              </button>
-            ))}
-          </div>
-        </div> */
-
-        {/* Talent Levels - COMMENTED OUT */}
-        {/* <div>
-          <h3 className="text-foreground font-semibold mb-3">Talent:</h3>
-          <div className="flex gap-2 mb-4">
-            {[0, 1, 2, 3, 4, 5].map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedTalentLevel(level)}
-                className={`px-3 py-2 rounded font-semibold transition-colors ${
-                  selectedTalentLevel === level
-                    ? 'bg-yellow-400 text-black border-2 border-yellow-300'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                +{level}
-              </button>
-            ))}
-          </div>
-        </div> */
-
-        {/* Select Skill Level - COMMENTED OUT */}
-        {/* <div>
-          <h3 className="text-foreground font-semibold mb-3">Select Skill Level:</h3>
-          <div className="flex gap-2">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedSkillLevel(level)}
-                className={`w-8 h-8 flex items-center justify-center rounded transition-colors ${
-                  selectedSkillLevel === level
-                    ? 'bg-yellow-400 text-black'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                ◆
-              </button>
-            ))}
-          </div>
-        </div> */
-
-        {/* Skill Description - ONLY TABS */}
+        {/* Skill Description */}
         <div className="border-t border-border pt-4">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-yellow-400 font-semibold">{weapon.skillStats}</h3>
