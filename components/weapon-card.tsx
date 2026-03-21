@@ -75,7 +75,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
               </div>
 
               {/* Name */}
-              <h3 className="font-semibold text-foreground text-sm flex-1 line-clamp-2">{weapon.name}</h3>
+              <h3 className="font-semibold text-foreground truncate text-sm flex-1 line-clamp-2">{weapon.name}</h3>
             </div>
           </div>
         </Link>
