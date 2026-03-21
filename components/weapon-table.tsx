@@ -115,7 +115,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           <div className="w-14 h-14 bg-black/40 rounded overflow-hidden">
             {!imageError ? (
               <Image
-                src={weapon.image}
+                src={weapon.imageCloud || weapon.image}
                 alt={weapon.name}
                 width={56}
                 height={56}

@@ -50,7 +50,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             <div className="relative w-full h-40 bg-black/40 overflow-hidden">
               {!imageError ? (
                 <Image
-                  src={weapon.image}
+                  src={weapon.imageCloud || weapon.image}
                   alt={weapon.name}
                   fill
                   className="object-cover"

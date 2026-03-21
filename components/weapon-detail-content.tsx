@@ -53,7 +53,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
         <div className="relative w-full aspect-square bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg overflow-hidden">
           {!imageError ? (
             <Image
-              src={weapon.image}
+              src={weapon.imageCloud || weapon.image}
               alt={weapon.name}
               fill
               className="object-cover"

@@ -35,8 +35,7 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
       ...weapon,
       rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
       id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
-      image: weapon.imageCloud || weapon.image, // Use imageCloud (working GitHub URL)
-      weaponType: weapon.weaponType || weapon.type, // Normalize type → weaponType
+      weaponType: weapon.weaponType, // Keep only weaponType
     }));
   }
 
@@ -49,29 +48,28 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
     }
   }
 
-  // Merge data using imageCloud as the unique key for matching
+  // Merge data using image (local path) as the unique key for matching
   const weaponsMap = new Map<string, any>();
   
-  // Create map of English weapons using imageCloud as key
+  // Create map of English weapons using image as key
   enData.forEach((weapon: any) => {
     const id = weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-');
-    const imageKey = weapon.imageCloud || weapon.image;
+    const imageKey = weapon.image; // Use local image path as key
     
     if (imageKey) {
       weaponsMap.set(imageKey, {
         ...weapon,
         id,
-        image: weapon.imageCloud || weapon.image, // Use imageCloud as primary
-        weaponType: weapon.weaponType || weapon.type, // Normalize type field
+        weaponType: weapon.weaponType, // Keep only weaponType
         rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
       });
     }
   });
 
-  // Overlay language-specific translations using imageCloud as key
+  // Overlay language-specific translations using image as key
   if (language === 'es' && langData !== enData) {
     langData.forEach((langWeapon: any) => {
-      const imageKey = langWeapon.imageCloud || langWeapon.image;
+      const imageKey = langWeapon.image;
       
       if (imageKey && weaponsMap.has(imageKey)) {
         const matchedEntry = weaponsMap.get(imageKey)!;
@@ -82,9 +80,7 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
         matchedEntry.attributeStats = langWeapon.attributeStats || matchedEntry.attributeStats;
         matchedEntry.secondaryStats = langWeapon.secondaryStats || matchedEntry.secondaryStats;
         matchedEntry.skillStats = langWeapon.skillStats || matchedEntry.skillStats;
-        matchedEntry.weaponType = langWeapon.weaponType || langWeapon.type || matchedEntry.weaponType;
-        // Keep imageCloud for consistency
-        matchedEntry.image = matchedEntry.imageCloud || matchedEntry.image;
+        matchedEntry.weaponType = langWeapon.weaponType || matchedEntry.weaponType;
       }
     });
   }
