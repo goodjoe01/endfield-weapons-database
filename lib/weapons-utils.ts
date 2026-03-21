@@ -29,12 +29,14 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
   if (!enResponse.ok) throw new Error('Failed to load weapons');
   const enData = await enResponse.json();
 
-  // If English, return as is
+  // If English, return normalized
   if (language === 'en') {
     return enData.map((weapon: any) => ({
       ...weapon,
       rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
       id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
+      image: weapon.imageCloud || weapon.image, // Use imageCloud (working GitHub URL)
+      weaponType: weapon.weaponType || weapon.type, // Normalize type → weaponType
     }));
   }
 
@@ -47,28 +49,29 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
     }
   }
 
-  // Merge data using IMAGE as the unique key for matching
-  // This ensures consistent matching even if names or order changes
+  // Merge data using imageCloud as the unique key for matching
   const weaponsMap = new Map<string, any>();
   
-  // Create map of English weapons using image as key
+  // Create map of English weapons using imageCloud as key
   enData.forEach((weapon: any) => {
     const id = weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-');
-    const imageKey = weapon.image || weapon.imageCloud;
+    const imageKey = weapon.imageCloud || weapon.image;
     
     if (imageKey) {
       weaponsMap.set(imageKey, {
         ...weapon,
         id,
+        image: weapon.imageCloud || weapon.image, // Use imageCloud as primary
+        weaponType: weapon.weaponType || weapon.type, // Normalize type field
         rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
       });
     }
   });
 
-  // Overlay language-specific translations using image as key
+  // Overlay language-specific translations using imageCloud as key
   if (language === 'es' && langData !== enData) {
     langData.forEach((langWeapon: any) => {
-      const imageKey = langWeapon.image || langWeapon.imageCloud;
+      const imageKey = langWeapon.imageCloud || langWeapon.image;
       
       if (imageKey && weaponsMap.has(imageKey)) {
         const matchedEntry = weaponsMap.get(imageKey)!;
@@ -79,7 +82,9 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
         matchedEntry.attributeStats = langWeapon.attributeStats || matchedEntry.attributeStats;
         matchedEntry.secondaryStats = langWeapon.secondaryStats || matchedEntry.secondaryStats;
         matchedEntry.skillStats = langWeapon.skillStats || matchedEntry.skillStats;
-        matchedEntry.weaponType = langWeapon.weaponType || matchedEntry.weaponType;
+        matchedEntry.weaponType = langWeapon.weaponType || langWeapon.type || matchedEntry.weaponType;
+        // Keep imageCloud for consistency
+        matchedEntry.image = matchedEntry.imageCloud || matchedEntry.image;
       }
     });
   }
