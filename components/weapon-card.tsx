@@ -48,7 +48,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             <div className="relative w-full h-40 bg-black/40 overflow-hidden">
               {!imageError ? (
                 <Image
-                  src={weapon.image}
+                  src={weapon.image?? ''}
                   alt={weapon.name}
                   fill
                   className="object-cover"
@@ -65,7 +65,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             {/* Content */}
             <div className="px-3 pb-3">
               {/* Weapon Type Badge */}
-              <div className="text-xs text-muted-foreground mb-1">{getDisplayWeaponType(weapon.weaponType)}</div>
+              <div className="text-xs text-gray-100 mb-1">{getDisplayWeaponType(weapon.weaponType ?? '')}</div>
 
               {/* Rarity Badge */}
               <div className={`inline-flex w-fit px-2 py-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>

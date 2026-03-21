@@ -4,6 +4,7 @@ export interface Weapon {
   rarity: 3 | 4 | 5 | 6;
   image: string;
   weaponType?: string;
+  imageCloud?: string;
   domains: string[];
   attributeStats: string;
   secondaryStats: string;
