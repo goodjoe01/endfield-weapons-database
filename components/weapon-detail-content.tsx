@@ -172,8 +172,8 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
         </div>
 
-        {/* Breakthrough Level */}
-        <div>
+        {/* Breakthrough Level - COMMENTED OUT */}
+        {/* <div>
           <h3 className="text-foreground font-semibold mb-3">Breakthrough Level:</h3>
           <div className="flex gap-2">
             {breakthroughLevels.map(level => (
@@ -190,10 +190,10 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
               </button>
             ))}
           </div>
-        </div>
+        </div> */
 
-        {/* Talent Levels */}
-        <div>
+        {/* Talent Levels - COMMENTED OUT */}
+        {/* <div>
           <h3 className="text-foreground font-semibold mb-3">Talent:</h3>
           <div className="flex gap-2 mb-4">
             {[0, 1, 2, 3, 4, 5].map(level => (
@@ -210,10 +210,10 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
               </button>
             ))}
           </div>
-        </div>
+        </div> */
 
-        {/* Select Skill Level */}
-        <div>
+        {/* Select Skill Level - COMMENTED OUT */}
+        {/* <div>
           <h3 className="text-foreground font-semibold mb-3">Select Skill Level:</h3>
           <div className="flex gap-2">
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(level => (
@@ -230,13 +230,12 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
               </button>
             ))}
           </div>
-        </div>
+        </div> */
 
-        {/* Skill Description */}
+        {/* Skill Description - ONLY TABS */}
         <div className="border-t border-border pt-4">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-yellow-400 font-semibold">{weapon.skillStats}</h3>
-            <span className="text-muted-foreground text-sm ml-auto">Lv.{selectedSkillLevel}</span>
           </div>
           <p className="text-sm text-foreground leading-relaxed">{weapon.description}</p>
           <div className="mt-4 space-y-2 text-sm text-muted-foreground">

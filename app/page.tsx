@@ -98,8 +98,8 @@ export default function WeaponsPage() {
           onToggle={setFilterOpen}
         />
 
-        {/* View Controls */}
-        <div className="flex items-center justify-between py-4 border-b border-border mb-6">
+        {/* View Controls - COMMENTED OUT */}
+        {/* <div className="flex items-center justify-between py-4 border-b border-border mb-6">
           <div className="text-sm font-medium text-foreground">
             Showing {filteredWeapons.length} of {weapons.length} weapons
           </div>
@@ -138,30 +138,28 @@ export default function WeaponsPage() {
               <Layout className="h-5 w-5" />
             </button>
           </div>
-        </div>
+        </div> */
 
-        {/* Weapons Display */}
+        {/* Weapons Display - ONLY CARD VIEW */}
         <div className="pb-12 overflow-visible">
-          {viewMode === 'card' && (
-            <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible pt-12">
-              {filteredWeapons.map(weapon => (
-                <WeaponCard
-                  key={weapon.id}
-                  weapon={weapon}
-                  onMaxedChange={(isMaxed) => {
-                    // Auto-hide maxed weapon if showMaxedWeapons is false and weapon is marked as maxed
-                    if (isMaxed && !filters.showMaxedWeapons) {
-                      setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
-                    }
-                  }}
-                />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible pt-12">
+            {filteredWeapons.map(weapon => (
+              <WeaponCard
+                key={weapon.id}
+                weapon={weapon}
+                onMaxedChange={(isMaxed) => {
+                  // Auto-hide maxed weapon if showMaxedWeapons is false and weapon is marked as maxed
+                  if (isMaxed && !filters.showMaxedWeapons) {
+                    setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
+                  }
+                }}
+              />
+            ))}
+          </div>
 
-          {viewMode === 'list' && <WeaponList weapons={filteredWeapons} />}
-
-          {viewMode === 'table' && <WeaponTable weapons={filteredWeapons} />}
+          {/* Commented out List and Table views */}
+          {/* {viewMode === 'list' && <WeaponList weapons={filteredWeapons} />}
+          {viewMode === 'table' && <WeaponTable weapons={filteredWeapons} />} */}
 
           {filteredWeapons.length === 0 && (
             <div className="text-center py-12">

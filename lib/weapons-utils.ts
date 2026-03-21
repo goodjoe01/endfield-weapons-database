@@ -7,6 +7,7 @@ const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
     'Lance': 'Polearm',
     'Sword': 'Sword',
     'Greatsword': 'Great Sword',
+    'funnel': 'Arts Unit',
   },
   'es': {
     'Caster': 'Unidad de las Artes',
@@ -14,6 +15,7 @@ const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
     'Lance': 'Arma de asta',
     'Sword': 'Espada',
     'Greatsword': 'Gran espada',
+    'funnel': 'Unidad de las Artes',
   },
 };
 
