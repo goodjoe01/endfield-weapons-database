@@ -14,7 +14,7 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { Layout, Grid3x3, List } from 'lucide-react';
 
 export default function WeaponsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [weapons, setWeapons] = useState<Weapon[]>([]);
   const [filteredWeapons, setFilteredWeapons] = useState<Weapon[]>([]);
   const [viewMode, setViewMode] = useState<ViewMode>('card');
@@ -32,17 +32,21 @@ export default function WeaponsPage() {
   });
 
   useEffect(() => {
-    loadWeapons()
-      .then(data => {
+    async function loadData() {
+      setLoading(true);
+      try {
+        const data = await loadWeapons(language);
         setWeapons(data);
         setFilteredWeapons(data);
-        setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error loading weapons:', error);
+      } finally {
         setLoading(false);
-      });
-  }, []);
+      }
+    }
+
+    loadData();
+  }, [language]);
 
   useEffect(() => {
     let filtered = filterWeapons(weapons, filters);

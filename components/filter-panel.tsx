@@ -28,7 +28,7 @@ export function FilterPanel({
   isOpen,
   onToggle,
 }: FilterPanelProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const domains = getUniqueDomains(weapons);
   const attributeStats = getUniqueAttributeStats(weapons);
   const secondaryStats = getUniqueSecondaryStats(weapons);
@@ -248,7 +248,7 @@ export function FilterPanel({
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                   }`}
                 >
-                  {getDisplayWeaponType(type)}
+                  {getDisplayWeaponType(type, language)}
                 </button>
               ))}
             </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Weapon } from '@/lib/types';
 import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
+import { useLanguage } from '@/lib/language-context';
 import Image from 'next/image';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
@@ -11,6 +12,7 @@ interface WeaponDetailContentProps {
 }
 
 export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
+  const { language } = useLanguage();
   const [imageError, setImageError] = useState(false);
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
@@ -110,7 +112,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
           <div>
             <span className="text-foreground font-semibold">Weapon Type:</span>
-            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType) : 'N/A'}</span>
+            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType, language) : 'N/A'}</span>
           </div>
           <div>
             <span className="text-foreground font-semibold">Max Level:</span>

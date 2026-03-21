@@ -2,6 +2,7 @@
 
 import { Weapon } from '@/lib/types';
 import { getRarityColor, getRarityLabel, getRarityBackgroundColor, getDisplayWeaponType } from '@/lib/weapons-utils';
+import { useLanguage } from '@/lib/language-context';
 import { isWeaponMaxed, toggleWeaponMaxed } from '@/lib/maxed-weapons';
 import { WeaponTooltip } from './weapon-tooltip';
 import Image from 'next/image';
@@ -14,6 +15,7 @@ interface WeaponCardProps {
 }
 
 export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
+  const { language } = useLanguage();
   const [imageError, setImageError] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [isMaxed, setIsMaxed] = useState(() => isWeaponMaxed(weapon.name));
@@ -65,7 +67,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             {/* Content */}
             <div className="px-3 pb-3">
               {/* Weapon Type Badge */}
-              <div className="text-xs text-muted-foreground mb-1">{getDisplayWeaponType(weapon.weaponType)}</div>
+              <div className="text-xs text-muted-foreground mb-1">{getDisplayWeaponType(weapon.weaponType, language)}</div>
 
               {/* Rarity Badge */}
               <div className={`inline-flex w-fit px-2 py-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>

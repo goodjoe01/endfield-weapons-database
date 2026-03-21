@@ -1,26 +1,98 @@
 import { Weapon, FilterState } from './types';
 
-const WEAPON_TYPE_DISPLAY_NAMES: Record<string, string> = {
-  'Caster': 'Arts Unit',
-  'Pistol': 'Handcannon',
-  'Lance': 'Polearm',
-  'Sword': 'Sword',
-  'Greatsword': 'Great Sword',
+const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
+  'en': {
+    'Caster': 'Arts Unit',
+    'Pistol': 'Handcannon',
+    'Lance': 'Polearm',
+    'Sword': 'Sword',
+    'Greatsword': 'Great Sword',
+  },
+  'es': {
+    'Caster': 'Unidad de las Artes',
+    'Pistol': 'Cañón de mano',
+    'Lance': 'Arma de asta',
+    'Sword': 'Espada',
+    'Greatsword': 'Gran espada',
+  },
 };
 
-export function getDisplayWeaponType(weaponType: string): string {
-  return WEAPON_TYPE_DISPLAY_NAMES[weaponType] || weaponType;
+export function getDisplayWeaponType(weaponType: string, language: string = 'en'): string {
+  return WEAPON_TYPE_DISPLAY_NAMES[language]?.[weaponType] || 
+         WEAPON_TYPE_DISPLAY_NAMES['en'][weaponType] || 
+         weaponType;
 }
 
-export async function loadWeapons(): Promise<Weapon[]> {
-  const response = await fetch('/data/weapons.json');
-  if (!response.ok) throw new Error('Failed to load weapons');
-  const data = await response.json();
-  return data.map((weapon: any) => ({
-    ...weapon,
-    rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
-    id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
-  }));
+export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
+  // Always load English as base for IDs and non-translatable fields
+  const enResponse = await fetch('/data/weapons.json');
+  if (!enResponse.ok) throw new Error('Failed to load weapons');
+  const enData = await enResponse.json();
+
+  // If English, return as is
+  if (language === 'en') {
+    return enData.map((weapon: any) => ({
+      ...weapon,
+      rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
+      id: weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-'),
+    }));
+  }
+
+  // Load language-specific data
+  let langData = enData;
+  if (language === 'es') {
+    const esResponse = await fetch('/data/weapons.es.json');
+    if (esResponse.ok) {
+      langData = await esResponse.json();
+    }
+  }
+
+  // Merge data: use English as base for IDs/images/descriptions, overlay language-specific translations
+  const weaponsMap = new Map();
+  
+  // Create map of English weapons with IDs
+  enData.forEach((weapon: any) => {
+    const id = weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-');
+    weaponsMap.set(id, {
+      ...weapon,
+      id,
+      rarity: typeof weapon.rarity === 'string' ? parseInt(weapon.rarity, 10) : weapon.rarity,
+    });
+  });
+
+  // Overlay language-specific translations
+  if (language === 'es' && langData !== enData) {
+    langData.forEach((langWeapon: any, index: number) => {
+      // Try to find matching weapon by checking English data at same index first
+      let matchedEntry = null;
+      
+      if (enData[index]) {
+        const enWeapon = enData[index];
+        const id = enWeapon.id || enWeapon.name.toLowerCase().replace(/\s+/g, '-');
+        matchedEntry = weaponsMap.get(id);
+      }
+
+      // Fallback: find by name comparison
+      if (!matchedEntry) {
+        const engName = langWeapon.name?.toLowerCase() || '';
+        matchedEntry = Array.from(weaponsMap.values()).find(
+          (w: any) => w.name.toLowerCase().includes(engName) || engName.includes(w.name.toLowerCase())
+        );
+      }
+
+      // Apply translations
+      if (matchedEntry) {
+        matchedEntry.name = langWeapon.name || matchedEntry.name;
+        matchedEntry.domains = langWeapon.domains || matchedEntry.domains;
+        matchedEntry.attributeStats = langWeapon.attributeStats || matchedEntry.attributeStats;
+        matchedEntry.secondaryStats = langWeapon.secondaryStats || matchedEntry.secondaryStats;
+        matchedEntry.skillStats = langWeapon.skillStats || matchedEntry.skillStats;
+        matchedEntry.weaponType = langWeapon.weaponType || matchedEntry.weaponType;
+      }
+    });
+  }
+
+  return Array.from(weaponsMap.values());
 }
 
 export function filterWeapons(weapons: Weapon[], filters: FilterState): Weapon[] {

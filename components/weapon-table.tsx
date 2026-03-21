@@ -2,6 +2,7 @@
 
 import { Weapon } from '@/lib/types';
 import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
+import { useLanguage } from '@/lib/language-context';
 import { useState } from 'react';
 import { ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
@@ -15,6 +16,7 @@ type SortField = 'name' | 'rarity' | 'attributeStats' | 'skillStats';
 type SortOrder = 'asc' | 'desc';
 
 export function WeaponTable({ weapons }: WeaponTableProps) {
+  const { language } = useLanguage();
   const [sortField, setSortField] = useState<SortField>('name');
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
 
@@ -129,7 +131,7 @@ function TableRow({ weapon }: { weapon: Weapon }) {
           </div>
         </td>
         <td className="px-4 py-3 font-medium text-foreground">{weapon.name}</td>
-        <td className="px-4 py-3 text-muted-foreground">{getDisplayWeaponType(weapon.weaponType)}</td>
+        <td className="px-4 py-3 text-muted-foreground">{getDisplayWeaponType(weapon.weaponType, language)}</td>
         <td className="px-4 py-3">
           <span
             className={`inline-flex px-2 py-1 ${getRarityColor(
