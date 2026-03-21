@@ -100,7 +100,7 @@ export default function WeaponsPage() {
 
         <div className="pb-12 overflow-visible">
           {/* Weapons Counter */}
-          <div className="mb-6 text-sm font-medium text-foreground">
+          <div className="my-2 text-sm font-medium text-foreground">
             {language === 'en' 
               ? `Showing ${filteredWeapons.length} of ${weapons.length} weapons`
               : `Mostrando ${filteredWeapons.length} de ${weapons.length} armas`
