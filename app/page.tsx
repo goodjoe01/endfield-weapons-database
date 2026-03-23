@@ -71,7 +71,7 @@ export default function WeaponsPage() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
       {/* Contact Banner - Top */}
-      <div className="bg-orange-600/20 border-b border-orange-600/50 px-4 py-2">
+{/*       <div className="bg-gray-900 border-b border-orange-900 px-4 py-2">
         <div className="max-w-7xl mx-auto text-center">
           <a
             href="https://www.tiktok.com/@goodjoe01"
@@ -79,14 +79,14 @@ export default function WeaponsPage() {
             rel="noopener noreferrer"
             className="text-sm font-medium text-orange-400 hover:text-orange-300 transition-colors"
           >
-            Follow @goodjoe01 on TikTok
+            by @goodjoe01
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="max-w-7xl mx-auto px-4 pt-6 pb-2">
           <div className="flex justify-between items-start mb-4">
             <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
             <LanguageSwitcher />
@@ -166,7 +166,7 @@ export default function WeaponsPage() {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col items-center justify-center gap-6">
             <div className="text-center">
-              <h3 className="text-foreground font-semibold mb-4">Follow Me</h3>
+              <h3 className="text-foreground font-semibold mb-4">Socials</h3>
               <div className="flex gap-6 justify-center flex-wrap">
                 <a
                   href="https://www.tiktok.com/@goodjoe01"
@@ -202,9 +202,8 @@ export default function WeaponsPage() {
                 </a>
               </div>
             </div>
-            <div className="text-xs text-muted-foreground text-center pt-4 border-t border-border w-full space-y-2">
-              <p>Weapons Database © 2024 | Built with passion</p>
-              <p className="text-xs leading-relaxed">
+            <div className="text-xs text-muted-foreground text-center border-border w-full">
+              <p className="text-xs leading-relaxed text-gray-100 font-medium">
                 Unofficial fan project. Not affiliated with Hypergryph or Gryphline. Game assets and data belong to their respective owners.
               </p>
             </div>
