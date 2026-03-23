@@ -161,64 +161,6 @@ export default function WeaponsPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Filter Panel */}
-        <FilterPanel
-          weapons={weapons}
-          filters={filters}
-          onFilterChange={setFilters}
-          isOpen={filterOpen}
-          onToggle={setFilterOpen}
-        />
-
-        <div className="pb-12 overflow-visible">
-          {/* Weapons Counter */}
-          <div className="my-2 text-sm font-medium text-foreground">
-            {language === 'en'
-              ? `Showing ${filteredWeapons.length} of ${weapons.length} weapons`
-              : `Mostrando ${filteredWeapons.length} de ${weapons.length} armas`
-            }
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible">
-            {filteredWeapons.map(weapon => (
-              <WeaponCard
-                key={weapon.id}
-                weapon={weapon}
-                onMaxedChange={(isMaxed) => {
-                  if (isMaxed && !filters.showMaxedWeapons) {
-                    setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
-                  }
-                }}
-              />
-            ))}
-          </div>
-
-          {filteredWeapons.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground mb-4">No weapons found matching your filters.</p>
-              <button
-                onClick={() =>
-                  setFilters({
-                    rarity: new Set(),
-                    weaponType: new Set(),
-                    domains: new Set(),
-                    attributeStats: new Set(),
-                    secondaryStats: new Set(),
-                    skillStats: new Set(),
-                    searchQuery: '',
-                    showMaxedWeapons: false,
-                  })
-                }
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                Clear All Filters
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-
       {/* Footer */}
       <footer className="bg-background border-t border-border mt-12">
         <div className="max-w-7xl mx-auto px-4 py-8">
