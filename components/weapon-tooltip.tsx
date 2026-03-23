@@ -54,15 +54,29 @@ export function WeaponTooltip({ weapon, isVisible }: WeaponTooltipProps) {
         </div>
 
         {/* Passive Attribute Section */}
-        <div>
+        <div className="mb-3">
           <h5 className="text-gray-400 font-bold text-xs mb-2 uppercase">Passive Attribute</h5>
-          <div className="mb-3">
+          <div>
             <p className="text-yellow-400 font-bold text-sm mb-2">{weapon.skillStats}</p>
             <p className="text-white text-xs leading-relaxed">
               {weapon.description || 'No description available'}
             </p>
           </div>
         </div>
+
+        {/* Domains Section */}
+        {weapon.domains && weapon.domains.length > 0 && (
+          <div className="border-t border-orange-600/50 pt-3">
+            <h5 className="text-gray-400 font-bold text-xs mb-2 uppercase">Available in</h5>
+            <div className="flex flex-wrap gap-2">
+              {weapon.domains.map(domain => (
+                <span key={domain} className="px-2 py-1 bg-orange-600/30 text-orange-300 rounded text-xs">
+                  {domain}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Tooltip Arrow */}

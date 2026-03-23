@@ -260,8 +260,11 @@ export default function WeaponsPage() {
                 </a>
               </div>
             </div>
-            <div className="text-xs text-muted-foreground text-center pt-4 border-t border-border w-full">
+            <div className="text-xs text-muted-foreground text-center pt-4 border-t border-border w-full space-y-2">
               <p>Weapons Database © 2024 | Built with passion</p>
+              <p className="text-xs leading-relaxed">
+                Unofficial fan project. Not affiliated with Hypergryph or Gryphline. Game assets and data belong to their respective owners.
+              </p>
             </div>
           </div>
         </div>
