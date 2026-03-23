@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Weapon } from '@/lib/types';
 import { getRarityLabel, getRarityColor, getDisplayWeaponType } from '@/lib/weapons-utils';
+import { useLanguage } from '@/lib/language-context';
 import Image from 'next/image';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
@@ -11,14 +12,11 @@ interface WeaponDetailContentProps {
 }
 
 export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
+  const { language } = useLanguage();
   const [imageError, setImageError] = useState(false);
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [liked, setLiked] = useState<boolean | null>(null);
-  const [selectedBreakthrough, setSelectedBreakthrough] = useState(80);
-  const [selectedTalentLevel, setSelectedTalentLevel] = useState(0);
-  const [selectedSkillLevel, setSelectedSkillLevel] = useState(0);
-  const [activeTab, setActiveTab] = useState<'passive' | 'special' | 'potential'>('passive');
 
   const handleLike = () => {
     if (liked === true) {
@@ -42,8 +40,6 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
     }
   };
 
-  const breakthroughLevels = [1, 20, 40, 60, 80];
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Left Column - Image */}
@@ -51,7 +47,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
         <div className="relative w-full aspect-square bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg overflow-hidden">
           {!imageError ? (
             <Image
-              src={weapon.image}
+              src={weapon.imageCloud || weapon.image}
               alt={weapon.name}
               fill
               className="object-cover"
@@ -110,7 +106,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
           <div>
             <span className="text-foreground font-semibold">Weapon Type:</span>
-            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType) : 'N/A'}</span>
+            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType, language) : 'N/A'}</span>
           </div>
           <div>
             <span className="text-foreground font-semibold">Max Level:</span>
@@ -122,119 +118,27 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
         </div>
 
-        {/* Effects Tabs */}
-        <div>
-          <div className="flex gap-4 mb-4 border-b border-border">
-            <button
-              onClick={() => setActiveTab('passive')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'passive'
-                  ? 'text-foreground border-b-2 border-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Passive Attribute
-            </button>
-            <button
-              onClick={() => setActiveTab('special')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'special'
-                  ? 'text-foreground border-b-2 border-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Special Attribute
-            </button>
-            <button
-              onClick={() => setActiveTab('potential')}
-              className={`px-4 py-2 font-semibold transition-colors ${
-                activeTab === 'potential'
-                  ? 'text-foreground border-b-2 border-primary bg-yellow-400/20'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Potential Skill
-            </button>
+        {/* Effects - Attribute and Secondary Stats */}
+        <div className="space-y-4 border-t border-border pt-4">
+          {/* Passive Attribute */}
+          <div>
+            <h3 className="text-foreground font-semibold mb-2">Passive Attribute</h3>
+            <p className="text-muted-foreground text-sm">{weapon.attributeStats}</p>
           </div>
 
-          {/* Tab Content */}
-          <div className="space-y-4">
+          {/* Secondary Attribute */}
+          {weapon.secondaryStats && (
             <div>
-              <h3 className="text-foreground font-semibold mb-2">
-                {activeTab === 'passive' && 'Passive Attribute'}
-                {activeTab === 'special' && 'Special Attribute'}
-                {activeTab === 'potential' && weapon.skillStats}
-              </h3>
-              <p className="text-muted-foreground text-sm">{weapon.attributeStats}</p>
+              <h3 className="text-foreground font-semibold mb-2">Secondary Attribute</h3>
+              <p className="text-muted-foreground text-sm">{weapon.secondaryStats}</p>
             </div>
-          </div>
-        </div>
-
-        {/* Breakthrough Level */}
-        <div>
-          <h3 className="text-foreground font-semibold mb-3">Breakthrough Level:</h3>
-          <div className="flex gap-2">
-            {breakthroughLevels.map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedBreakthrough(level)}
-                className={`px-3 py-2 rounded font-semibold transition-colors ${
-                  selectedBreakthrough === level
-                    ? 'bg-yellow-400 text-black'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                {level}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Talent Levels */}
-        <div>
-          <h3 className="text-foreground font-semibold mb-3">Talent:</h3>
-          <div className="flex gap-2 mb-4">
-            {[0, 1, 2, 3, 4, 5].map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedTalentLevel(level)}
-                className={`px-3 py-2 rounded font-semibold transition-colors ${
-                  selectedTalentLevel === level
-                    ? 'bg-yellow-400 text-black border-2 border-yellow-300'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                +{level}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Select Skill Level */}
-        <div>
-          <h3 className="text-foreground font-semibold mb-3">Select Skill Level:</h3>
-          <div className="flex gap-2">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(level => (
-              <button
-                key={level}
-                onClick={() => setSelectedSkillLevel(level)}
-                className={`w-8 h-8 flex items-center justify-center rounded transition-colors ${
-                  selectedSkillLevel === level
-                    ? 'bg-yellow-400 text-black'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                }`}
-              >
-                ◆
-              </button>
-            ))}
-          </div>
+          )}
         </div>
 
         {/* Skill Description */}
         <div className="border-t border-border pt-4">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-yellow-400 font-semibold">{weapon.skillStats}</h3>
-            <span className="text-muted-foreground text-sm ml-auto">Lv.{selectedSkillLevel}</span>
           </div>
           <p className="text-sm text-foreground leading-relaxed">{weapon.description}</p>
           <div className="mt-4 space-y-2 text-sm text-muted-foreground">

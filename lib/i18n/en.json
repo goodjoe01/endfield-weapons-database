@@ -1,0 +1,44 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "header": {
+    "title": "Weapons Database",
+    "description": "Browse and filter weapons by rarity, domains, attributes, and skills"
+  },
+  "filters": {
+    "rarity": "Rarity",
+    "weaponType": "Weapon Type",
+    "domain": "Energy Alluvium",
+    "attributeStats": "Attribute Stats",
+    "secondaryStats": "Secondary Stats",
+    "skillStats": "Skill Stats",
+    "showMaxed": "Show maxed",
+    "clearAll": "Clear All Filters"
+  },
+  "table": {
+    "image": "Image",
+    "name": "Name",
+    "weaponType": "Weapon Type",
+    "rarity": "Rarity",
+    "attribute": "Attribute",
+    "skill": "Skill",
+    "domain": "Energy Alluvium"
+  },
+  "tooltip": {
+    "stats": "STATS",
+    "passiveAttribute": "Passive Attribute"
+  },
+  "detail": {
+    "breadcrumb": "Weapons",
+    "weaponType": "Weapon Type",
+    "domain": "Energy Alluvium",
+    "attributeStats": "Attribute Stats",
+    "secondaryStats": "Secondary Stats",
+    "skillStats": "Skill Stats",
+    "description": "Description",
+    "stats": "STATS"
+  }
+}

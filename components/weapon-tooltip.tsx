@@ -2,6 +2,7 @@
 
 import { Weapon } from '@/lib/types';
 import { getDisplayWeaponType } from '@/lib/weapons-utils';
+import { useLanguage } from '@/lib/language-context';
 
 interface WeaponTooltipProps {
   weapon: Weapon;
@@ -9,6 +10,7 @@ interface WeaponTooltipProps {
 }
 
 export function WeaponTooltip({ weapon, isVisible }: WeaponTooltipProps) {
+  const { language } = useLanguage();
   if (!isVisible) return null;
 
   // Parse stats from the attributeStats and secondaryStats strings
@@ -26,9 +28,10 @@ export function WeaponTooltip({ weapon, isVisible }: WeaponTooltipProps) {
   return (
     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50 pointer-events-none">
       <div className="bg-gray-900 border-2 border-orange-600 rounded-lg p-4 w-96 shadow-2xl">
-        {/* Weapon Type Section */}
+        {/* Weapon Name */}
         <div className="mb-3 pb-2 border-b border-orange-600/50">
-          <p className="text-orange-400 font-semibold text-sm">{getDisplayWeaponType(weapon.weaponType)}</p>
+          <p className="text-white font-bold text-base mb-1">{weapon.name}</p>
+          <p className="text-orange-400 font-semibold text-sm">{getDisplayWeaponType(weapon.weaponType, language)}</p>
         </div>
 
         {/* Stats Section */}

@@ -1,0 +1,44 @@
+{
+  "common": {
+    "language": "Idioma",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "header": {
+    "title": "Base de Datos de Armas",
+    "description": "Explora y filtra armas por rareza, dominios, atributos y habilidades"
+  },
+  "filters": {
+    "rarity": "Rareza",
+    "weaponType": "Tipo de Arma",
+    "domain": "Aluvión de Energía",
+    "attributeStats": "Estadísticas de Atributo",
+    "secondaryStats": "Estadísticas Secundarias",
+    "skillStats": "Estadísticas de Habilidad",
+    "showMaxed": "Mostrar potenciadas",
+    "clearAll": "Limpiar Todos los Filtros"
+  },
+  "table": {
+    "image": "Imagen",
+    "name": "Nombre",
+    "weaponType": "Tipo de Arma",
+    "rarity": "Rareza",
+    "attribute": "Atributo",
+    "skill": "Habilidad",
+    "domain": "Aluvión de Energía"
+  },
+  "tooltip": {
+    "stats": "ESTADÍSTICAS",
+    "passiveAttribute": "Atributo Pasivo"
+  },
+  "detail": {
+    "breadcrumb": "Armas",
+    "weaponType": "Tipo de Arma",
+    "domain": "Aluvión de Energía",
+    "attributeStats": "Estadísticas de Atributo",
+    "secondaryStats": "Estadísticas Secundarias",
+    "skillStats": "Estadísticas de Habilidad",
+    "description": "Descripción",
+    "stats": "ESTADÍSTICAS"
+  }
+}
