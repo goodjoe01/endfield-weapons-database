@@ -15,8 +15,12 @@
     "attributeStats": "Attribute Stats",
     "secondaryStats": "Secondary Stats",
     "skillStats": "Skill Stats",
-    "showMaxed": "Show maxed",
-    "clearAll": "Clear All Filters"
+    "showMaxed": "Include god roll weapons",
+    "clearAll": "Clear All Filters",
+    "perfectEssence": {
+      "text": "God Roll",
+      "description": "Do you already have its perfect essence?"
+    }
   },
   "table": {
     "image": "Image",

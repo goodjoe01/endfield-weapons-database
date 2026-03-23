@@ -106,7 +106,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
           </div>
           <div>
             <span className="text-foreground font-semibold">Weapon Type:</span>
-            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType, language) : 'N/A'}</span>
+            <span className="text-muted-foreground ml-2">{weapon.weaponType ? getDisplayWeaponType(weapon.weaponType, language).label : 'N/A'}</span>
           </div>
           <div>
             <span className="text-foreground font-semibold">Max Level:</span>

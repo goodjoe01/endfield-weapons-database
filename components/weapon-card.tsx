@@ -15,7 +15,7 @@ interface WeaponCardProps {
 }
 
 export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const [imageError, setImageError] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [isMaxed, setIsMaxed] = useState(() => isWeaponMaxed(weapon.name));
@@ -42,7 +42,7 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
         {/* Card - Wrapped in Link */}
         <Link href={`/weapon-detail/${weapon.id}`} className="block">
           <div
-            className={`relative flex flex-col gap-2 bg-gradient-to-br ${bgGradient} border border-border rounded-t-lg overflow-visible hover:shadow-xl transition-shadow duration-200 cursor-pointer`}
+            className={`relative flex flex-col bg-linear-to-br ${bgGradient} border border-border rounded-t-lg overflow-visible hover:shadow-xl transition-shadow duration-200 cursor-pointer`}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
@@ -50,10 +50,10 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
             <div className="relative w-full h-40 bg-black/40 overflow-hidden">
               {!imageError ? (
                 <Image
-                  src={weapon.image?? ''}
+                  src={weapon.image ?? ''}
                   alt={weapon.name}
                   fill
-                  className="object-cover"
+                  className="relative z-1 object-cover"
                   loading="eager"
                   onError={() => setImageError(true)}
                 />
@@ -62,20 +62,32 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
                   No image
                 </div>
               )}
+
+              {/* Weapon Type Badge */}
+              <img
+                className='absolute z-2 top-1 left-1 w-7 h-7 bg-black/50 rounded-sm'
+                src={getDisplayWeaponType(weapon.weaponType ?? '', language).image}
+                alt={getDisplayWeaponType(weapon.weaponType ?? '', language).image} />
+
+              {/* Rarity Badge */}
+              <div className={`text-xs absolute bottom-0 right-2 inline-flex w-fit px-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>
+                {getRarityLabel(weapon.rarity)}
+              </div>
             </div>
 
             {/* Content */}
-            <div className="px-3 pb-3 flex flex-col h-24">
-              {/* Weapon Type Badge */}
-              <div className="text-xs text-gray-100 mb-1 truncate">{getDisplayWeaponType(weapon.weaponType ?? '')}</div>
-
-              {/* Rarity Badge */}
-              <div className={`inline-flex w-fit px-2 py-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>
-                {getRarityLabel(weapon.rarity)}
-              </div>
-
+            <div className="px-2 py-1 flex flex-col justify-between">
               {/* Name */}
               <h3 className="font-semibold text-foreground truncate text-sm flex-1 line-clamp-2">{weapon.name}</h3>
+              {/* Energy Alluvium */}
+   {/*            <div>
+                {
+                  weapon.domains.map((domain, k) => (
+                    <div key={k} className='text-xs bg-black/50 rounded-sm'> {domain} </div>
+                  ))
+                }
+              </div> */}
+
             </div>
           </div>
         </Link>
@@ -83,13 +95,13 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
         {/* MAXED Button - Outside Link, at bottom */}
         <button
           onClick={handleToggleMaxed}
-          className={`w-full py-2 font-bold text-xs uppercase transition-colors rounded-b-lg border border-t-0 border-border ${
-            isMaxed
-              ? 'bg-yellow-400 text-black hover:bg-yellow-300'
-              : 'bg-gray-700/60 text-gray-300 hover:bg-gray-700/80'
-          }`}
+          title={t('filters.perfectEssence.description')}
+          className={`w-full py-1 text-xs font-bold uppercase transition-colors rounded-b-lg border border-t-0 border-border ${isMaxed
+            ? 'bg-yellow-400 text-black hover:bg-yellow-300'
+            : 'bg-gray-500/60 text-gray-400 hover:bg-gray-700/80 hover:text-gray-300'
+            }`}
         >
-          Maxed
+          {t('filters.perfectEssence.text')}
         </button>
       </div>
     </div>

@@ -222,13 +222,12 @@ export function FilterPanel({
                 onClick={() =>
                   handleRarityChange(rarity, !filters.rarity.has(rarity))
                 }
-                className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${
-                  filters.rarity.has(rarity)
-                    ? 'bg-primary text-primary-foreground border-primary'
-                    : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
-                }`}
+                className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.rarity.has(rarity)
+                  ? 'bg-primary text-primary-foreground border-primary'
+                  : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
+                  }`}
               >
-                ★ {rarity}★
+                {rarity} ★
               </button>
             ))}
           </div>
@@ -236,21 +235,24 @@ export function FilterPanel({
           {/* Weapon Type Filters */}
           {weaponTypes.length > 0 && (
             <div className="flex gap-2 items-center flex-wrap pl-4 border-l border-border">
-              {weaponTypes.map(type => (
-                <button
-                  key={type}
-                  onClick={() =>
-                    handleWeaponTypeChange(type, !filters.weaponType.has(type))
-                  }
-                  className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${
-                    filters.weaponType.has(type)
+              {weaponTypes.map(type => {
+                const { image, label } = getDisplayWeaponType(type, language)
+                return (
+                  <button
+                    key={type}
+                    onClick={() =>
+                      handleWeaponTypeChange(type, !filters.weaponType.has(type))
+                    }
+                    className={`flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.weaponType.has(type)
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
-                  }`}
-                >
-                  {getDisplayWeaponType(type, language)}
-                </button>
-              ))}
+                      }`}
+                  >
+                    <img src={image} alt={image} className='w-5 h-5' />
+                    {label}
+                  </button>
+                )
+              })}
             </div>
           )}
 

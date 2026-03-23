@@ -1,30 +1,60 @@
 import { Weapon, FilterState } from './types';
 
+const WEAPON_TYPE_IMAGES: Record<string, Record<string, string>> = {
+  'en': {
+    'caster': '/weapons/logo/artsUnit.webp',
+    'pistol': '/weapons/logo/handcannon.webp',
+    'lance': '/weapons/logo/polearm.webp',
+    'sword': '/weapons/logo/sword.webp',
+    'greatsword': '/weapons/logo/greatSword.webp',
+    'funnel': '/weapons/logo/artsUnit.webp',
+  },
+  'es': {
+    'unidad de las artes': '/weapons/logo/artsUnit.webp',
+    'cañon de mano': '/weapons/logo/handcannon.webp',
+    'arma de asta': '/weapons/logo/polearm.webp',
+    'espada': '/weapons/logo/sword.webp',
+    'gran espada': '/weapons/logo/greatSword.webp',
+  }
+};
+
 const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
   'en': {
-    'Caster': 'Arts Unit',
-    'Pistol': 'Handcannon',
-    'Lance': 'Polearm',
+    'caster': 'Arts Unit',
+    'pistol': 'Handcannon',
     'lance': 'Polearm',
-    'Sword': 'Sword',
-    'Greatsword': 'Great Sword',
+    'sword': 'Sword',
+    'greatsword': 'Great Sword',
     'funnel': 'Arts Unit',
   },
   'es': {
-    'Caster': 'Unidad de las Artes',
-    'Pistol': 'Cañón de mano',
-    'Lance': 'Arma de asta',
+    'caster': 'Unidad de las Artes',
+    'pistol': 'Cañón de mano',
     'lance': 'Arma de asta',
-    'Sword': 'Espada',
-    'Greatsword': 'Gran espada',
+    'sword': 'Espada',
+    'greatsword': 'Gran espada',
     'funnel': 'Unidad de las Artes',
   },
 };
 
-export function getDisplayWeaponType(weaponType: string, language: string = 'en'): string {
-  return WEAPON_TYPE_DISPLAY_NAMES[language]?.[weaponType] || 
-         WEAPON_TYPE_DISPLAY_NAMES['en'][weaponType] || 
-         weaponType;
+export function getDisplayWeaponType(
+  weaponType: string,
+  language: string = 'en'
+): { label: string; image: string } {
+
+  const key = weaponType.trim().toLowerCase();
+
+  return {
+    label:
+      WEAPON_TYPE_DISPLAY_NAMES[language]?.[key] ||
+      WEAPON_TYPE_DISPLAY_NAMES['en'][key] ||
+      weaponType,
+
+    image:
+      WEAPON_TYPE_IMAGES[language]?.[key] ||
+      WEAPON_TYPE_IMAGES['en'][key] ||
+      '/images/weapons/default.png',
+  };
 }
 
 export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
@@ -54,12 +84,12 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
 
   // Merge data using image (local path) as the unique key for matching
   const weaponsMap = new Map<string, any>();
-  
+
   // Create map of English weapons using image as key
   enData.forEach((weapon: any) => {
     const id = weapon.id || weapon.name.toLowerCase().replace(/\s+/g, '-');
     const imageKey = weapon.image; // Use local image path as key
-    
+
     if (imageKey) {
       weaponsMap.set(imageKey, {
         ...weapon,
@@ -74,10 +104,10 @@ export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
   if (language === 'es' && langData !== enData) {
     langData.forEach((langWeapon: any) => {
       const imageKey = langWeapon.image;
-      
+
       if (imageKey && weaponsMap.has(imageKey)) {
         const matchedEntry = weaponsMap.get(imageKey)!;
-        
+
         // Apply translations while preserving English data for non-translatable fields
         matchedEntry.name = langWeapon.name || matchedEntry.name;
         matchedEntry.domains = langWeapon.domains || matchedEntry.domains;
@@ -215,5 +245,5 @@ export function getRarityBackgroundColor(rarity: number): string {
 }
 
 export function getRarityLabel(rarity: number): string {
-  return `${rarity}-Star`;
+  return `${rarity}★`;
 }

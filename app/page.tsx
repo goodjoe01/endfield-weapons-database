@@ -69,82 +69,89 @@ export default function WeaponsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background flex flex-col justify-between">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-start mb-4">
-            <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
-            <LanguageSwitcher />
-          </div>
-          <p className="text-muted-foreground mb-6">
-            {t('header.description')}
-          </p>
-
-          {/* Search Bar */}
-          <div className="mb-4">
-            <SearchBar filters={filters} onFilterChange={setFilters} />
-          </div>
-        </div>
-      </header>
-
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Filter Panel */}
-        <FilterPanel
-          weapons={weapons}
-          filters={filters}
-          onFilterChange={setFilters}
-          isOpen={filterOpen}
-          onToggle={setFilterOpen}
-        />
-
-        <div className="pb-12 overflow-visible">
-          {/* Weapons Counter */}
-          <div className="my-2 text-sm font-medium text-foreground">
-            {language === 'en' 
-              ? `Showing ${filteredWeapons.length} of ${weapons.length} weapons`
-              : `Mostrando ${filteredWeapons.length} de ${weapons.length} armas`
-            }
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible">
-            {filteredWeapons.map(weapon => (
-              <WeaponCard
-                key={weapon.id}
-                weapon={weapon}
-                onMaxedChange={(isMaxed) => {
-                  if (isMaxed && !filters.showMaxedWeapons) {
-                    setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
-                  }
-                }}
-              />
-            ))}
-          </div>
-
-          {filteredWeapons.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground mb-4">No weapons found matching your filters.</p>
-              <button
-                onClick={() =>
-                  setFilters({
-                    rarity: new Set(),
-                    weaponType: new Set(),
-                    domains: new Set(),
-                    attributeStats: new Set(),
-                    secondaryStats: new Set(),
-                    skillStats: new Set(),
-                    searchQuery: '',
-                    showMaxedWeapons: false,
-                  })
-                }
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                Clear All Filters
-              </button>
+      <div className='flex flex-col'>
+        <header className="sticky top-0 z-50 bg-background border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 py-6">
+            <div className="flex justify-between items-start mb-4">
+              <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
+              <LanguageSwitcher />
             </div>
-          )}
+            <p className="text-muted-foreground mb-6">
+              {t('header.description')}
+            </p>
+
+            {/* Search Bar */}
+            <div className="mb-4">
+              <SearchBar filters={filters} onFilterChange={setFilters} />
+            </div>
+          </div>
+        </header>
+
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          {/* Filter Panel */}
+          <FilterPanel
+            weapons={weapons}
+            filters={filters}
+            onFilterChange={setFilters}
+            isOpen={filterOpen}
+            onToggle={setFilterOpen}
+          />
+
+          <div className="pb-12 overflow-visible">
+            {/* Weapons Counter */}
+            <div className="my-2 text-sm font-medium text-foreground">
+              {language === 'en'
+                ? `Showing ${filteredWeapons.length} of ${weapons.length} weapons`
+                : `Mostrando ${filteredWeapons.length} de ${weapons.length} armas`
+              }
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-3 overflow-visible">
+              {filteredWeapons.map(weapon => (
+                <WeaponCard
+                  key={weapon.id}
+                  weapon={weapon}
+                  onMaxedChange={(isMaxed) => {
+                    if (isMaxed && !filters.showMaxedWeapons) {
+                      setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
+                    }
+                  }}
+                />
+              ))}
+            </div>
+
+            {filteredWeapons.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground mb-4">No weapons found matching your filters.</p>
+                <button
+                  onClick={() =>
+                    setFilters({
+                      rarity: new Set(),
+                      weaponType: new Set(),
+                      domains: new Set(),
+                      attributeStats: new Set(),
+                      secondaryStats: new Set(),
+                      skillStats: new Set(),
+                      searchQuery: '',
+                      showMaxedWeapons: false,
+                    })
+                  }
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Clear All Filters
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
+
+      <footer className='w-full flex items-center justify-center mx-auto text-center text-lg py-4 border-t-2 border-border'>
+        <p className='max-w-7xl px-3'>Unofficial fan project. Not affiliated with Hypergryph or Gryphline.
+          Game assets and data belong to their respective owners.</p>
+      </footer>
     </main>
   );
 }

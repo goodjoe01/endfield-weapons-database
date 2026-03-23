@@ -15,8 +15,12 @@
     "attributeStats": "Estadísticas de Atributo",
     "secondaryStats": "Estadísticas Secundarias",
     "skillStats": "Estadísticas de Habilidad",
-    "showMaxed": "Mostrar potenciadas",
-    "clearAll": "Limpiar Todos los Filtros"
+    "showMaxed": "Incluir esencias god",
+    "clearAll": "Limpiar Todos los Filtros",
+    "perfectEssence": {
+      "text": "Esencia God",
+      "description": "¿Ya tienes su esencia perfecta?"
+    }
   },
   "table": {
     "image": "Imagen",
