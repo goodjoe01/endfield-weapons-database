@@ -69,7 +69,21 @@ export default function WeaponsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background flex flex-col">
+      {/* Contact Banner - Top */}
+      <div className="bg-orange-600/20 border-b border-orange-600/50 px-4 py-2">
+        <div className="max-w-7xl mx-auto text-center">
+          <a 
+            href="https://www.tiktok.com/@goodjoe01" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-orange-400 hover:text-orange-300 transition-colors"
+          >
+            Follow @goodjoe01 on TikTok
+          </a>
+        </div>
+      </div>
+
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-6">
@@ -88,7 +102,7 @@ export default function WeaponsPage() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-6 flex-1">
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
@@ -145,6 +159,54 @@ export default function WeaponsPage() {
           )}
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-background border-t border-border mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col items-center justify-center gap-6">
+            <div className="text-center">
+              <h3 className="text-foreground font-semibold mb-4">Follow Me</h3>
+              <div className="flex gap-6 justify-center flex-wrap">
+                <a 
+                  href="https://www.tiktok.com/@goodjoe01" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-orange-400 transition-colors font-medium"
+                >
+                  TikTok
+                </a>
+                <a 
+                  href="https://www.twitch.tv/goodjoe01" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-purple-400 transition-colors font-medium"
+                >
+                  Twitch
+                </a>
+                <a 
+                  href="https://kick.com/goodjoe01" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-green-400 transition-colors font-medium"
+                >
+                  Kick
+                </a>
+                <a 
+                  href="https://www.youtube.com/@goodjoee01" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-red-400 transition-colors font-medium"
+                >
+                  YouTube
+                </a>
+              </div>
+            </div>
+            <div className="text-xs text-muted-foreground text-center pt-4 border-t border-border w-full">
+              <p>Weapons Database © 2024 | Built with passion</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
