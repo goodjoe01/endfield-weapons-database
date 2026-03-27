@@ -11,6 +11,7 @@ import { WeaponCard } from '@/components/weapon-card';
 import { WeaponList } from '@/components/weapon-list';
 import { WeaponTable } from '@/components/weapon-table';
 import { FarmingPlanner } from '@/components/farming-planner';
+import { FarmingPlannerMobile } from '@/components/farming-planner-mobile';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { Layout, Grid3x3, List } from 'lucide-react';
 
@@ -152,6 +153,15 @@ export default function WeaponsPage() {
           onToggleFarmingMode={handleToggleFarmingMode}
           selectedWeaponsCount={selectedWeapons.length}
         />
+
+        {/* Mobile Farming Planner */}
+        {isFarmingMode && (
+          <FarmingPlannerMobile
+            selectedWeapons={selectedWeapons}
+            onRemoveWeapon={handleRemoveSelectedWeapon}
+            onClearAll={() => setSelectedWeapons([])}
+          />
+        )}
         <div className="pb-12 overflow-visible">
           {/* Weapons Counter */}
           <div className="my-2 text-sm font-medium text-foreground">

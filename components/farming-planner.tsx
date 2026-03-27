@@ -149,6 +149,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
 
   return (
     <>
+      {/* Side Panel - Desktop Only */}
       <div
         className={`hidden md:block fixed right-0 top-0 h-screen w-full max-w-md bg-background border-l-2 border-orange-600/50 overflow-y-auto transition-transform duration-300 z-50 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
