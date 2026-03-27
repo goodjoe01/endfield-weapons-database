@@ -20,7 +20,7 @@ interface FarmingPlannerProps {
 }
 
 export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, isOpen, onClose }: FarmingPlannerProps) {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const maxedWeapons = getMaxedWeapons();
 
   // Calculate domain efficiency
@@ -44,7 +44,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
   // Calculate suggested domains (for weapons without Perfect Essence)
   const notMaxedWeapons = selectedWeapons.filter(w => !maxedWeapons.has(w.name));
   const suggestedDomainMap = new Map<string, DomainCount>();
-  
+
   notMaxedWeapons.forEach(weapon => {
     if (weapon.domains && weapon.domains.length > 0) {
       weapon.domains.forEach(domain => {
@@ -69,9 +69,8 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
     <>
       {/* Side Panel - No Backdrop */}
       <div
-        className={`fixed right-0 top-0 h-screen w-full max-w-md bg-background border-l-2 border-orange-600/50 overflow-y-auto transition-transform duration-300 z-50 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed right-0 top-0 h-screen w-full max-w-md bg-background border-l-2 border-orange-600/50 overflow-y-auto transition-transform duration-300 z-50 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         {/* Header */}
         <div className="sticky top-0 bg-background border-b border-orange-600/50 px-6 py-4 flex items-center justify-between">
@@ -88,10 +87,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
           {selectedWeapons.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-muted-foreground">
-                {language === 'en' 
-                  ? 'Select weapons to see best farming routes'
-                  : 'Selecciona armas para ver las mejores rutas de granja'
-                }
+                {t('planner.description')}
               </p>
             </div>
           ) : (
@@ -99,7 +95,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
               {/* Selected Weapons */}
               <div>
                 <h3 className="text-foreground font-semibold mb-3">
-                  {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'}
+                  {t('planner.selectedWeapons')}
                 </h3>
                 <div className="space-y-2">
                   {selectedWeapons.map(weapon => (
@@ -123,7 +119,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
               {sortedDomains.length > 0 && (
                 <div>
                   <h3 className="text-foreground font-semibold mb-3">
-                    {language === 'en' ? 'Best Farming Routes' : 'Mejores Rutas de Granja'}
+                    {t('planner.title')}
                   </h3>
                   <div className="space-y-2">
                     {sortedDomains.map((domain, index) => (
@@ -132,7 +128,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
                           <span className="text-orange-400 font-semibold w-6">{index + 1}.</span>
                           <span className="text-foreground text-sm truncate">{domain.domain}</span>
                         </div>
-                        <span className="text-muted-foreground text-xs flex-shrink-0 ml-2">
+                        <span className="text-muted-foreground text-xs shrink-0 ml-2">
                           ×{domain.count}
                         </span>
                       </div>
@@ -142,9 +138,9 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
               )}
 
               {/* Suggested Farming (based on missing Perfect Essence) */}
-              {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
+              {/* {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
                 <div className="border-t border-border pt-4">
-                  <h3 className="text-foreground font-semibold mb-3 text-yellow-400 text-sm">
+                  <h3 className="text-foreground font-semibold mb-3 text-sm">
                     {language === 'en' 
                       ? 'Need Perfect Essence' 
                       : 'Necesita Esencia Perfecta'
@@ -170,7 +166,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
                     }
                   </p>
                 </div>
-              )}
+              )} */}
             </>
           )}
         </div>
@@ -182,7 +178,8 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
               onClick={handleClearSelection}
               className="w-full px-4 py-2 bg-red-600/30 border border-red-600/50 text-red-400 hover:bg-red-600/40 rounded-lg font-medium transition-colors text-sm"
             >
-              {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}
+              {t('planner.clear')}
+
             </button>
           </div>
         )}

@@ -67,7 +67,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
         {/* Title and Actions */}
         <div>
           <h1 className="text-4xl font-bold text-foreground mb-4">{weapon.name}</h1>
-          <div className="flex items-center gap-4 mb-4">
+          {/* <div className="flex items-center gap-4 mb-4">
             <button
               onClick={handleLike}
               className={`flex items-center gap-2 px-3 py-2 rounded border transition-colors ${
@@ -93,7 +93,7 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
             <button className="ml-auto px-4 py-2 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-300 transition-colors">
               Create Build
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Basic Stats */}

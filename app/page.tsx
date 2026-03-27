@@ -122,20 +122,6 @@ export default function WeaponsPage() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col">
-      {/* Contact Banner - Top */}
-{/*       <div className="bg-gray-900 border-b border-orange-900 px-4 py-2">
-        <div className="max-w-7xl mx-auto text-center">
-          <a
-            href="https://www.tiktok.com/@goodjoe01"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            by @goodjoe01
-          </a>
-        </div>
-      </div> */}
-
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 pt-6 pb-2">
