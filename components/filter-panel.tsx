@@ -19,6 +19,9 @@ interface FilterPanelProps {
   onFilterChange: (filters: FilterState) => void;
   isOpen: boolean;
   onToggle: (open: boolean) => void;
+  isFarmingMode?: boolean;
+  onToggleFarmingMode?: () => void;
+  selectedWeaponsCount?: number;
 }
 
 export function FilterPanel({
@@ -27,6 +30,9 @@ export function FilterPanel({
   onFilterChange,
   isOpen,
   onToggle,
+  isFarmingMode,
+  onToggleFarmingMode,
+  selectedWeaponsCount,
 }: FilterPanelProps) {
   const { t, language } = useLanguage();
   const domains = getUniqueDomains(weapons);
@@ -270,6 +276,23 @@ export function FilterPanel({
 
       {/* Horizontal Dropdown Filters */}
       <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
+        {/* Farming Planner Button */}
+        <button
+          onClick={onToggleFarmingMode}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
+            isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+          }`}
+        >
+          {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+          {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+            <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+              {selectedWeaponsCount}
+            </span>
+          )}
+        </button>
+
         <FilterMultiSelect
           label={t('filters.attributeStats')}
           values={filters.attributeStats}

@@ -141,25 +141,6 @@ export default function WeaponsPage() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-6 flex-1">
-        {/* Farming Planner Toggle */}
-        <div className="mb-6 flex justify-between items-center">
-          <button
-            onClick={handleToggleFarmingMode}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              isFarmingMode
-                ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
-                : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
-            }`}
-          >
-            {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
-            {isFarmingMode && selectedWeapons.length > 0 && (
-              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
-                {selectedWeapons.length}
-              </span>
-            )}
-          </button>
-        </div>
-
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
@@ -167,6 +148,9 @@ export default function WeaponsPage() {
           onFilterChange={setFilters}
           isOpen={filterOpen}
           onToggle={setFilterOpen}
+          isFarmingMode={isFarmingMode}
+          onToggleFarmingMode={handleToggleFarmingMode}
+          selectedWeaponsCount={selectedWeapons.length}
         />
         <div className="pb-12 overflow-visible">
           {/* Weapons Counter */}
