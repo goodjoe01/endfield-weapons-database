@@ -22,6 +22,7 @@ export default function WeaponsPage() {
   const [filterOpen, setFilterOpen] = useState(true);
   const [loading, setLoading] = useState(true);
   const [isFarmingMode, setIsFarmingMode] = useState(false);
+  const [farmingPanelOpen, setFarmingPanelOpen] = useState(false);
   const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
@@ -52,10 +53,22 @@ export default function WeaponsPage() {
         return [...prev, weapon];
       }
     });
+    // Auto-open panel when first weapon is selected
+    if (selectedWeapons.length === 0) {
+      setFarmingPanelOpen(true);
+    }
   };
 
   const handleRemoveSelectedWeapon = (weaponId: string) => {
     setSelectedWeapons(prev => prev.filter(w => w.id !== weaponId));
+  };
+
+  const handleToggleFarmingMode = () => {
+    setIsFarmingMode(!isFarmingMode);
+    if (!isFarmingMode) {
+      setSelectedWeapons([]);
+      setFarmingPanelOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -133,7 +146,7 @@ export default function WeaponsPage() {
         {/* Farming Planner Toggle */}
         <div className="mb-6 flex justify-between items-center">
           <button
-            onClick={() => setIsFarmingMode(!isFarmingMode)}
+            onClick={handleToggleFarmingMode}
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
               isFarmingMode
                 ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
@@ -141,27 +154,13 @@ export default function WeaponsPage() {
             }`}
           >
             {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+            {isFarmingMode && selectedWeapons.length > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeapons.length}
+              </span>
+            )}
           </button>
-          {isFarmingMode && selectedWeapons.length > 0 && (
-            <button
-              onClick={() => setSelectedWeapons([])}
-              className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}
-            </button>
-          )}
         </div>
-
-        {/* Farming Planner Panel */}
-        {isFarmingMode && selectedWeapons.length > 0 && (
-          <div className="mb-6">
-            <FarmingPlanner
-              selectedWeapons={selectedWeapons}
-              onRemoveWeapon={handleRemoveSelectedWeapon}
-              allWeapons={weapons}
-            />
-          </div>
-        )}
 
         {/* Filter Panel */}
         <FilterPanel
@@ -223,6 +222,15 @@ export default function WeaponsPage() {
           )}
         </div>
       </div>
+
+      {/* Farming Planner Side Panel */}
+      <FarmingPlanner
+        selectedWeapons={selectedWeapons}
+        onRemoveWeapon={handleRemoveSelectedWeapon}
+        allWeapons={weapons}
+        isOpen={isFarmingMode && farmingPanelOpen}
+        onClose={() => setFarmingPanelOpen(false)}
+      />
 
       {/* Footer */}
       <footer className="bg-background border-t border-border mt-12">

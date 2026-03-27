@@ -15,24 +15,13 @@ interface FarmingPlannerProps {
   selectedWeapons: Weapon[];
   onRemoveWeapon: (weaponId: string) => void;
   allWeapons: Weapon[];
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons }: FarmingPlannerProps) {
+export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, isOpen, onClose }: FarmingPlannerProps) {
   const { language } = useLanguage();
   const maxedWeapons = getMaxedWeapons();
-
-  if (selectedWeapons.length === 0) {
-    return (
-      <div className="bg-background border border-border rounded-lg p-6 text-center">
-        <p className="text-muted-foreground">
-          {language === 'en' 
-            ? 'Select weapons to see best farming routes'
-            : 'Selecciona armas para ver las mejores rutas de granja'
-          }
-        </p>
-      </div>
-    );
-  }
 
   // Calculate domain efficiency
   const domainMap = new Map<string, DomainCount>();
@@ -73,82 +62,126 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons }: 
     .sort((a, b) => b.count - a.count);
 
   return (
-    <div className="space-y-6 bg-background border border-border rounded-lg p-6">
-      {/* Selected Weapons */}
-      <div>
-        <h3 className="text-foreground font-semibold mb-3">
-          {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeapons.length})
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {selectedWeapons.map(weapon => (
-            <div
-              key={weapon.id}
-              className="flex items-center gap-2 px-3 py-1 bg-orange-600/20 border border-orange-600/50 rounded-lg text-sm"
-            >
-              <span className="text-foreground">{weapon.name}</span>
-              <button
-                onClick={() => onRemoveWeapon(weapon.id)}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <X className="h-4 w-4" />
-              </button>
+    <>
+      {/* Backdrop */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 transition-opacity"
+          onClick={onClose}
+        />
+      )}
+
+      {/* Side Panel */}
+      <div
+        className={`fixed right-0 top-0 h-screen w-full max-w-md bg-background border-l-2 border-orange-600/50 overflow-y-auto transition-transform duration-300 z-50 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* Header */}
+        <div className="sticky top-0 bg-background border-b border-orange-600/50 px-6 py-4 flex items-center justify-between">
+          <h2 className="text-lg font-bold text-foreground">
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+          </h2>
+          <button
+            onClick={onClose}
+            className="p-1 hover:bg-secondary rounded-lg transition-colors"
+          >
+            <X className="h-5 w-5 text-muted-foreground hover:text-foreground" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {selectedWeapons.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">
+                {language === 'en' 
+                  ? 'Select weapons to see best farming routes'
+                  : 'Selecciona armas para ver las mejores rutas de granja'
+                }
+              </p>
             </div>
-          ))}
+          ) : (
+            <>
+              {/* Selected Weapons */}
+              <div>
+                <h3 className="text-foreground font-semibold mb-3">
+                  {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeapons.length})
+                </h3>
+                <div className="space-y-2">
+                  {selectedWeapons.map(weapon => (
+                    <div
+                      key={weapon.id}
+                      className="flex items-center justify-between px-3 py-2 bg-orange-600/20 border border-orange-600/50 rounded-lg"
+                    >
+                      <span className="text-foreground text-sm truncate">{weapon.name}</span>
+                      <button
+                        onClick={() => onRemoveWeapon(weapon.id)}
+                        className="text-muted-foreground hover:text-orange-400 transition-colors flex-shrink-0 ml-2"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Best Farming Domains */}
+              {sortedDomains.length > 0 && (
+                <div>
+                  <h3 className="text-foreground font-semibold mb-3">
+                    {language === 'en' ? 'Best Farming Routes' : 'Mejores Rutas de Granja'}
+                  </h3>
+                  <div className="space-y-2">
+                    {sortedDomains.map((domain, index) => (
+                      <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-secondary/50 rounded-lg border border-secondary">
+                        <div className="flex items-center gap-3">
+                          <span className="text-orange-400 font-semibold w-6">{index + 1}.</span>
+                          <span className="text-foreground text-sm truncate">{domain.domain}</span>
+                        </div>
+                        <span className="text-muted-foreground text-xs flex-shrink-0 ml-2">
+                          ×{domain.count}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Suggested Farming (based on missing Perfect Essence) */}
+              {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
+                <div className="border-t border-border pt-4">
+                  <h3 className="text-foreground font-semibold mb-3 text-yellow-400 text-sm">
+                    {language === 'en' 
+                      ? 'Need Perfect Essence' 
+                      : 'Necesita Esencia Perfecta'
+                    }
+                  </h3>
+                  <div className="space-y-2">
+                    {suggestedDomains.map((domain, index) => (
+                      <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-yellow-600/20 border border-yellow-600/50 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <span className="text-yellow-400 font-semibold w-6">{index + 1}.</span>
+                          <span className="text-foreground text-sm truncate">{domain.domain}</span>
+                        </div>
+                        <span className="text-muted-foreground text-xs flex-shrink-0 ml-2">
+                          ×{domain.count}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    {language === 'en'
+                      ? 'Showing weapons not marked as Perfect Essence'
+                      : 'Mostrando armas no marcadas como Esencia Perfecta'
+                    }
+                  </p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
-
-      {/* Best Farming Domains */}
-      {sortedDomains.length > 0 && (
-        <div>
-          <h3 className="text-foreground font-semibold mb-3">
-            {language === 'en' ? 'Best Farming Domains' : 'Mejores Dominios de Granja'}
-          </h3>
-          <div className="space-y-2">
-            {sortedDomains.map((domain, index) => (
-              <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-secondary/50 rounded-lg border border-secondary">
-                <div className="flex items-center gap-3">
-                  <span className="text-orange-400 font-semibold min-w-6">{index + 1}.</span>
-                  <span className="text-foreground">{domain.domain}</span>
-                </div>
-                <span className="text-muted-foreground text-sm">
-                  {domain.count} {language === 'en' ? 'weapon' : 'arma'}{domain.count !== 1 ? 's' : ''}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Suggested Farming (based on missing Perfect Essence) */}
-      {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
-        <div className="border-t border-border pt-4">
-          <h3 className="text-foreground font-semibold mb-3 text-yellow-400">
-            {language === 'en' 
-              ? 'Suggested Farming (missing Perfect Essence)' 
-              : 'Granja Sugerida (falta Esencia Perfecta)'
-            }
-          </h3>
-          <div className="space-y-2">
-            {suggestedDomains.map((domain, index) => (
-              <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-yellow-600/20 border border-yellow-600/50 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <span className="text-yellow-400 font-semibold min-w-6">{index + 1}.</span>
-                  <span className="text-foreground">{domain.domain}</span>
-                </div>
-                <span className="text-muted-foreground text-sm">
-                  {domain.count} {language === 'en' ? 'weapon' : 'arma'}{domain.count !== 1 ? 's' : ''}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-muted-foreground mt-2">
-            {language === 'en'
-              ? '* Based on weapons not marked as Perfect Essence'
-              : '* Basado en armas no marcadas como Esencia Perfecta'
-            }
-          </p>
-        </div>
-      )}
-    </div>
+    </>
   );
 }
