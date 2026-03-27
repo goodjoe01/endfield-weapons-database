@@ -45,12 +45,14 @@ export function WeaponCard({ weapon, onMaxedChange, isFarmingMode, isSelected, o
         {/* Card - Wrapped in Link */}
         <Link href={`/weapon-detail/${weapon.id}`} className="block">
           <div
-            className={`relative flex flex-col bg-linear-to-br ${bgGradient} border rounded-t-lg overflow-visible hover:shadow-xl transition-shadow duration-200 cursor-pointer ${
+            className={`relative flex flex-col bg-linear-to-br ${bgGradient} border rounded-t-lg overflow-visible transition-all duration-200 ${
               isSelected && isFarmingMode
-                ? 'border-orange-500 border-2'
-                : 'border-border'
+                ? 'border-4 border-amber-500 shadow-lg shadow-amber-500/40 bg-opacity-100'
+                : isFarmingMode
+                ? 'border border-border bg-opacity-40'
+                : 'border border-border bg-opacity-40 hover:shadow-xl hover:bg-opacity-80 cursor-pointer'
             }`}
-            onMouseEnter={() => setShowTooltip(true)}
+            onMouseEnter={() => !isFarmingMode && setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
             {/* Image Container */}
