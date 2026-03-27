@@ -12,9 +12,12 @@ import { useState } from 'react';
 interface WeaponCardProps {
   weapon: Weapon;
   onMaxedChange?: (isMaxed: boolean) => void;
+  isFarmingMode?: boolean;
+  isSelected?: boolean;
+  onToggleSelect?: (weapon: Weapon) => void;
 }
 
-export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
+export function WeaponCard({ weapon, onMaxedChange, isFarmingMode, isSelected, onToggleSelect }: WeaponCardProps) {
   const { t, language } = useLanguage();
   const [imageError, setImageError] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -42,7 +45,11 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
         {/* Card - Wrapped in Link */}
         <Link href={`/weapon-detail/${weapon.id}`} className="block">
           <div
-            className={`relative flex flex-col bg-linear-to-br ${bgGradient} border border-border rounded-t-lg overflow-visible hover:shadow-xl transition-shadow duration-200 cursor-pointer`}
+            className={`relative flex flex-col bg-linear-to-br ${bgGradient} border rounded-t-lg overflow-visible hover:shadow-xl transition-shadow duration-200 cursor-pointer ${
+              isSelected && isFarmingMode
+                ? 'border-orange-500 border-2'
+                : 'border-border'
+            }`}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
@@ -73,6 +80,24 @@ export function WeaponCard({ weapon, onMaxedChange }: WeaponCardProps) {
               <div className={`text-xs absolute bottom-0 right-2 inline-flex w-fit px-1 ${getRarityColor(weapon.rarity)} text-white text-xs font-semibold rounded mb-2`}>
                 {getRarityLabel(weapon.rarity)}
               </div>
+
+              {/* Farming Mode Checkbox */}
+              {isFarmingMode && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onToggleSelect?.(weapon);
+                  }}
+                  className="absolute top-2 right-2 flex items-center justify-center w-6 h-6 bg-black/50 rounded border-2 border-orange-400 hover:bg-black/70 transition-colors z-10"
+                >
+                  {isSelected && (
+                    <svg className="w-4 h-4 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </button>
+              )}
             </div>
 
             {/* Content */}

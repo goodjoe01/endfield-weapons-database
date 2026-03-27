@@ -10,6 +10,7 @@ import { SearchBar } from '@/components/search-bar';
 import { WeaponCard } from '@/components/weapon-card';
 import { WeaponList } from '@/components/weapon-list';
 import { WeaponTable } from '@/components/weapon-table';
+import { FarmingPlanner } from '@/components/farming-planner';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { Layout, Grid3x3, List } from 'lucide-react';
 
@@ -20,6 +21,8 @@ export default function WeaponsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('card');
   const [filterOpen, setFilterOpen] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [isFarmingMode, setIsFarmingMode] = useState(false);
+  const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
     weaponType: new Set(),
@@ -30,6 +33,30 @@ export default function WeaponsPage() {
     searchQuery: '',
     showMaxedWeapons: false,
   });
+
+  // Save farming mode state to localStorage
+  useEffect(() => {
+    localStorage.setItem('farmingMode', JSON.stringify(isFarmingMode));
+  }, [isFarmingMode]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedWeapons', JSON.stringify(selectedWeapons.map(w => w.id)));
+  }, [selectedWeapons]);
+
+  const handleToggleWeaponSelection = (weapon: Weapon) => {
+    setSelectedWeapons(prev => {
+      const isSelected = prev.find(w => w.id === weapon.id);
+      if (isSelected) {
+        return prev.filter(w => w.id !== weapon.id);
+      } else {
+        return [...prev, weapon];
+      }
+    });
+  };
+
+  const handleRemoveSelectedWeapon = (weaponId: string) => {
+    setSelectedWeapons(prev => prev.filter(w => w.id !== weaponId));
+  };
 
   useEffect(() => {
     async function loadData() {
@@ -103,6 +130,39 @@ export default function WeaponsPage() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-6 flex-1">
+        {/* Farming Planner Toggle */}
+        <div className="mb-6 flex justify-between items-center">
+          <button
+            onClick={() => setIsFarmingMode(!isFarmingMode)}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              isFarmingMode
+                ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+                : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+            }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+          </button>
+          {isFarmingMode && selectedWeapons.length > 0 && (
+            <button
+              onClick={() => setSelectedWeapons([])}
+              className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}
+            </button>
+          )}
+        </div>
+
+        {/* Farming Planner Panel */}
+        {isFarmingMode && selectedWeapons.length > 0 && (
+          <div className="mb-6">
+            <FarmingPlanner
+              selectedWeapons={selectedWeapons}
+              onRemoveWeapon={handleRemoveSelectedWeapon}
+              allWeapons={weapons}
+            />
+          </div>
+        )}
+
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
@@ -125,6 +185,9 @@ export default function WeaponsPage() {
               <WeaponCard
                 key={weapon.id}
                 weapon={weapon}
+                isFarmingMode={isFarmingMode}
+                isSelected={selectedWeapons.some(w => w.id === weapon.id)}
+                onToggleSelect={handleToggleWeaponSelection}
                 onMaxedChange={(isMaxed) => {
                   if (isMaxed && !filters.showMaxedWeapons) {
                     setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
