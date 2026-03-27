@@ -22,7 +22,6 @@ export default function WeaponsPage() {
   const [filterOpen, setFilterOpen] = useState(true);
   const [loading, setLoading] = useState(true);
   const [isFarmingMode, setIsFarmingMode] = useState(false);
-  const [farmingPanelOpen, setFarmingPanelOpen] = useState(false);
   const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
@@ -44,6 +43,22 @@ export default function WeaponsPage() {
     localStorage.setItem('selectedWeapons', JSON.stringify(selectedWeapons.map(w => w.id)));
   }, [selectedWeapons]);
 
+  // Load farming mode and selected weapons from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('farmingMode');
+    const savedWeaponIds = localStorage.getItem('selectedWeapons');
+    if (saved) setIsFarmingMode(JSON.parse(saved));
+    if (savedWeaponIds && weapons.length > 0) {
+      try {
+        const weaponIds = JSON.parse(savedWeaponIds);
+        const selected = weapons.filter(w => weaponIds.includes(w.id));
+        setSelectedWeapons(selected);
+      } catch (e) {
+        // Ignore parse errors
+      }
+    }
+  }, [weapons]);
+
   const handleToggleWeaponSelection = (weapon: Weapon) => {
     setSelectedWeapons(prev => {
       const isSelected = prev.find(w => w.id === weapon.id);
@@ -53,10 +68,6 @@ export default function WeaponsPage() {
         return [...prev, weapon];
       }
     });
-    // Auto-open panel when first weapon is selected
-    if (selectedWeapons.length === 0) {
-      setFarmingPanelOpen(true);
-    }
   };
 
   const handleRemoveSelectedWeapon = (weaponId: string) => {
@@ -64,10 +75,11 @@ export default function WeaponsPage() {
   };
 
   const handleToggleFarmingMode = () => {
-    setIsFarmingMode(!isFarmingMode);
-    if (!isFarmingMode) {
+    const newMode = !isFarmingMode;
+    setIsFarmingMode(newMode);
+    if (!newMode) {
+      // Clear selection when disabling farming mode
       setSelectedWeapons([]);
-      setFarmingPanelOpen(false);
     }
   };
 
@@ -228,8 +240,8 @@ export default function WeaponsPage() {
         selectedWeapons={selectedWeapons}
         onRemoveWeapon={handleRemoveSelectedWeapon}
         allWeapons={weapons}
-        isOpen={isFarmingMode && farmingPanelOpen}
-        onClose={() => setFarmingPanelOpen(false)}
+        isOpen={isFarmingMode}
+        onClose={() => {}}
       />
 
       {/* Footer */}
