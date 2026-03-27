@@ -29,18 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPGG1WQCK9" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-MPGG1WQCK9');`,
-          }}
-        />
-      </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <Providers>
           {children}
