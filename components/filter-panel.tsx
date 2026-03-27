@@ -275,31 +275,49 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
-        {/* Farming Planner Button */}
-        <button
-          onClick={onToggleFarmingMode}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
-            isFarmingMode
-              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
-              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
-          }`}
-        >
-          {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
-          {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
-            <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
-              {selectedWeaponsCount}
-            </span>
-          )}
-        </button>
+      <div className="px-4 py-4 flex flex-col lg:flex-row gap-4 items-start lg:items-end relative">
+        {/* Left Column - Farming Planner and Include God Roll */}
+        <div className="flex flex-col gap-3 w-full lg:w-auto">
+          {/* Farming Planner Button */}
+          <button
+            onClick={onToggleFarmingMode}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${
+              isFarmingMode
+                ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+                : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+            }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
 
-        <FilterMultiSelect
-          label={t('filters.attributeStats')}
-          values={filters.attributeStats}
-          options={attributeStats}
-          onAddValue={handleAttributeChange}
-          onClear={handleAttributeClear}
-        />
+          {/* Include God Roll Weapons */}
+          <label className="flex items-center gap-2 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              checked={filters.showMaxedWeapons}
+              onChange={(e) =>
+                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+              }
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span className="text-foreground">{t('filters.includeMaxed')}</span>
+          </label>
+        </div>
+
+        {/* Right Column - Filters */}
+        <div className="flex flex-wrap gap-4 items-end flex-1">
+          <FilterMultiSelect
+            label={t('filters.attributeStats')}
+            values={filters.attributeStats}
+            options={attributeStats}
+            onAddValue={handleAttributeChange}
+            onClear={handleAttributeClear}
+          />
         <FilterSelect
           label={t('filters.secondaryStats')}
           value={Array.from(filters.secondaryStats)[0] ?? ''}
@@ -333,6 +351,23 @@ export function FilterPanel({
             <span>{t('filters.showMaxed')}</span>
           </label>
         </div>
+
+        {/* Mobile Farming Planner Section */}
+        {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+          <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
+            <div className="space-y-3">
+              <h3 className="text-foreground font-semibold text-sm">
+                {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeaponsCount})
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                {language === 'en' 
+                  ? 'Open full planner to view farming routes'
+                  : 'Abre el planificador completo para ver rutas de granja'
+                }
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
