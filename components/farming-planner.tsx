@@ -23,7 +23,6 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
   const { language } = useLanguage();
   const maxedWeapons = getMaxedWeapons();
 
-  // Calculate domain efficiency
   const domainMap = new Map<string, DomainCount>();
   selectedWeapons.forEach(weapon => {
     if (weapon.domains && weapon.domains.length > 0) {
@@ -38,13 +37,11 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
     }
   });
 
-  const sortedDomains = Array.from(domainMap.values())
-    .sort((a, b) => b.count - a.count);
+  const sortedDomains = Array.from(domainMap.values()).sort((a, b) => b.count - a.count);
 
-  // Calculate suggested domains (for weapons without Perfect Essence)
   const notMaxedWeapons = selectedWeapons.filter(w => !maxedWeapons.has(w.name));
   const suggestedDomainMap = new Map<string, DomainCount>();
-
+  
   notMaxedWeapons.forEach(weapon => {
     if (weapon.domains && weapon.domains.length > 0) {
       weapon.domains.forEach(domain => {
@@ -58,8 +55,7 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
     }
   });
 
-  const suggestedDomains = Array.from(suggestedDomainMap.values())
-    .sort((a, b) => b.count - a.count);
+  const suggestedDomains = Array.from(suggestedDomainMap.values()).sort((a, b) => b.count - a.count);
 
   const renderContent = () => (
     <>
@@ -74,7 +70,6 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
         </div>
       ) : (
         <>
-          {/* Selected Weapons */}
           <div>
             <h3 className="text-foreground font-semibold mb-3">
               {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'}
@@ -97,7 +92,6 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
             </div>
           </div>
 
-          {/* Best Farming Domains */}
           {sortedDomains.length > 0 && (
             <div>
               <h3 className="text-foreground font-semibold mb-3">
@@ -119,7 +113,6 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
             </div>
           )}
 
-          {/* Suggested Farming (based on missing Perfect Essence) */}
           {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
             <div className="border-t border-border pt-4">
               <h3 className="text-foreground font-semibold mb-3 text-yellow-400 text-sm">
@@ -156,13 +149,11 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
 
   return (
     <>
-      {/* Side Panel - Desktop */}
       <div
         className={`hidden md:block fixed right-0 top-0 h-screen w-full max-w-md bg-background border-l-2 border-orange-600/50 overflow-y-auto transition-transform duration-300 z-50 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Header */}
         <div className="sticky top-0 bg-background border-b border-orange-600/50 px-6 py-4 flex items-center justify-between">
           <h2 className="text-lg font-bold text-foreground">
             {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
@@ -172,18 +163,14 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
           </span>
         </div>
 
-        {/* Content */}
         <div className="p-6 space-y-6 pb-24">
           {renderContent()}
         </div>
 
-        {/* Footer with Clear Button */}
         {selectedWeapons.length > 0 && (
           <div className="fixed bottom-0 right-0 hidden md:block w-full max-w-md bg-background border-t border-orange-600/50 px-6 py-4">
             <button
-              onClick={() => {
-                selectedWeapons.forEach(w => onRemoveWeapon(w.id));
-              }}
+              onClick={() => selectedWeapons.forEach(w => onRemoveWeapon(w.id))}
               className="w-full px-4 py-2 bg-red-600/30 border border-red-600/50 text-red-400 hover:bg-red-600/40 rounded-lg font-medium transition-colors text-sm"
             >
               {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}
@@ -192,18 +179,14 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
         )}
       </div>
 
-      {/* Mobile Drawer - Bottom Sheet */}
       {isOpen && (
         <>
-          {/* Backdrop */}
           <div
             className="md:hidden fixed inset-0 bg-black/50 z-40 transition-opacity"
             onClick={onClose}
           />
           
-          {/* Drawer */}
           <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t-2 border-orange-600/50 rounded-t-2xl max-h-[80vh] overflow-y-auto transition-transform duration-300 z-50">
-            {/* Header */}
             <div className="sticky top-0 bg-background border-b border-orange-600/50 px-6 py-4 flex items-center justify-between rounded-t-2xl">
               <h2 className="text-lg font-bold text-foreground">
                 {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
@@ -213,18 +196,14 @@ export function FarmingPlanner({ selectedWeapons, onRemoveWeapon, allWeapons, is
               </span>
             </div>
 
-            {/* Content */}
             <div className="p-6 space-y-6 pb-32">
               {renderContent()}
             </div>
 
-            {/* Footer with Clear Button */}
             {selectedWeapons.length > 0 && (
               <div className="fixed bottom-0 left-0 right-0 md:hidden bg-background border-t border-orange-600/50 px-6 py-4">
                 <button
-                  onClick={() => {
-                    selectedWeapons.forEach(w => onRemoveWeapon(w.id));
-                  }}
+                  onClick={() => selectedWeapons.forEach(w => onRemoveWeapon(w.id))}
                   className="w-full px-4 py-2 bg-red-600/30 border border-red-600/50 text-red-400 hover:bg-red-600/40 rounded-lg font-medium transition-colors text-sm"
                 >
                   {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}

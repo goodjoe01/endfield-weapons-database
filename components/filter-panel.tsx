@@ -318,38 +318,24 @@ export function FilterPanel({
             onAddValue={handleAttributeChange}
             onClear={handleAttributeClear}
           />
-        <FilterSelect
-          label={t('filters.secondaryStats')}
-          value={Array.from(filters.secondaryStats)[0] ?? ''}
-          options={secondaryStats}
-          onChange={handleSecondaryChange}
-        />
-        <FilterSelect
-          label={t('filters.skillStats')}
-          value={Array.from(filters.skillStats)[0] ?? ''}
-          options={skillStats}
-          onChange={handleSkillChange}
-        />
-        <FilterSelect
-          label={t('filters.domain')}
-          value={Array.from(filters.domains)[0] ?? ''}
-          options={domains}
-          onChange={handleDomainChange}
-        />
-
-        {/* Show Maxed Weapons */}
-        <div className="flex items-center gap-2 ml-auto">
-          <label className="text-xs font-semibold text-foreground flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={filters.showMaxedWeapons}
-              onChange={e =>
-                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
-              }
-              className="rounded border-input"
-            />
-            <span>{t('filters.showMaxed')}</span>
-          </label>
+          <FilterSelect
+            label={t('filters.secondaryStats')}
+            value={Array.from(filters.secondaryStats)[0] ?? ''}
+            options={secondaryStats}
+            onChange={handleSecondaryChange}
+          />
+          <FilterSelect
+            label={t('filters.skillStats')}
+            value={Array.from(filters.skillStats)[0] ?? ''}
+            options={skillStats}
+            onChange={handleSkillChange}
+          />
+          <FilterSelect
+            label={t('filters.domain')}
+            value={Array.from(filters.domains)[0] ?? ''}
+            options={domains}
+            onChange={handleDomainChange}
+          />
         </div>
 
         {/* Mobile Farming Planner Section */}
