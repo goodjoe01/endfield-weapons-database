@@ -257,6 +257,22 @@
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0013.png",
     "weaponType": "Greatsword"
   },
+    {
+    "name": "Lupine Scarlet",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0022.webp",
+    "domains": [
+      "Wuling City",
+      "Originium Science Park",
+      "Power Plateau"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Critical Rate Boost",
+    "skillStats": "Fracture",
+    "description": "After the wielder's skill deals Critical DMG, the wielder gains 1 stack of Wolven Blood that grants Physical and Heat DMG% + 1.6% . Wolven Blood can reach 16 stacks. After reaching 16 stacks, the wielder gains another Physical and Heat DMG% + 38.4% for 20s. After the duration ends, all Wolven Blood stacks are removed.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0022.png",
+    "weaponType": "Sword"
+  },
   {
     "name": "Mountain Bearer",
     "rarity": "6",

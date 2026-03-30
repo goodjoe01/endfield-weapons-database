@@ -112,10 +112,10 @@ export function WeaponDetailContent({ weapon }: WeaponDetailContentProps) {
             <span className="text-foreground font-semibold">Max Level:</span>
             <span className="text-muted-foreground ml-2">90</span>
           </div>
-          <div>
+          {/* <div>
             <span className="text-foreground font-semibold">Attack (Lv.90):</span>
             <span className="text-yellow-400 ml-2 font-semibold">485</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Effects - Attribute and Secondary Stats */}
