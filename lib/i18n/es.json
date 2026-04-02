@@ -44,5 +44,12 @@
     "skillStats": "Estadísticas de Habilidad",
     "description": "Descripción",
     "stats": "ESTADÍSTICAS"
+  },
+    "planner": {
+    "title": "Mejores lugares de farmeo",
+    "description": "Selecciona armas para ver las mejores rutas de granja",
+    "selectedWeapons": "Armas seleccionadas",
+    "bestRoutes": "Aluvión energético",
+    "clear": "Limpiar Selección"
   }
 }

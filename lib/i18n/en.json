@@ -44,5 +44,12 @@
     "skillStats": "Skill Stats",
     "description": "Description",
     "stats": "STATS"
+  },
+  "planner": {
+    "title": "Best Farming Zones",
+    "description": "Select weapons to see best farming routes",
+    "selectedWeapons": "Selected Weapons",
+    "bestRoutes": "Energy Alluvial",
+    "clear": "Clear Selection"
   }
 }

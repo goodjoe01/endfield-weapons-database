@@ -19,6 +19,9 @@ interface FilterPanelProps {
   onFilterChange: (filters: FilterState) => void;
   isOpen: boolean;
   onToggle: (open: boolean) => void;
+  isFarmingMode?: boolean;
+  onToggleFarmingMode?: () => void;
+  selectedWeaponsCount?: number;
 }
 
 export function FilterPanel({
@@ -27,6 +30,9 @@ export function FilterPanel({
   onFilterChange,
   isOpen,
   onToggle,
+  isFarmingMode,
+  onToggleFarmingMode,
+  selectedWeaponsCount,
 }: FilterPanelProps) {
   const { t, language } = useLanguage();
   const domains = getUniqueDomains(weapons);
@@ -131,7 +137,7 @@ export function FilterPanel({
         }}
         onClick={() => setOpenDropdown(null)}
         onMouseDown={() => setOpenDropdown(null)}
-        className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
+        className="py-1 px-2 sm:px-3 sm:py-2 bg-card border border-border rounded text-xs sm:text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
           backgroundRepeat: 'no-repeat',
@@ -170,7 +176,7 @@ export function FilterPanel({
         <label className="text-xs font-semibold text-foreground">{label}</label>
         <button
           onClick={() => setOpenDropdown(isOpen ? null : label)}
-          className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
+          className="py-1 px-2 sm:px-3 sm:py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
         >
           <span>{values.size === 0 ? 'None' : `${values.size} selected`}</span>
           <ChevronDown
@@ -212,8 +218,8 @@ export function FilterPanel({
   return (
     <div className="border-b border-border bg-card">
       {/* Top Filter Bar - Rarity and Weapon Type */}
-      <div className="border-b border-border px-4 py-4">
-        <div className="flex flex-wrap gap-3 items-center">
+      <div className="border-b border-border px-4 py-2 sm:py-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3 items-center">
           {/* Rarity Filters */}
           <div className="flex gap-2 items-center flex-wrap">
             {[3, 4, 5, 6].map(rarity => (
@@ -222,7 +228,7 @@ export function FilterPanel({
                 onClick={() =>
                   handleRarityChange(rarity, !filters.rarity.has(rarity))
                 }
-                className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.rarity.has(rarity)
+                className={`px-2 sm:px-3 sm:py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.rarity.has(rarity)
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                   }`}
@@ -234,7 +240,7 @@ export function FilterPanel({
 
           {/* Weapon Type Filters */}
           {weaponTypes.length > 0 && (
-            <div className="flex gap-2 items-center flex-wrap pl-4 border-l border-border">
+            <div className="flex gap-2 items-center flex-wrap pl-1 sm:pl-4 border-l border-border">
               {weaponTypes.map(type => {
                 const { image, label } = getDisplayWeaponType(type, language)
                 return (
@@ -243,7 +249,7 @@ export function FilterPanel({
                     onClick={() =>
                       handleWeaponTypeChange(type, !filters.weaponType.has(type))
                     }
-                    className={`flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.weaponType.has(type)
+                    className={`flex items-center justify-center gap-1 px-2 sm:px-3 sm:py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.weaponType.has(type)
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                       }`}
@@ -269,47 +275,112 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="px-4 py-4 flex flex-wrap gap-4 items-end relative">
-        <FilterMultiSelect
-          label={t('filters.attributeStats')}
-          values={filters.attributeStats}
-          options={attributeStats}
-          onAddValue={handleAttributeChange}
-          onClear={handleAttributeClear}
-        />
-        <FilterSelect
-          label={t('filters.secondaryStats')}
-          value={Array.from(filters.secondaryStats)[0] ?? ''}
-          options={secondaryStats}
-          onChange={handleSecondaryChange}
-        />
-        <FilterSelect
-          label={t('filters.skillStats')}
-          value={Array.from(filters.skillStats)[0] ?? ''}
-          options={skillStats}
-          onChange={handleSkillChange}
-        />
-        <FilterSelect
-          label={t('filters.domain')}
-          value={Array.from(filters.domains)[0] ?? ''}
-          options={domains}
-          onChange={handleDomainChange}
-        />
+      <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
+        {/* Right Column - Filters */}
+        <div className="px-2 py-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
+          <FilterMultiSelect
+            label={t('filters.attributeStats')}
+            values={filters.attributeStats}
+            options={attributeStats}
+            onAddValue={handleAttributeChange}
+            onClear={handleAttributeClear}
+          />
+          <FilterSelect
+            label={t('filters.secondaryStats')}
+            value={Array.from(filters.secondaryStats)[0] ?? ''}
+            options={secondaryStats}
+            onChange={handleSecondaryChange}
+          />
+          <FilterSelect
+            label={t('filters.skillStats')}
+            value={Array.from(filters.skillStats)[0] ?? ''}
+            options={skillStats}
+            onChange={handleSkillChange}
+          />
+          <FilterSelect
+            label={t('filters.domain')}
+            value={Array.from(filters.domains)[0] ?? ''}
+            options={domains}
+            onChange={handleDomainChange}
+          />
+        </div>
+        {/* Left Column - Farming Planner and Include God Roll */}
+        <div className="px-2 py-1 sm:px-0 flex gap-3 w-full lg:w-auto">
+          {/* Farming Planner Button */}
+          <button
+            onClick={onToggleFarmingMode}
+            className={`hidden sm:block px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+              }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
 
-        {/* Show Maxed Weapons */}
-        <div className="flex items-center gap-2 ml-auto">
-          <label className="text-xs font-semibold text-foreground flex items-center gap-2 cursor-pointer">
+          {/* Include God Roll Weapons */}
+          <label className="hidden sm:flex items-center gap-2 cursor-pointer text-sm">
             <input
               type="checkbox"
               checked={filters.showMaxedWeapons}
-              onChange={e =>
+              onChange={(e) =>
                 onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
               }
-              className="rounded border-input"
+              className="w-4 h-4 cursor-pointer"
             />
-            <span>{t('filters.showMaxed')}</span>
+            <span className="text-foreground">{t('filters.showMaxed')}</span>
           </label>
         </div>
+        {/* Farming Planner Button */}
+        <div className='sm:hidden w-full border-t mt-2 p-2 flex flex-col gap-1'>
+          <label className="flex items-center gap-2 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              checked={filters.showMaxedWeapons}
+              onChange={(e) =>
+                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+              }
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span className="text-foreground">{t('filters.showMaxed')}</span>
+          </label>
+
+          <button
+            onClick={onToggleFarmingMode}
+            className={`w-fit px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm lg:w-auto ${isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+              }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Farming Planner Section */}
+        {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+          <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
+            <div className="space-y-3">
+              <h3 className="text-foreground font-semibold text-sm">
+                {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeaponsCount})
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                {language === 'en'
+                  ? 'Open full planner to view farming routes'
+                  : 'Abre el planificador completo para ver rutas de granja'
+                }
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
