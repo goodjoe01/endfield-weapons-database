@@ -275,9 +275,37 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="sm:px-4 sm:py-4 flex flex-col lg:flex-row sm:gap-4 items-start lg:items-end relative">
+      <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
+        {/* Right Column - Filters */}
+        <div className="px-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
+          <FilterMultiSelect
+            label={t('filters.attributeStats')}
+            values={filters.attributeStats}
+            options={attributeStats}
+            onAddValue={handleAttributeChange}
+            onClear={handleAttributeClear}
+          />
+          <FilterSelect
+            label={t('filters.secondaryStats')}
+            value={Array.from(filters.secondaryStats)[0] ?? ''}
+            options={secondaryStats}
+            onChange={handleSecondaryChange}
+          />
+          <FilterSelect
+            label={t('filters.skillStats')}
+            value={Array.from(filters.skillStats)[0] ?? ''}
+            options={skillStats}
+            onChange={handleSkillChange}
+          />
+          <FilterSelect
+            label={t('filters.domain')}
+            value={Array.from(filters.domains)[0] ?? ''}
+            options={domains}
+            onChange={handleDomainChange}
+          />
+        </div>
         {/* Left Column - Farming Planner and Include God Roll */}
-        <div className="px-2 py-1 sm:px-0 flex flex-col gap-3 w-full lg:w-auto">
+        <div className="px-2 py-1 sm:px-0 flex gap-3 w-full lg:w-auto">
           {/* Farming Planner Button */}
           <button
             onClick={onToggleFarmingMode}
@@ -307,36 +335,6 @@ export function FilterPanel({
             <span className="text-foreground">{t('filters.showMaxed')}</span>
           </label>
         </div>
-
-        {/* Right Column - Filters */}
-        <div className="px-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
-          <FilterMultiSelect
-            label={t('filters.attributeStats')}
-            values={filters.attributeStats}
-            options={attributeStats}
-            onAddValue={handleAttributeChange}
-            onClear={handleAttributeClear}
-          />
-          <FilterSelect
-            label={t('filters.secondaryStats')}
-            value={Array.from(filters.secondaryStats)[0] ?? ''}
-            options={secondaryStats}
-            onChange={handleSecondaryChange}
-          />
-          <FilterSelect
-            label={t('filters.skillStats')}
-            value={Array.from(filters.skillStats)[0] ?? ''}
-            options={skillStats}
-            onChange={handleSkillChange}
-          />
-          <FilterSelect
-            label={t('filters.domain')}
-            value={Array.from(filters.domains)[0] ?? ''}
-            options={domains}
-            onChange={handleDomainChange}
-          />
-        </div>
-
         {/* Farming Planner Button */}
         <div className='sm:hidden w-full border-t mt-2 p-2 flex flex-col gap-1'>
           <label className="flex items-center gap-2 cursor-pointer text-sm">
@@ -350,7 +348,7 @@ export function FilterPanel({
             />
             <span className="text-foreground">{t('filters.showMaxed')}</span>
           </label>
-          
+
           <button
             onClick={onToggleFarmingMode}
             className={`w-fit px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm lg:w-auto ${isFarmingMode
