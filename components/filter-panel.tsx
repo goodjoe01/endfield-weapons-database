@@ -277,7 +277,7 @@ export function FilterPanel({
       {/* Horizontal Dropdown Filters */}
       <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
         {/* Right Column - Filters */}
-        <div className="px-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
+        <div className="px-2 py-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
           <FilterMultiSelect
             label={t('filters.attributeStats')}
             values={filters.attributeStats}
