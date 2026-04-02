@@ -137,7 +137,7 @@ export function FilterPanel({
         }}
         onClick={() => setOpenDropdown(null)}
         onMouseDown={() => setOpenDropdown(null)}
-        className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
+        className="py-1 px-2 sm:px-3 sm:py-2 bg-card border border-border rounded text-xs sm:text-sm text-foreground hover:bg-muted/50 transition-colors cursor-pointer appearance-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
           backgroundRepeat: 'no-repeat',
@@ -176,7 +176,7 @@ export function FilterPanel({
         <label className="text-xs font-semibold text-foreground">{label}</label>
         <button
           onClick={() => setOpenDropdown(isOpen ? null : label)}
-          className="px-3 py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
+          className="py-1 px-2 sm:px-3 sm:py-2 bg-card border border-border rounded text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center justify-between"
         >
           <span>{values.size === 0 ? 'None' : `${values.size} selected`}</span>
           <ChevronDown
@@ -218,8 +218,8 @@ export function FilterPanel({
   return (
     <div className="border-b border-border bg-card">
       {/* Top Filter Bar - Rarity and Weapon Type */}
-      <div className="border-b border-border px-4 py-4">
-        <div className="flex flex-wrap gap-3 items-center">
+      <div className="border-b border-border px-4 py-2 sm:py-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3 items-center">
           {/* Rarity Filters */}
           <div className="flex gap-2 items-center flex-wrap">
             {[3, 4, 5, 6].map(rarity => (
@@ -228,7 +228,7 @@ export function FilterPanel({
                 onClick={() =>
                   handleRarityChange(rarity, !filters.rarity.has(rarity))
                 }
-                className={`px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.rarity.has(rarity)
+                className={`px-2 sm:px-3 sm:py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.rarity.has(rarity)
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                   }`}
@@ -240,7 +240,7 @@ export function FilterPanel({
 
           {/* Weapon Type Filters */}
           {weaponTypes.length > 0 && (
-            <div className="flex gap-2 items-center flex-wrap pl-4 border-l border-border">
+            <div className="flex gap-2 items-center flex-wrap pl-1 sm:pl-4 border-l border-border">
               {weaponTypes.map(type => {
                 const { image, label } = getDisplayWeaponType(type, language)
                 return (
@@ -249,7 +249,7 @@ export function FilterPanel({
                     onClick={() =>
                       handleWeaponTypeChange(type, !filters.weaponType.has(type))
                     }
-                    className={`flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.weaponType.has(type)
+                    className={`flex items-center justify-center gap-1 px-2 sm:px-3 sm:py-1.5 text-xs font-semibold uppercase rounded border transition-colors ${filters.weaponType.has(type)
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'bg-muted text-muted-foreground border-border hover:bg-muted/80'
                       }`}
@@ -275,19 +275,18 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="px-4 py-4 flex flex-col lg:flex-row gap-4 items-start lg:items-end relative">
+      <div className="sm:px-4 sm:py-4 flex flex-col lg:flex-row sm:gap-4 items-start lg:items-end relative">
         {/* Left Column - Farming Planner and Include God Roll */}
-        <div className="flex flex-col gap-3 w-full lg:w-auto">
+        <div className="px-2 py-1 sm:px-0 flex flex-col gap-3 w-full lg:w-auto">
           {/* Farming Planner Button */}
           <button
             onClick={onToggleFarmingMode}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${
-              isFarmingMode
-                ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
-                : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
-            }`}
+            className={`hidden sm:block px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+              }`}
           >
-            {language === 'en' ? 'Farming Planner' : 'Planificador de Granja'}
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
             {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
               <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
                 {selectedWeaponsCount}
@@ -296,7 +295,7 @@ export function FilterPanel({
           </button>
 
           {/* Include God Roll Weapons */}
-          <label className="flex items-center gap-2 cursor-pointer text-sm">
+          <label className="hidden sm:flex items-center gap-2 cursor-pointer text-sm">
             <input
               type="checkbox"
               checked={filters.showMaxedWeapons}
@@ -305,12 +304,12 @@ export function FilterPanel({
               }
               className="w-4 h-4 cursor-pointer"
             />
-            <span className="text-foreground">{t('filters.includeMaxed')}</span>
+            <span className="text-foreground">{t('filters.showMaxed')}</span>
           </label>
         </div>
 
         {/* Right Column - Filters */}
-        <div className="flex flex-wrap gap-4 items-end flex-1">
+        <div className="px-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
           <FilterMultiSelect
             label={t('filters.attributeStats')}
             values={filters.attributeStats}
@@ -338,6 +337,36 @@ export function FilterPanel({
           />
         </div>
 
+        {/* Farming Planner Button */}
+        <div className='sm:hidden w-full border-t mt-2 p-2 flex flex-col gap-1'>
+          <label className="flex items-center gap-2 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              checked={filters.showMaxedWeapons}
+              onChange={(e) =>
+                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+              }
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span className="text-foreground">{t('filters.showMaxed')}</span>
+          </label>
+          
+          <button
+            onClick={onToggleFarmingMode}
+            className={`w-fit px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm lg:w-auto ${isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+              }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
+            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
+        </div>
+
         {/* Mobile Farming Planner Section */}
         {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
           <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
@@ -346,7 +375,7 @@ export function FilterPanel({
                 {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeaponsCount})
               </h3>
               <p className="text-xs text-muted-foreground">
-                {language === 'en' 
+                {language === 'en'
                   ? 'Open full planner to view farming routes'
                   : 'Abre el planificador completo para ver rutas de granja'
                 }

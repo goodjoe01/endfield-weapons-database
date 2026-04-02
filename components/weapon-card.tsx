@@ -142,7 +142,7 @@ export function WeaponCard({ weapon, onMaxedChange, isFarmingMode, isSelected, o
               {/* Content */}
               <div className="px-2 py-1 flex flex-col justify-between">
                 {/* Name */}
-                <h3 className="font-semibold text-foreground truncate text-sm flex-1 line-clamp-2">{weapon.name}</h3>
+                <h3 className="font-semibold text-foreground text-center truncate text-sm flex-1 line-clamp-2">{weapon.name}</h3>
               </div>
             </div>
           </Link>

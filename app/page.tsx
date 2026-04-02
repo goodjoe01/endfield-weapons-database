@@ -125,23 +125,23 @@ export default function WeaponsPage() {
     <main className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 pt-6 pb-2">
-          <div className="flex justify-between items-start mb-4">
-            <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
+        <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
+          <div className="flex justify-between items-start mb-1 sm:mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t('header.title')}</h1>
             <LanguageSwitcher />
           </div>
-          <p className="text-muted-foreground mb-6">
+          <p className="hidden sm:block text-muted-foreground mb-6">
             {t('header.description')}
           </p>
 
           {/* Search Bar */}
-          <div className="mb-4">
+          <div className="pb-1 sm:mb-4">
             <SearchBar filters={filters} onFilterChange={setFilters} />
           </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 flex-1">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-6 flex-1">
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}

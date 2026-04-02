@@ -33,7 +33,7 @@ export function SearchBar({ filters, onFilterChange }: SearchBarProps) {
         placeholder={placeholders[language as keyof typeof placeholders]}
         value={filters.searchQuery}
         onChange={e => handleSearchChange(e.target.value)}
-        className="w-full pl-10 pr-10 py-2 bg-background border border-input rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-background"
+        className="w-full pl-10 pr-10 py-1 sm:py-2 bg-background border border-input rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-background"
       />
       {filters.searchQuery && (
         <button
