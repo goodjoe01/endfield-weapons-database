@@ -315,7 +315,7 @@ export function FilterPanel({
               }`}
           >
             {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
-            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
               <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
                 {selectedWeaponsCount}
               </span>
@@ -357,7 +357,7 @@ export function FilterPanel({
               }`}
           >
             {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
-            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
               <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
                 {selectedWeaponsCount}
               </span>
@@ -366,7 +366,16 @@ export function FilterPanel({
         </div>
 
         {/* Mobile Farming Planner Section */}
-        {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+        {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Farming Planner Section */}
+        {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
           <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
             <div className="space-y-3">
               <h3 className="text-foreground font-semibold text-sm">
