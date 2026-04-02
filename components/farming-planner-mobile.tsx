@@ -1,0 +1,142 @@
+'use client';
+
+import { Weapon } from '@/lib/types';
+import { getMaxedWeapons } from '@/lib/maxed-weapons';
+import { useLanguage } from '@/lib/language-context';
+import { X } from 'lucide-react';
+
+interface DomainCount {
+  domain: string;
+  count: number;
+  weaponIds: string[];
+}
+
+interface FarmingPlannerMobileProps {
+  selectedWeapons: Weapon[];
+  onRemoveWeapon: (weaponId: string) => void;
+  onClearAll: () => void;
+}
+
+export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearAll }: FarmingPlannerMobileProps) {
+  const { language } = useLanguage();
+  const maxedWeapons = getMaxedWeapons();
+
+  // Calculate domain efficiency
+  const domainMap = new Map<string, DomainCount>();
+  selectedWeapons.forEach(weapon => {
+    if (weapon.domains && weapon.domains.length > 0) {
+      weapon.domains.forEach(domain => {
+        if (!domainMap.has(domain)) {
+          domainMap.set(domain, { domain, count: 0, weaponIds: [] });
+        }
+        const entry = domainMap.get(domain)!;
+        entry.count++;
+        entry.weaponIds.push(weapon.id);
+      });
+    }
+  });
+
+  const sortedDomains = Array.from(domainMap.values()).sort((a, b) => b.count - a.count);
+
+  // Calculate suggested domains (for weapons without Perfect Essence)
+  const notMaxedWeapons = selectedWeapons.filter(w => !maxedWeapons.has(w.name));
+  const suggestedDomainMap = new Map<string, DomainCount>();
+  
+  notMaxedWeapons.forEach(weapon => {
+    if (weapon.domains && weapon.domains.length > 0) {
+      weapon.domains.forEach(domain => {
+        if (!suggestedDomainMap.has(domain)) {
+          suggestedDomainMap.set(domain, { domain, count: 0, weaponIds: [] });
+        }
+        const entry = suggestedDomainMap.get(domain)!;
+        entry.count++;
+        entry.weaponIds.push(weapon.id);
+      });
+    }
+  });
+
+  const suggestedDomains = Array.from(suggestedDomainMap.values()).sort((a, b) => b.count - a.count);
+
+  if (selectedWeapons.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="md:hidden w-full mt-6 pt-6 border-t border-border">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-foreground font-semibold">
+          {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeapons.length})
+        </h3>
+        <button
+          onClick={onClearAll}
+          className="text-xs text-orange-400 hover:text-orange-300 transition-colors font-medium"
+        >
+          {language === 'en' ? 'Clear Selection' : 'Limpiar Selección'}
+        </button>
+      </div>
+
+      {/* Selected Weapons Chips */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {selectedWeapons.map(weapon => (
+          <div
+            key={weapon.id}
+            className="flex items-center gap-2 px-3 py-2 bg-orange-600/20 border border-orange-600/50 rounded-lg"
+          >
+            <span className="text-foreground text-sm truncate">{weapon.name}</span>
+            <button
+              onClick={() => onRemoveWeapon(weapon.id)}
+              className="text-muted-foreground hover:text-orange-400 transition-colors flex-shrink-0"
+            >
+              <X className="h-3 w-3" />
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Best Farming Domains */}
+      {sortedDomains.length > 0 && (
+        <div className="mb-6">
+          <h4 className="text-foreground font-semibold text-sm mb-3">
+            {language === 'en' ? 'Best Farming Routes' : 'Mejores Rutas de Granja'}
+          </h4>
+          <div className="space-y-2">
+            {sortedDomains.map((domain, index) => (
+              <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-secondary/50 rounded-lg border border-secondary">
+                <div className="flex items-center gap-3">
+                  <span className="text-orange-400 font-semibold text-sm">{index + 1}.</span>
+                  <span className="text-foreground text-sm truncate">{domain.domain}</span>
+                </div>
+                <span className="text-muted-foreground text-xs flex-shrink-0">
+                  ×{domain.count}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Suggested Farming */}
+      {suggestedDomains.length > 0 && suggestedDomains.length < sortedDomains.length && (
+        <div className="border-t border-border pt-4">
+          <h4 className="text-foreground font-semibold text-sm mb-3 text-yellow-400">
+            {language === 'en' ? 'Need Perfect Essence' : 'Necesita Esencia Perfecta'}
+          </h4>
+          <div className="space-y-2">
+            {suggestedDomains.map((domain, index) => (
+              <div key={domain.domain} className="flex items-center justify-between px-3 py-2 bg-yellow-600/20 border border-yellow-600/50 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-yellow-400 font-semibold text-sm">{index + 1}.</span>
+                  <span className="text-foreground text-sm truncate">{domain.domain}</span>
+                </div>
+                <span className="text-muted-foreground text-xs flex-shrink-0">
+                  ×{domain.count}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

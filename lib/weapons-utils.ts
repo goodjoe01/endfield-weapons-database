@@ -232,15 +232,15 @@ export function getRarityColor(rarity: number): string {
 export function getRarityBackgroundColor(rarity: number): string {
   switch (rarity) {
     case 3:
-      return 'from-gray-700 to-gray-800';
+      return 'from-gray-600 to-gray-700';
     case 4:
-      return 'from-purple-700 to-purple-800';
+      return 'from-purple-600 to-purple-800';
     case 5:
       return 'from-yellow-600 to-yellow-700';
     case 6:
-      return 'from-orange-600 to-orange-700';
+      return 'from-orange-500 to-orange-700';
     default:
-      return 'from-gray-700 to-gray-800';
+      return 'from-gray-500 to-gray-800';
   }
 }
 

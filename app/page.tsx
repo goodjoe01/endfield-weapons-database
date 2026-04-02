@@ -10,6 +10,8 @@ import { SearchBar } from '@/components/search-bar';
 import { WeaponCard } from '@/components/weapon-card';
 import { WeaponList } from '@/components/weapon-list';
 import { WeaponTable } from '@/components/weapon-table';
+import { FarmingPlanner } from '@/components/farming-planner';
+import { FarmingPlannerMobile } from '@/components/farming-planner-mobile';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { Layout, Grid3x3, List } from 'lucide-react';
 
@@ -20,6 +22,8 @@ export default function WeaponsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('card');
   const [filterOpen, setFilterOpen] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [isFarmingMode, setIsFarmingMode] = useState(false);
+  const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
     weaponType: new Set(),
@@ -30,6 +34,55 @@ export default function WeaponsPage() {
     searchQuery: '',
     showMaxedWeapons: false,
   });
+
+  // Save farming mode state to localStorage
+  useEffect(() => {
+    localStorage.setItem('farmingMode', JSON.stringify(isFarmingMode));
+  }, [isFarmingMode]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedWeapons', JSON.stringify(selectedWeapons.map(w => w.id)));
+  }, [selectedWeapons]);
+
+  // Load farming mode and selected weapons from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('farmingMode');
+    const savedWeaponIds = localStorage.getItem('selectedWeapons');
+    if (saved) setIsFarmingMode(JSON.parse(saved));
+    if (savedWeaponIds && weapons.length > 0) {
+      try {
+        const weaponIds = JSON.parse(savedWeaponIds);
+        const selected = weapons.filter(w => weaponIds.includes(w.id));
+        setSelectedWeapons(selected);
+      } catch (e) {
+        // Ignore parse errors
+      }
+    }
+  }, [weapons]);
+
+  const handleToggleWeaponSelection = (weapon: Weapon) => {
+    setSelectedWeapons(prev => {
+      const isSelected = prev.find(w => w.id === weapon.id);
+      if (isSelected) {
+        return prev.filter(w => w.id !== weapon.id);
+      } else {
+        return [...prev, weapon];
+      }
+    });
+  };
+
+  const handleRemoveSelectedWeapon = (weaponId: string) => {
+    setSelectedWeapons(prev => prev.filter(w => w.id !== weaponId));
+  };
+
+  const handleToggleFarmingMode = () => {
+    const newMode = !isFarmingMode;
+    setIsFarmingMode(newMode);
+    if (!newMode) {
+      // Clear selection when disabling farming mode
+      setSelectedWeapons([]);
+    }
+  };
 
   useEffect(() => {
     async function loadData() {
@@ -70,39 +123,25 @@ export default function WeaponsPage() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col">
-      {/* Contact Banner - Top */}
-{/*       <div className="bg-gray-900 border-b border-orange-900 px-4 py-2">
-        <div className="max-w-7xl mx-auto text-center">
-          <a
-            href="https://www.tiktok.com/@goodjoe01"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            by @goodjoe01
-          </a>
-        </div>
-      </div> */}
-
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 pt-6 pb-2">
-          <div className="flex justify-between items-start mb-4">
-            <h1 className="text-4xl font-bold text-foreground">{t('header.title')}</h1>
+        <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
+          <div className="flex justify-between items-start mb-1 sm:mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t('header.title')}</h1>
             <LanguageSwitcher />
           </div>
-          <p className="text-muted-foreground mb-6">
+          <p className="hidden sm:block text-muted-foreground mb-6">
             {t('header.description')}
           </p>
 
           {/* Search Bar */}
-          <div className="mb-4">
+          <div className="pb-1 sm:mb-4">
             <SearchBar filters={filters} onFilterChange={setFilters} />
           </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 flex-1">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-6 flex-1">
         {/* Filter Panel */}
         <FilterPanel
           weapons={weapons}
@@ -110,7 +149,19 @@ export default function WeaponsPage() {
           onFilterChange={setFilters}
           isOpen={filterOpen}
           onToggle={setFilterOpen}
+          isFarmingMode={isFarmingMode}
+          onToggleFarmingMode={handleToggleFarmingMode}
+          selectedWeaponsCount={selectedWeapons.length}
         />
+
+        {/* Mobile Farming Planner */}
+        {isFarmingMode && (
+          <FarmingPlannerMobile
+            selectedWeapons={selectedWeapons}
+            onRemoveWeapon={handleRemoveSelectedWeapon}
+            onClearAll={() => setSelectedWeapons([])}
+          />
+        )}
         <div className="pb-12 overflow-visible">
           {/* Weapons Counter */}
           <div className="my-2 text-sm font-medium text-foreground">
@@ -125,6 +176,9 @@ export default function WeaponsPage() {
               <WeaponCard
                 key={weapon.id}
                 weapon={weapon}
+                isFarmingMode={isFarmingMode}
+                isSelected={selectedWeapons.some(w => w.id === weapon.id)}
+                onToggleSelect={handleToggleWeaponSelection}
                 onMaxedChange={(isMaxed) => {
                   if (isMaxed && !filters.showMaxedWeapons) {
                     setFilteredWeapons(prev => prev.filter(w => w.id !== weapon.id));
@@ -160,6 +214,15 @@ export default function WeaponsPage() {
           )}
         </div>
       </div>
+
+      {/* Farming Planner Side Panel */}
+      <FarmingPlanner
+        selectedWeapons={selectedWeapons}
+        onRemoveWeapon={handleRemoveSelectedWeapon}
+        allWeapons={weapons}
+        isOpen={isFarmingMode}
+        onClose={() => {}}
+      />
 
       {/* Footer */}
       <footer className="bg-background border-t border-border mt-12">
