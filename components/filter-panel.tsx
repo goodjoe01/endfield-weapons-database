@@ -275,41 +275,9 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="sm:px-4 sm:py-4 flex flex-col lg:flex-row sm:gap-4 items-start lg:items-end relative">
-        {/* Left Column - Farming Planner and Include God Roll */}
-        <div className="px-2 py-1 sm:px-0 flex flex-col gap-3 w-full lg:w-auto">
-          {/* Farming Planner Button */}
-          <button
-            onClick={onToggleFarmingMode}
-            className={`hidden sm:block px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${isFarmingMode
-              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
-              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
-              }`}
-          >
-            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
-            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
-              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
-                {selectedWeaponsCount}
-              </span>
-            )}
-          </button>
-
-          {/* Include God Roll Weapons */}
-          <label className="hidden sm:flex items-center gap-2 cursor-pointer text-sm">
-            <input
-              type="checkbox"
-              checked={filters.showMaxedWeapons}
-              onChange={(e) =>
-                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
-              }
-              className="w-4 h-4 cursor-pointer"
-            />
-            <span className="text-foreground">{t('filters.showMaxed')}</span>
-          </label>
-        </div>
-
+      <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
         {/* Right Column - Filters */}
-        <div className="px-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
+        <div className="px-2 py-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
           <FilterMultiSelect
             label={t('filters.attributeStats')}
             values={filters.attributeStats}
@@ -336,7 +304,37 @@ export function FilterPanel({
             onChange={handleDomainChange}
           />
         </div>
+        {/* Left Column - Farming Planner and Include God Roll */}
+        <div className="px-2 py-1 sm:px-0 flex gap-3 w-full lg:w-auto">
+          {/* Farming Planner Button */}
+          <button
+            onClick={onToggleFarmingMode}
+            className={`hidden sm:block px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm w-full lg:w-auto ${isFarmingMode
+              ? 'bg-orange-600/30 border border-orange-600/50 text-orange-400 hover:bg-orange-600/40'
+              : 'bg-secondary/50 border border-secondary text-secondary-foreground hover:bg-secondary/70'
+              }`}
+          >
+            {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+              <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
+                {selectedWeaponsCount}
+              </span>
+            )}
+          </button>
 
+          {/* Include God Roll Weapons */}
+          <label className="hidden sm:flex items-center gap-2 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              checked={filters.showMaxedWeapons}
+              onChange={(e) =>
+                onFilterChange({ ...filters, showMaxedWeapons: e.target.checked })
+              }
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span className="text-foreground">{t('filters.showMaxed')}</span>
+          </label>
+        </div>
         {/* Farming Planner Button */}
         <div className='sm:hidden w-full border-t mt-2 p-2 flex flex-col gap-1'>
           <label className="flex items-center gap-2 cursor-pointer text-sm">
@@ -350,7 +348,7 @@ export function FilterPanel({
             />
             <span className="text-foreground">{t('filters.showMaxed')}</span>
           </label>
-          
+
           <button
             onClick={onToggleFarmingMode}
             className={`w-fit px-4 py-1 sm:py-2 rounded-lg font-medium transition-colors text-sm lg:w-auto ${isFarmingMode
@@ -359,7 +357,7 @@ export function FilterPanel({
               }`}
           >
             {language === 'en' ? 'Farming Planner' : 'Planificador de Esencias'}
-            {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+            {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
               <span className="ml-2 text-xs bg-orange-600 px-2 py-1 rounded">
                 {selectedWeaponsCount}
               </span>
@@ -368,7 +366,7 @@ export function FilterPanel({
         </div>
 
         {/* Mobile Farming Planner Section */}
-        {isFarmingMode && selectedWeaponsCount && selectedWeaponsCount > 0 && (
+        {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
           <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
             <div className="space-y-3">
               <h3 className="text-foreground font-semibold text-sm">
