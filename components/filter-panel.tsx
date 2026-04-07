@@ -220,31 +220,20 @@ export function FilterPanel({
   };
 
   return (
-    <div className={`border-b border-border bg-card ${isFilterPinned ? 'sm:relative sticky top-0 z-30' : ''}`}>
-      {/* Pin Button - Mobile Only, Absolute Position */}
-      {isFilterPinned && (
-        <button
-          onClick={() => onToggleFilterPin?.(!isFilterPinned)}
-          className="sm:hidden absolute top-2 right-2 p-1.5 rounded transition-colors bg-orange-600/30 text-orange-400 hover:bg-orange-600/40 z-40"
-          title="Unpin filters"
-        >
-          <Pin className="h-4 w-4" />
-        </button>
-      )}
-
-      {/* Unpin Button - Mobile Only when not pinned */}
-      {!isFilterPinned && (
-        <button
-          onClick={() => onToggleFilterPin?.(true)}
-          className="sm:hidden absolute top-2 right-2 p-1.5 rounded transition-colors text-muted-foreground hover:text-foreground z-40"
-          title="Pin filters"
-        >
-          <Pin className="h-4 w-4" />
-        </button>
-      )}
-
+    <div className={`border-b border-border bg-card ${isFilterPinned ? 'sm:relative sticky z-20' : ''}`} style={isFilterPinned ? { top: '0' } : {}}>
       {/* Top Filter Bar - Rarity and Weapon Type */}
-      <div className="border-b border-border px-4 py-2 sm:py-4">
+      <div className="border-b border-border px-4 py-2 sm:py-4 relative">
+        {/* Pin Button - Mobile Only, Inside Filter Bar */}
+        <div className="absolute sm:hidden top-2 right-2">
+          <button
+            onClick={() => onToggleFilterPin?.(!isFilterPinned)}
+            className={`p-1.5 rounded transition-colors ${isFilterPinned ? 'bg-orange-600/30 text-orange-400 hover:bg-orange-600/40' : 'text-muted-foreground hover:text-foreground'}`}
+            title={isFilterPinned ? 'Unpin filters' : 'Pin filters'}
+          >
+            <Pin className="h-4 w-4" />
+          </button>
+        </div>
+
         <div className="flex flex-wrap gap-2 sm:gap-3 items-center">
           {/* Rarity Filters */}
           <div className="flex gap-2 items-center flex-wrap">

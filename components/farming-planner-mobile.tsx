@@ -16,11 +16,12 @@ interface FarmingPlannerMobileProps {
   selectedWeapons: Weapon[];
   onRemoveWeapon: (weaponId: string) => void;
   onClearAll: () => void;
+  isFilterPinned?: boolean;
 }
 
-export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearAll }: FarmingPlannerMobileProps) {
+export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearAll, isFilterPinned }: FarmingPlannerMobileProps) {
   const { language } = useLanguage();
-  const [isPinned, setIsPinned] = useState(false);
+  const [isPinned, setIsPinned] = useState(isFilterPinned ?? false);
   const maxedWeapons = getMaxedWeapons();
 
   // Calculate domain efficiency

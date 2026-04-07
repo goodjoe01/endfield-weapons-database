@@ -126,7 +126,7 @@ export default function WeaponsPage() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className={`bg-background border-b border-border ${isHeaderPinned ? 'sticky top-0 z-40' : 'relative'}`}>
+      <header className={`bg-background border-b border-border ${isHeaderPinned ? 'sticky top-0 z-50' : 'relative'}`}>
         <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
           <div className="flex justify-between items-start mb-1 sm:mb-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t('header.title')}</h1>
@@ -174,6 +174,7 @@ export default function WeaponsPage() {
             selectedWeapons={selectedWeapons}
             onRemoveWeapon={handleRemoveSelectedWeapon}
             onClearAll={() => setSelectedWeapons([])}
+            isFilterPinned={isFilterPinned}
           />
         )}
         <div className="pb-12 overflow-visible">
