@@ -64,7 +64,7 @@ export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearA
   }
 
   return (
-    <div className={`md:hidden w-full border-t border-border ${isPinned ? 'fixed bottom-0 left-0 right-0 bg-background border-t-2 border-orange-600/50 z-40 h-[50vh] overflow-hidden flex flex-col' : 'mt-6 pt-6'}`}>
+    <div className={`md:hidden w-full border-t border-border ${isPinned ? 'fixed bottom-0 left-0 right-0 bg-background border-t-2 border-orange-600/50 z-40 h-[25vh] overflow-hidden flex flex-col' : 'mt-6 pt-6'}`}>
       {/* Header - Always visible */}
       <div className="flex items-center justify-between px-4 py-3 flex-shrink-0 border-b border-border">
         <h3 className="text-foreground font-semibold text-sm">

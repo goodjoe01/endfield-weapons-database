@@ -11,7 +11,7 @@ import {
   getUniqueWeaponTypes,
   getDisplayWeaponType,
 } from '@/lib/weapons-utils';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Pin } from 'lucide-react';
 
 interface FilterPanelProps {
   weapons: Weapon[];
@@ -22,6 +22,8 @@ interface FilterPanelProps {
   isFarmingMode?: boolean;
   onToggleFarmingMode?: () => void;
   selectedWeaponsCount?: number;
+  isFilterPinned?: boolean;
+  onToggleFilterPin?: (pinned: boolean) => void;
 }
 
 export function FilterPanel({
@@ -33,6 +35,8 @@ export function FilterPanel({
   isFarmingMode,
   onToggleFarmingMode,
   selectedWeaponsCount,
+  isFilterPinned,
+  onToggleFilterPin,
 }: FilterPanelProps) {
   const { t, language } = useLanguage();
   const domains = getUniqueDomains(weapons);
@@ -275,7 +279,16 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
+      <div className={`sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative ${isFilterPinned ? 'sm:relative sticky top-0 z-30 bg-background border-b border-border' : 'sm:relative'}`}>
+        {/* Pin Button - Mobile Only */}
+        <button
+          onClick={() => onToggleFilterPin?.(!isFilterPinned)}
+          className={`sm:hidden ml-auto p-1.5 rounded transition-colors ${isFilterPinned ? 'bg-orange-600/30 text-orange-400' : 'text-muted-foreground hover:text-foreground'}`}
+          title={isFilterPinned ? 'Unpin filters' : 'Pin filters'}
+        >
+          <Pin className="h-4 w-4" />
+        </button>
+
         {/* Right Column - Filters */}
         <div className="px-2 py-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
           <FilterMultiSelect

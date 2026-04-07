@@ -25,6 +25,7 @@ export default function WeaponsPage() {
   const [isFarmingMode, setIsFarmingMode] = useState(false);
   const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
   const [isHeaderPinned, setIsHeaderPinned] = useState(false);
+  const [isFilterPinned, setIsFilterPinned] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
     weaponType: new Set(),
@@ -163,6 +164,8 @@ export default function WeaponsPage() {
           isFarmingMode={isFarmingMode}
           onToggleFarmingMode={handleToggleFarmingMode}
           selectedWeaponsCount={selectedWeapons.length}
+          isFilterPinned={isFilterPinned}
+          onToggleFilterPin={setIsFilterPinned}
         />
 
         {/* Mobile Farming Planner */}
