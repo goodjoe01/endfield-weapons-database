@@ -111,8 +111,8 @@ export function FarmingPlanner({
             <div>
               <h3 className="text-foreground font-semibold mb-3">
                 {language === 'en'
-                  ? 'Best Farming Routes'
-                  : 'Mejores Rutas de Granja'}
+                  ? 'Best Alluvium'
+                  : 'Mejores Aluviones'}
               </h3>
               <div className="space-y-2">
                 {sortedDomains.map((domain, index) => (

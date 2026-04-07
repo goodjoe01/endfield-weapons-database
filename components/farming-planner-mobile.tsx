@@ -65,9 +65,9 @@ export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearA
   }
 
   return (
-    <div className={`md:hidden w-full border-t border-border ${isPinned ? 'fixed bottom-0 left-0 right-0 bg-background border-t-2 border-orange-600/50 z-40 h-[25vh] overflow-hidden flex flex-col' : 'pt-0'}`}>
+    <div className={`md:hidden w-full border-t border-border ${isPinned ? 'fixed bottom-0 left-0 right-0 bg-background border-t-2 border-orange-600/50 z-40 h-[35vh] overflow-hidden flex flex-col' : 'pt-0'}`}>
       {/* Header - Always visible */}
-      <div className="flex items-center justify-between px-4 py-3 flex-shrink-0 border-b border-border">
+      <div className="flex items-center justify-between px-4 py-1 flex-shrink-0 border-b border-border">
         <h3 className="text-foreground font-semibold text-sm">
           {language === 'en' ? 'Selected Weapons' : 'Armas Seleccionadas'} ({selectedWeapons.length})
         </h3>
@@ -92,7 +92,7 @@ export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearA
       <div className={`flex-1 overflow-y-auto ${isPinned ? '' : 'px-4'}`}>
         <div className={`${isPinned ? 'px-4' : ''}`}>
           {/* Selected Weapons Chips */}
-          <div className="flex flex-wrap gap-1.5 py-2">
+          <div className="flex flex-wrap gap-1.5 pt-2">
             {selectedWeapons.map(weapon => (
               <div
                 key={weapon.id}
@@ -113,7 +113,7 @@ export function FarmingPlannerMobile({ selectedWeapons, onRemoveWeapon, onClearA
           {sortedDomains.length > 0 && (
             <div className="py-2">
               <h4 className="text-foreground font-semibold text-xs mb-1.5">
-                {language === 'en' ? 'Best Farming Routes' : 'Mejores Rutas'}
+                {language === 'en' ? 'Best Alluvium' : 'Mejores Aluviones'}
               </h4>
               <div className="space-y-1">
                 {sortedDomains.map((domain, index) => (

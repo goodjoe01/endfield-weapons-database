@@ -224,7 +224,7 @@ export function FilterPanel({
       {/* Top Filter Bar - Rarity and Weapon Type */}
       <div className="border-b border-border px-4 py-2 sm:py-4 relative">
         {/* Pin Button - Mobile Only, Inside Filter Bar */}
-        <div className="absolute sm:hidden top-2 right-2">
+        {/* <div className="absolute sm:hidden top-2 right-2">
           <button
             onClick={() => onToggleFilterPin?.(!isFilterPinned)}
             className={`p-1.5 rounded transition-colors ${isFilterPinned ? 'bg-orange-600/30 text-orange-400 hover:bg-orange-600/40' : 'text-muted-foreground hover:text-foreground'}`}
@@ -232,7 +232,7 @@ export function FilterPanel({
           >
             <Pin className="h-4 w-4" />
           </button>
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap gap-2 sm:gap-3 items-center">
           {/* Rarity Filters */}
@@ -281,7 +281,7 @@ export function FilterPanel({
           {hasActiveFilters && (
             <button
               onClick={handleClearFilters}
-              className="ml-auto text-xs font-medium text-muted-foreground hover:text-foreground"
+              className="cursor-pointer text-xs font-medium text-yellow-600 hover:text-yellow-500"
             >
               {t('filters.clearAll')}
             </button>
