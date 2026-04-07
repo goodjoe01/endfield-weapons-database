@@ -220,7 +220,29 @@ export function FilterPanel({
   };
 
   return (
-    <div className="border-b border-border bg-card">
+    <div className={`border-b border-border bg-card ${isFilterPinned ? 'sm:relative sticky top-0 z-30' : ''}`}>
+      {/* Pin Button - Mobile Only, Absolute Position */}
+      {isFilterPinned && (
+        <button
+          onClick={() => onToggleFilterPin?.(!isFilterPinned)}
+          className="sm:hidden absolute top-2 right-2 p-1.5 rounded transition-colors bg-orange-600/30 text-orange-400 hover:bg-orange-600/40 z-40"
+          title="Unpin filters"
+        >
+          <Pin className="h-4 w-4" />
+        </button>
+      )}
+
+      {/* Unpin Button - Mobile Only when not pinned */}
+      {!isFilterPinned && (
+        <button
+          onClick={() => onToggleFilterPin?.(true)}
+          className="sm:hidden absolute top-2 right-2 p-1.5 rounded transition-colors text-muted-foreground hover:text-foreground z-40"
+          title="Pin filters"
+        >
+          <Pin className="h-4 w-4" />
+        </button>
+      )}
+
       {/* Top Filter Bar - Rarity and Weapon Type */}
       <div className="border-b border-border px-4 py-2 sm:py-4">
         <div className="flex flex-wrap gap-2 sm:gap-3 items-center">
@@ -279,17 +301,7 @@ export function FilterPanel({
       </div>
 
       {/* Horizontal Dropdown Filters */}
-      <div className={`sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative ${isFilterPinned ? 'sm:relative sticky top-0 z-30 bg-background border-b border-border' : 'sm:relative'}`}>
-        {/* Pin Button - Mobile Only */}
-        <button
-          onClick={() => onToggleFilterPin?.(!isFilterPinned)}
-          className={`sm:hidden ml-auto p-1.5 rounded transition-colors ${isFilterPinned ? 'bg-orange-600/30 text-orange-400' : 'text-muted-foreground hover:text-foreground'}`}
-          title={isFilterPinned ? 'Unpin filters' : 'Pin filters'}
-        >
-          <Pin className="h-4 w-4" />
-        </button>
-
-        {/* Right Column - Filters */}
+      <div className="sm:px-4 sm:py-4 flex flex-col sm:gap-4 items-start relative">
         <div className="px-2 py-2 sm:px-0 flex flex-wrap gap-1 sm:gap-4 items-end flex-1">
           <FilterMultiSelect
             label={t('filters.attributeStats')}
