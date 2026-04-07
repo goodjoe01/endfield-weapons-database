@@ -379,8 +379,7 @@ export function FilterPanel({
           </button>
         </div>
 
-        {/* Mobile Farming Planner Section */}
-        {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
+        {/* {isFarmingMode && (selectedWeaponsCount ?? 0) > 0 && (
           <div className="md:hidden w-full mt-4 pt-4 border-t border-border">
             <div className="space-y-3">
               <h3 className="text-foreground font-semibold text-sm">
@@ -394,7 +393,7 @@ export function FilterPanel({
               </p>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
