@@ -125,7 +125,7 @@ export default function WeaponsPage() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className={`sm:sticky top-0 z-50 bg-background border-b border-border ${isHeaderPinned ? 'sm:hidden fixed top-0 left-0 right-0 sm:static' : 'sticky sm:sticky'}`}>
+      <header className={`bg-background border-b border-border ${isHeaderPinned ? 'sticky top-0 z-40' : 'relative'}`}>
         <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
           <div className="flex justify-between items-start mb-1 sm:mb-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t('header.title')}</h1>
