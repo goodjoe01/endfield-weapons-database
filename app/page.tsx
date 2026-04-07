@@ -13,7 +13,7 @@ import { WeaponTable } from '@/components/weapon-table';
 import { FarmingPlanner } from '@/components/farming-planner';
 import { FarmingPlannerMobile } from '@/components/farming-planner-mobile';
 import { LanguageSwitcher } from '@/components/language-switcher';
-import { Layout, Grid3x3, List } from 'lucide-react';
+import { Layout, Grid3x3, List, Pin } from 'lucide-react';
 
 export default function WeaponsPage() {
   const { t, language } = useLanguage();
@@ -24,6 +24,8 @@ export default function WeaponsPage() {
   const [loading, setLoading] = useState(true);
   const [isFarmingMode, setIsFarmingMode] = useState(false);
   const [selectedWeapons, setSelectedWeapons] = useState<Weapon[]>([]);
+  const [isHeaderPinned, setIsHeaderPinned] = useState(false);
+  const [isFilterPinned, setIsFilterPinned] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     rarity: new Set(),
     weaponType: new Set(),
@@ -124,11 +126,21 @@ export default function WeaponsPage() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background border-b border-border">
+      <header className={`bg-background border-b border-border ${isHeaderPinned ? 'sticky top-0 z-50' : 'relative'}`}>
         <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
           <div className="flex justify-between items-start mb-1 sm:mb-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t('header.title')}</h1>
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              {/* Pin Button - Mobile Only */}
+              <button
+                onClick={() => setIsHeaderPinned(!isHeaderPinned)}
+                className={`sm:hidden p-2 rounded transition-colors ${isHeaderPinned ? 'bg-orange-600/30 text-orange-400' : 'text-muted-foreground hover:text-foreground'}`}
+                title={isHeaderPinned ? 'Unpin header' : 'Pin header'}
+              >
+                <Pin className="h-4 w-4" />
+              </button>
+              <LanguageSwitcher />
+            </div>
           </div>
           <p className="hidden sm:block text-muted-foreground mb-6">
             {t('header.description')}
@@ -152,6 +164,8 @@ export default function WeaponsPage() {
           isFarmingMode={isFarmingMode}
           onToggleFarmingMode={handleToggleFarmingMode}
           selectedWeaponsCount={selectedWeapons.length}
+          isFilterPinned={isFilterPinned}
+          onToggleFilterPin={setIsFilterPinned}
         />
 
         {/* Mobile Farming Planner */}
@@ -160,6 +174,7 @@ export default function WeaponsPage() {
             selectedWeapons={selectedWeapons}
             onRemoveWeapon={handleRemoveSelectedWeapon}
             onClearAll={() => setSelectedWeapons([])}
+            isFilterPinned={isFilterPinned}
           />
         )}
         <div className="pb-12 overflow-visible">
