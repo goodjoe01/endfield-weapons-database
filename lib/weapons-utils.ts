@@ -7,6 +7,7 @@ const WEAPON_TYPE_IMAGES: Record<string, Record<string, string>> = {
     'lance': '/weapons/logo/polearm.webp',
     'sword': '/weapons/logo/sword.webp',
     'greatsword': '/weapons/logo/greatSword.webp',
+    'claymore': '/weapons/logo/greatSword.webp',
     'funnel': '/weapons/logo/artsUnit.webp',
   },
   'es': {
@@ -25,6 +26,7 @@ const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
     'lance': 'Polearm',
     'sword': 'Sword',
     'greatsword': 'Great Sword',
+    'claymore': 'Great Sword',
     'funnel': 'Arts Unit',
   },
   'es': {
@@ -33,6 +35,7 @@ const WEAPON_TYPE_DISPLAY_NAMES: Record<string, Record<string, string>> = {
     'lance': 'Arma de asta',
     'sword': 'Espada',
     'greatsword': 'Gran espada',
+    'claymore': 'Gran espada',
     'funnel': 'Unidad de las Artes',
   },
 };
@@ -59,7 +62,7 @@ export function getDisplayWeaponType(
 
 export async function loadWeapons(language: string = 'en'): Promise<Weapon[]> {
   // Always load English as base for IDs and non-translatable fields
-  const enResponse = await fetch('/data/weapons.json');
+  const enResponse = await fetch('/data/weapons.en.json');
   if (!enResponse.ok) throw new Error('Failed to load weapons');
   const enData = await enResponse.json();
 
