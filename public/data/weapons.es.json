@@ -1,252 +1,69 @@
 [
   {
-    "name": "Artzy tirano",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0010.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Parque científico de Originio",
-      "Meseta de poder"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de índice crít.",
-    "skillStats": "Fractura",
-    "description": "After the wielder scores a critical hit with a battle skill or combo skill, the wielder gains Cryo DMG% 22.4% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0010.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Llamado del bandido",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0011.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "La Base"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Detonación",
-    "description": "Cryo DMG% +16.0%.When the wielder applies Cryo Infliction via battle skills or ultimates, the wielder gains Cryo DMG% 32.% for 20s. When the wielder's battle skill or ultimate applies Arts Susceptibility, the target enemy suffers Arts DMG Taken 9.6% for 20s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0011.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Virtudes caballerescas",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0008.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Meseta de poder",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de PV",
-    "skillStats": "Medicante",
-    "description": "After the wielder's skill provides HP treatment, the entire team gains ATK% 14.4% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0008.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Clannibal",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0009.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
-    "skillStats": "Imposición",
-    "description": "After the wielder consumes an Arts Reaction, target enemy suffers Arts DMG Taken% 16.% (for the specified element) for 15 s. Each effect applies separately and does not stack with itself. Effect only triggers once every 25 s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0009.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Entrega Garantizada",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0011.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
-    "skillStats": "Persecución",
-    "description": "After the wielder's combo skill applies Lifted, the team gains Arts DMG% 19.2% for 15 s. For every enemy Lifted, the team gains bonus Arts DMG% 5.6% , up to a max of 3 stacks. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0011.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Unidad de detonación",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0010.webp",
-    "domains": [
-      "Veta de origen",
-      "La Base",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de intensidad de Artes",
-    "skillStats": "Detonación",
-    "description": "When the wielder applies an Arts Burst, target enemy suffers Arts DMG Taken% + 14.4% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0010.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Sueños de la playa estrellada",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0013.webp",
-    "domains": [
-      "Veta de origen",
-      "Meseta de poder"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de efic. del trat.",
-    "skillStats": "Imposición",
-    "description": "After the wielder consumes Corrosion, target enemy suffers Arts DMG Taken% 16.% for 25 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0013.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Alto prestigio",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0013.webp",
-    "domains": [
-      "Veta de origen",
-      "Meseta de poder",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de DAÑ físico",
-    "skillStats": "Brutalidad",
-    "description": "After the wielder consumes Vulnerability stack(s), the wielder gains ATK [ 8.% + 4.% ×Stacks Consumed] while other operators in the team gain half of this buff for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0013.png",
-    "weaponType": "Sword"
-  },
-  {
     "name": "Ejemplar",
     "rarity": "6",
     "image": "/weapons/wpn_claym_0004.webp",
     "domains": [
+      "La Base",
       "Parque científico de Originio",
-      "La Base"
+      "Paso de Yinglung"
     ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de Ataque",
     "skillStats": "Supresión",
-    "description": "When the wielder's battle skill or ultimate hits the enemy, the wielder gains Physical DMG% 16.% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "description": "DAÑ físico infligido +28.0%.Cuando la habilidad de batalla o la máxima del portador golpea al enemigo, el portador obtiene DAÑ físico infligido +28.0% durante 30 s.Acumulaciones Máx. para efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0004.png",
     "weaponType": "Claymore"
-  },
-  {
-    "name": "Destellos en la niebla",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0017.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de DAÑ eléc.",
-    "skillStats": "Eficacia",
-    "description": "When the wielder gainst Electric Amp, the wielder also gains Electric DMG Dealt 8.8% for 30s. Max Stacks for effects of the same name: 3. Duration of each stack is counted separately. This effect only triggers once every 0.1s",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0017.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Azote forjado",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0006.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Crepúsculo",
-    "description": "When the wielder casts an ultimate, the wielder gains Basic Attack DMG% 120.00% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0006.png",
-    "weaponType": "Sword"
   },
   {
     "name": "Antigua fineza",
     "rarity": "6",
     "image": "/weapons/wpn_claym_0006.webp",
     "domains": [
-      "Veta de origen"
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
     ],
     "attributeStats": "Refuerzo de voluntad",
     "secondaryStats": "Refuerzo de PV",
     "skillStats": "Eficacia",
-    "description": "After a Protected operator takes DMG, the wielder restores the said operator's HP by [ 134.4 + Will× 112.00% ]. Effect only triggers once every 15 s.",
+    "description": "Eficiencia del tratamiento +28.0%.Después de que un operador Protegido recibe DAÑ, el portador restaura los PV de dicho operador en [235 + Voluntad×1.96].El efecto solo se activa una vez cada 15 s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0006.png",
     "weaponType": "Claymore"
   },
   {
-    "name": "Memoria gloriosa",
+    "name": "Truenoberge",
     "rarity": "6",
-    "image": "/weapons/wpn_sword_0017.webp",
+    "image": "/weapons/wpn_claym_0007.webp",
     "domains": [
       "Ciudad de Wuling",
-      "Veta de origen",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de índice crít.",
-    "skillStats": "Crepúsculo",
-    "description": "ATK +7.0%. When the wielder's skill applies Vulnerability, during the next ultimate cast within 30s, the wielder gains DMG% 19.2% .",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0017.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Visión magna",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0021.webp",
-    "domains": [
-      "Parque científico de Originio",
+      "Empalizada de Qingbo",
       "Meseta de poder",
-      "Piedra Marcadora"
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
     ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Imposición",
-    "description": "When the wielder applies Originium Seal or Solidification, during the next battle skill or ultimate cast within 20 s, the wielder gains Physical DMG% 57.6% . Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0021.png",
-    "weaponType": "Sword"
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de PV",
+    "skillStats": "Medicante",
+    "description": "Escudo aplicado +67.2%.Después de que la habilidad de combo del portador proporciona tratamiento de PV, el operador controlado obtiene [19.6% × PV Máx. del portador] de escudo adicional durante 15 s.El efecto solo se activa una vez cada 15 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0007.png",
+    "weaponType": "Claymore"
   },
   {
-    "name": "Anhelo del hogar",
+    "name": "Príncipe desgarrado",
     "rarity": "6",
-    "image": "/weapons/wpn_pistol_0007.webp",
+    "image": "/weapons/wpn_claym_0008.webp",
     "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "La Base",
-      "Empalizada de Qingbo"
+      "Ciudad de Wuling",
+      "Meseta de poder",
+      "ZE norte de Wuling"
     ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ crio.",
-    "skillStats": "Supresión",
-    "description": "ATK +7.0%.For 20s after the wielder casts a combo skill, the wielder's next battle skill gains Cryo and Nature DMG Dealt 12.8% .",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0007.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "JET",
-    "rarity": "6",
-    "image": "/weapons/wpn_lance_0011.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base"
-    ],
-    "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Supresión",
-    "description": "When the wielder casts a battle skill, the wielder gains Arts DMG% 19.2% for 15 s. When the wielder casts a combo skill, Arts DMG% 19.2% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0011.png",
-    "weaponType": "Lance"
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de índice crít.",
+    "skillStats": "Triturador",
+    "description": "Cuando el portador realiza un Golpe final en el enemigo, el portador obtiene ATQ +28.0% durante 8 s.Si el portador también es el operador controlado, se duplica el aumento de ATQ obtenido y se potencia el Golpe final para que inflija Tambaleo +33.6% al enemigo.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0008.png",
+    "weaponType": "Claymore"
   },
   {
     "name": "Khravengger",
@@ -254,93 +71,89 @@
     "image": "/weapons/wpn_claym_0013.webp",
     "domains": [
       "Ciudad de Wuling",
-      "La Base"
+      "La Base",
+      "Paso de Yinglung",
+      "Valle Ocultaespadas"
     ],
     "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de Ataque",
     "skillStats": "Detonación",
-    "description": "When the wielder's battle skill applies Cryo Infliction, the wielder gains Cryo DMG% 16.% for 15 s. When the wielder deals combo skill DMG to an enemy with Cryo Infliction, the wielder gains Cryo DMG% 32.% for 15 s. The two effects apply separately and do not stack with themselves.",
+    "description": "DAÑ de habilidad infligido +56.0% (por cada habilidad).Cuando la habilidad de batalla del portador aplique Imposición criogénica, el portador obtiene DAÑ criogénico infligido +28.0% durante 15 s. Cuando el portador inflige DAÑ de la habilidad de combo a un enemigo con Imposición criogénica, el portador obtiene DAÑ criogénico infligido +56.0% durante 15 s.Ambos efectos se aplican por separado y no se acumulan entre sí.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0013.png",
     "weaponType": "Claymore"
   },
   {
-    "name": "Barca solitaria",
+    "name": "Dolor fantasma",
     "rarity": "6",
-    "image": "/weapons/wpn_funnel_0015.webp",
+    "image": "/weapons/wpn_claym_0016.webp",
     "domains": [
+      "Empalizada de Qingbo",
+      "La Base",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "ZE norte de Wuling",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
+    "skillStats": "Supresión",
+    "description": "DAÑ físico infligido +19.6%.Cuando el portador lanza habilidades de batalla o habilidades de combo, obtiene DAÑ físico infligido +15.4% durante 20 s.Acumulaciones Máx. por efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0016.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Amaranthine Tassel",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0017.webp",
+    "domains": [
+      "La Base",
       "Parque científico de Originio",
-      "La Base"
+      "Paso de Yinglung",
+      "Valle Ocultaespadas"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de Ataque",
+    "skillStats": "Combativo",
+    "description": "DAÑ físico infligido +44.8%.Cuando el portador aplica Susceptibilidad física, obtiene Intensidad de artes +84 durante 20 s. Cuando el portador aplica Triturar, el portador obtiene DAÑ físico infligido +[25.2% + (8.4% × número Máx. de acumulaciones de Vulnerabilidad consumidas de un enemigo)] durante 30 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0017.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Opus: figura grabada",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0006.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "ZE norte de Wuling",
+      "Área de pruebas"
     ],
     "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de DAÑ por naturaleza",
     "skillStats": "Supresión",
-    "description": "When the wielder's battle skill consumes Arts Reactions, the wielder gains Battle Skill Eletric DMG Dealt 32.% for 20s. This effect can reach 2 stacks. Duration of each stack counted separately. This effect only triggers once every 0.1s. After the wielder casts an ultimate the wielder gains Battle Skill Eletric DMG Dealt 64.% for 25s. This effect cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0015.png",
+    "description": "ATQ +19.6%.Cuando la habilidad de batalla del portador aplica Imposición de naturaleza, los demás operadores del equipo obtienen DAÑ por artes infligido +14.0% durante 15s. Por cada enemigo que sufra la Imposición de naturaleza aplicada por dicha habilidad de batalla, los demás operadores del equipo obtienen DAÑ por artes infligido adicional +5.6%, hasta un Máx. de +16.8%.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0006.png",
     "weaponType": "Funnel"
   },
   {
-    "name": "Lupina escarlata",
+    "name": "Unidad de detonación",
     "rarity": "6",
-    "image": "/weapons/wpn_sword_0022.webp",
+    "image": "/weapons/wpn_funnel_0008.webp",
     "domains": [
-      "Ciudad de Wuling",
-      "Parque científico de Originio",
-      "Meseta de poder"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de índice crít.",
-    "skillStats": "Fractura",
-    "description": "After the wielder's skill deals Critical DMG, the wielder gains 1 stack of Wolven Blood that grants Physical and Heat DMG% + 1.6% . Wolven Blood can reach 16 stacks. After reaching 16 stacks, the wielder gains another Physical and Heat DMG% + 38.4% for 20s. After the duration ends, all Wolven Blood stacks are removed.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0022.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Portador de montañas",
-    "rarity": "6",
-    "image": "/weapons/wpn_lance_0012.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ físico",
-    "skillStats": "Eficacia",
-    "description": "Against Vulnerable enemies, the wielder gains DMG% 32.% . When the wielder's battle skill applies Vulnerability, the wielder gains All Attributes 12.8% for 15 s. When the wielder's battle skill applies Physical Susceptibility, the wielder gains All Attributes 12.8% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0012.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Navegante",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0005.webp",
-    "domains": [
-      "Parque científico de Originio",
+      "Empalizada de Qingbo",
+      "La Base",
+      "Paso de Yinglung",
+      "Valle Ocultaespadas",
       "Veta de origen"
     ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de DAÑ crio.",
-    "skillStats": "Imposición",
-    "description": "When Solidification or Corrosion is applied to enemies, the wielder gains Cryo DMG% and Nature DMG% 5.6% and Critical Rate% 3.2% for 15 s. If this effect is triggered by the wielder, double the increase gained. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0005.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Sin descanso",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0016.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Meseta de poder",
-      "La Base",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Flujo",
-    "description": "After the wielder's skill recovers SP, the wielder gains Physical DMG% 8.% while other operators in the team gain Physical DMG% 4.% for 30s. Max stacks for effects of the same name: Max 5. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0016.png",
-    "weaponType": "Sword"
+    "attributeStats": "Refuerzo de atributo principal",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
+    "skillStats": "Detonación",
+    "description": "Atributo secundario +28.0%.Cuando el portador aplica una Ráfaga de artes, el enemigo objetivo sufre DAÑ por artes recibido +25.2% durante 15 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0008.png",
+    "weaponType": "Funnel"
   },
   {
     "name": "Olvido",
@@ -352,27 +165,363 @@
       "Piedra Marcadora"
     ],
     "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
+    "secondaryStats": "Refuerzo de artes",
     "skillStats": "Crepúsculo",
-    "description": "When the wielder casts an ultimate, the wielder gains Arts DMG% 38.4% for 15 s. When the wielder casts a combo skill, the wielder gains Arts DMG% 19.2% for 15 s. The two effects apply separately and do not stack with themselves.",
+    "description": "Índice crítico +14.0%.Cuando el portador lanza una Máxima, el portador obtiene DAÑ por artes infligido +67.2% durante 15 s. Cuando el portador lanza una habilidad de combo, el portador obtiene DAÑ por artes infligido +33.6% durante 15 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0009.png",
     "weaponType": "Funnel"
   },
   {
-    "name": "Opus: figura grabada",
+    "name": "Virtudes caballerescas",
     "rarity": "6",
-    "image": "/weapons/wpn_funnel_0006.webp",
+    "image": "/weapons/wpn_funnel_0010.webp",
     "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "La Base"
+      "Ciudad de Wuling",
+      "Empalizada de Qingbo",
+      "Meseta de poder",
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
     ],
     "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de DAÑ por natur.",
-    "skillStats": "Supresión",
-    "description": "When the wielder's battle skill applies Nature Infliction, other operators in the team gain Arts DMG% 8.% for 15 s. For every enemy suffering from Nature Infliction applied by the said battle skill, other operators in the team gain bonus Arts DMG% 3.2% , up to a max of 3 stacks. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0006.png",
+    "secondaryStats": "Refuerzo de PV",
+    "skillStats": "Medicante",
+    "description": "Eficiencia del tratamiento +28.0%.Después de que el portador otorgue tratamiento de PV, todo el equipo obtiene ATQ +25.2% durante 15 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0010.png",
     "weaponType": "Funnel"
+  },
+  {
+    "name": "Entrega Garantizada",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0011.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Persecución",
+    "description": "DAÑ por naturaleza infligido +44.8%.Después de que la habilidad de combo del portador aplique Levantado, el equipo obtiene DAÑ por Artes infligido +33.6% durante 15s. Por cada enemigo Levantado, el equipo obtiene DAÑ por Artes infligido adicional +9.8%, hasta un Máx. de +29.4%.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0011.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Sueños de la playa estrellada",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0013.webp",
+    "domains": [
+      "Meseta de poder",
+      "Veta de origen",
+      "ZE norte de Wuling",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de efic. del trat.",
+    "skillStats": "Imposición",
+    "description": "Atributo secundario +44.8%.Después de que el portador consume Corrosión, el enemigo objetivo sufre DAÑ por artes recibido +28.0% durante 25 s.Los efectos del mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0013.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Barca solitaria",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0015.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de Ataque",
+    "skillStats": "Supresión",
+    "description": "DAÑ eléctrico infligido +44.8%.Cuando la habilidad de batalla del portador consume Reacciones a Artes, el portador obtiene DAÑ eléctrico infligido de habilidad de batalla +56.0% durante 20 s.El efecto puede alcanzar una cantidad máxima de 2 acumulaciones y solo se puede activar una vez cada 0.1 s. La duración de cada acumulación se cuenta por separado.Después de que el portador lanza una máxima, obtiene DAÑ eléctrico infligido de habilidad de batalla +112.0% durante 25 s.Este efecto no se puede acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0015.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Tipo 42: Falange solemne",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0016.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Empalizada de Qingbo",
+      "La Base"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Detonación",
+    "description": "ATQ +44.8%.Intelecto del portador ≥ Voluntad: Cuando el portador aplica Imposición de artes con su propia habilidad, obtiene DAÑ por artes infligido +56.0% durante 20s; cuando aplica Susceptibilidad a artes con su propia habilidad, obtiene ATQ +56.0% durante 20 s;Voluntad del portador ＞ Intelecto: Cuando el portador aplica Ráfaga de artes con su propia habilidad, el enemigo objetivo sufre DAÑ por artes recibido +16.8% durante 25 s; cuando aplica Susceptibilidad a artes con su propia habilidad, el enemigo objetivo sufre DAÑ por artes recibido +16.8% durante 25 s.Los efectos con el mismo nombre no se pueden acumular. Los atributos antes mencionados solo incluyen los efectos del nivel, los talentos y los potenciales del portador, así como las bonificaciones de atributos proporcionadas por el equipamiento y las armas equipados.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0016.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Destellos en la niebla",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0017.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de DAÑ eléc.",
+    "skillStats": "Eficacia",
+    "description": "ATQ +19.6%.Cuando el portador obtiene Amp eléctrica, el portador también obtiene DAÑ eléctrico infligido +15.4% durante 30 s. Acumulaciones Máx. por efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0017.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Punto de unión",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0018.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Eficacia",
+    "description": "DAÑ por naturaleza infligido +19.6%.Cuando el portador aplica Susceptibilidad a Artes o Imposición de artes con una habilidad de combo, el portador obtiene ATQ +16.8%, mientras que los otros operadores en el equipo obtienen ATQ +4.2%. Duración: 20 s.Acumulaciones Máx. por efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0018.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Baliza del deber",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0007.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Eficacia",
+    "description": "DAÑ por calor infligido +19.6%.Cuando la habilidad del portador aplica Imposición de calor, el portador obtiene DAÑ físico y por calor infligido +22.4% durante 20 s. Cuando la habilidad del portador aplica Susceptibilidad al calor, todo el equipo obtiene DAÑ físico y por calor infligido +11.2% durante 30 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0007.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Valiente",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0010.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Valle Ocultaespadas",
+      "Veta de origen"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Combativo",
+    "description": "ATQ +28.0%. Después de que el portador inflige Estados físicos, el portador también inflige otro golpe de DAÑ físico igual a 336.0% del ATQ del portador.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0010.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "JET",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0011.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung"
+    ],
+    "attributeStats": "Refuerzo de atributo principal",
+    "secondaryStats": "Refuerzo de Ataque",
+    "skillStats": "Supresión",
+    "description": "DAÑ por artes infligido +33.6%.Cuando el portador lanza una habilidad de batalla, el portador obtiene DAÑ por artes infligido +33.6% durante 15 s. Cuando el portador lanza una habilidad de combo, DAÑ por artes infligido +33.6% durante 15 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0011.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Portador de montañas",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0012.webp",
+    "domains": [
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Eficacia",
+    "description": "Contra enemigos en estado Vulnerable, el portador obtiene DAÑ infligido +56.0%.Cuando la habilidad de batalla del portador aplique Vulnerabilidad, el portador obtiene todos los atributos +22.4% durante 15s. Después de que la habilidad de batalla del portador aplique Susceptibilidad física, el portador obtiene todos los atributos +22.4% durante 15 s.Ambos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0012.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Bendición del carmín lustroso",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0015.webp",
+    "domains": [
+      "La Base",
+      "Meseta de poder",
+      "Piedra Marcadora",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ por calor",
+    "skillStats": "Flujo",
+    "description": "Eficiencia de ganancia máxima +50.4%.Cuando la habilidad del portador recupera PH, todo el equipo obtiene ATQ +16.8% durante 20 s. Cuando la habilidad del portador aplica Imposición de calor, todo el equipo obtiene DAÑ por calor infligido +16.8% durante 20 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0015.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Edad de oro",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0016.webp",
+    "domains": [],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de efic. del trat.",
+    "skillStats": "Persecución",
+    "description": "DAÑ eléctrico infligido +16.8%.Cuando la habilidad de combo del portador inflige DAÑ, el portador obtiene Eficiencia del tratamiento +11.2% durante 15 s. Cuando la habilidad de combo del portador otorga Tratamiento de PV a otros operadores en el equipo, todo el equipo obtiene DAÑ por artes infligido +14.0% durante 20s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0016.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Navegante",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0005.webp",
+    "domains": [
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de DAÑ crio.",
+    "skillStats": "Imposición",
+    "description": "Índice crítico +9.8%.Cuando se aplique Solidificación o Corrosión a enemigos, el portador obtiene DAÑ criogénico infligido y DAÑ por naturaleza infligido +9.8%, e Índice crítico +5.6% durante 15 s. Si este efecto lo activa el portador, se duplica el aumento obtenido.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0005.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Anhelo del hogar",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0007.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ crio.",
+    "skillStats": "Supresión",
+    "description": "ATQ +19.6%.Durante 20 s después de que el portador lanza una habilidad de combo, la siguiente habilidad de batalla del portador obtiene DAÑ criogénico y DAÑ por naturaleza infligido +22.4%.Acumulaciones Max. para efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0007.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Cuña",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0008.webp",
+    "domains": [
+      "Meseta de poder",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de atributo principal",
+    "secondaryStats": "Refuerzo de índice crít.",
+    "skillStats": "Imposición",
+    "description": "DAÑ por artes infligido +33.6%.Cuando el portador lanza una habilidad de batalla, el portador obtiene DAÑ de artes infligido +22.4% durante 15 s. Cuando el portador aplica una Reacción a artes, el portador obtiene DAÑ por artes infligido +44.8% durante 15 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0008.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Clannibal",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0009.webp",
+    "domains": [
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de atributo principal",
+    "secondaryStats": "Refuerzo de artes",
+    "skillStats": "Imposición",
+    "description": "DAÑ por Artes +33.6%.Después de que el portador consume una Reacción a artes, el enemigo objetivo sufre DAÑ por Artes recibido +28.0% (del elemento especificado) durante 15 s.Cada efecto se aplica por separado y no se acumula consigo mismo. El efecto solo se activa una vez cada 25s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0009.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Artzy tirano",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0010.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Meseta de poder",
+      "Parque científico de Originio"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de índice crít.",
+    "skillStats": "Fractura",
+    "description": "DAÑ criogénico infligido +44.8%.Después de que el portador consigue un golpe crítico con una habilidad de batalla o una habilidad de combo, el portador obtiene DAÑ criogénico infligido +39.2% durante 30 s.Acumulaciones Máx. para efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0010.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Llamado del bandido",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0011.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Paso de Yinglung",
+      "Valle Ocultaespadas"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de Ataque",
+    "skillStats": "Detonar",
+    "description": "DAÑ criogénico infligido +44.8%.Cuando el portador aplica Imposición criogénica mediante habilidades de batalla o máximas, el portador obtiene DAÑ criogénico infligido +56.0% durante 20 s. Cuando la habilidad de batalla o la máxima del portador aplica Susceptibilidad a Artes, el objetivo enemigo sufre DAÑ por artes recibido +16.8% durante 20 s.Los dos efectos se aplican por separado y no se acumulan entre sí.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0011.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Azote forjado",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0006.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de Ataque",
+    "skillStats": "Crepúsculo",
+    "description": "DAÑ por calor infligido +44.8%.Cuando el portador lanza una máxima, el portador obtiene DAÑ de ataque básico infligido +210.0% durante 20.0 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0006.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Antorcha del umbral",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0010.webp",
+    "domains": [
+      "Meseta de poder",
+      "Piedra Marcadora",
+      "Veta de origen",
+      "ZE norte de Wuling",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de DAÑ por calor",
+    "skillStats": "Imposición",
+    "description": "ATQ +19.6%.Cada vez que se aplique Combustión o Corrosión a un enemigo, el portador obtiene DAÑ por calor y DAÑ por naturaleza infligidos +22.4% durante 20 s.Acumulación Máx. de los efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0010.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Ascenso Rápido",
@@ -380,30 +529,15 @@
     "image": "/weapons/wpn_sword_0011.webp",
     "domains": [
       "Ciudad de Wuling",
-      "Veta de origen",
-      "Piedra Marcadora"
+      "Piedra Marcadora",
+      "Veta de origen"
     ],
     "attributeStats": "Refuerzo de atributo principal",
     "secondaryStats": "Refuerzo de índice crít.",
     "skillStats": "Crepúsculo",
-    "description": "Battle skills and ultimates gain Physical DMG% 24.% Against Staggered enemies, battle skills and ultimates also gain DMG% 56.%",
+    "description": "Las habilidades de batalla y las máximas otorgan DAÑ físico infligido +42.0%.Contra enemigos Tambaleados, las habilidades de batalla y las máximas también otorgan DAÑ infligido +98.0%.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0011.png",
     "weaponType": "Sword"
-  },
-  {
-    "name": "Príncipe desgarrado",
-    "rarity": "6",
-    "image": "/weapons/wpn_claym_0008.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Meseta de poder"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de índice crít.",
-    "skillStats": "Triturador",
-    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK% 16.% for 8 s. If the wielder is also the controlled operator, double the ATK increase gained and buff the Final Strike so that it deals bonus Stagger% 19.2% to the enemy. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0008.png",
-    "weaponType": "Claymore"
   },
   {
     "name": "Cortador de termita",
@@ -411,349 +545,136 @@
     "image": "/weapons/wpn_sword_0012.webp",
     "domains": [
       "Ciudad de Wuling",
-      "Meseta de poder",
       "La Base",
+      "Meseta de poder",
+      "Paso de Yinglung",
       "Piedra Marcadora"
     ],
     "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de Ataque",
     "skillStats": "Flujo",
-    "description": "After the wielder's skill recovers SP or grants a Link state, the entire team gains ATK% 8.% for 20 s. Max stacks for effects of the same name: Max Stack 2. Duration of each stack is counted separately.",
+    "description": "ATQ +28.0%.Después de que la habilidad del portador recupere PH u otorgue un estado de Enlace, el equipo completo obtiene ATQ +14.0% durante 20 s.Acumulaciones Máx. Para efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0012.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Truenoberge",
+    "name": "Alto prestigio",
     "rarity": "6",
-    "image": "/weapons/wpn_claym_0007.webp",
+    "image": "/weapons/wpn_sword_0013.webp",
     "domains": [
-      "Ciudad de Wuling",
       "Meseta de poder",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de PV",
-    "skillStats": "Medicante",
-    "description": "After the wielder's combo skill provides HP treatment, the controlled operator gains an additional [ 11.2% ×Wielder's Max HP] Shield for 15 s. Effect only triggers once every 15s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0007.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Antorcha del umbral",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0010.webp",
-    "domains": [
-      "Veta de origen",
-      "Meseta de poder",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de DAÑ por calor",
-    "skillStats": "Imposición",
-    "description": "Whenever Combustion or Corrosion is applied to an enemy, the wielder gains Heat and Nature DMG% 12.8% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0010.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Valiente",
-    "rarity": "6",
-    "image": "/weapons/wpn_lance_0010.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ físico",
-    "skillStats": "Combativo",
-    "description": "After the wielder applies Physical Statuses, the wielder also deals another hit of Physical DMG equal to 192.00% of the wielder's ATK.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0010.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Cuña",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0008.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "Meseta de poder",
-      "Piedra Marcadora"
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Veta de origen"
     ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de índice crít.",
-    "skillStats": "Imposición",
-    "description": "When the wielder casts a battle skill, the wielder gains Arts DMG% 12.8% for 15 s. When the wielder's battle skill applies an Arts Reaction, the wielder gains Arts DMG% 25.6% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0008.png",
-    "weaponType": "Pistol"
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Brutalidad",
+    "description": "ATQ +28.0%.Después de que el portador consuma acumulaciones de Vulnerabilidad, el portador obtiene ATQ +[14.0%+7.0%×Acumulaciones consumidas] mientras que los demás operadores del equipo obtienen la mitad de este incremento durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0013.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Nova de la noche blanca",
     "rarity": "6",
     "image": "/weapons/wpn_sword_0014.webp",
     "domains": [
+      "Meseta de poder",
+      "Paso de Yinglung",
       "Veta de origen",
-      "Meseta de poder"
+      "ZE norte de Wuling",
+      "Área de pruebas"
     ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Refuerzo de intensidad de Artes",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
     "skillStats": "Imposición",
-    "description": "After the wielder applies Combustion or Electrification, the wielder gains Arts DMG% 19.2% and Arts Intensity 40 for 15 s. Effects of the same name cannot stack.",
+    "description": "DAÑ por artes infligido +33.6%.Después de que el portador aplique Combustión o Electrificación, el portador obtiene DAÑ por artes infligido +33.6% e Intensidad de artes +70 durante 15 s.Los efectos con el mismo nombre no se acumulan.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0014.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Canal antiguo",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0014.webp",
-    "domains": [
-      "Veta de origen",
-      "Meseta de poder"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de intensidad de Artes",
-    "skillStats": "Brutalidad",
-    "description": "After the wielder consumes Vulnerability stack(s), the wielder gains Physical DMG% +[ 8.% ×Stacks Consumed] for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0014.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Aspirante",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0015.webp",
-    "domains": [
-      "Veta de origen",
-      "Empalizada de Qingbo",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ físico",
-    "skillStats": "Crepúsculo",
-    "description": "After the wielder applies Lifted, during the next ultimate cast within 30 s, the wielder gains Physical DMG% 19.2% . Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.5s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0015.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Justicia quimérica",
-    "rarity": "5",
-    "image": "/weapons/wpn_lance_0004.webp",
+    "name": "Sin descanso",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0016.webp",
     "domains": [
       "Ciudad de Wuling",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
-    "skillStats": "Brutalidad",
-    "description": "When the wielder applies Vulnerability to an enemy with no Vulnerability stacks, the wielder gains ATK% 24.% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0004.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Tracción cohesiva",
-    "rarity": "5",
-    "image": "/weapons/wpn_lance_0006.webp",
-    "domains": [
-      "Parque científico de Originio",
       "La Base",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de DAÑ eléc.",
-    "skillStats": "Supresión",
-    "description": "When the wielder casts a combo skill, during the next battle skill cast within 30 s, the wielder gains Electric DMG% 16.% . Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0006.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Cazaletas 3.0",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0020.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "La Base",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de DAÑ crio.",
-    "skillStats": "Supresión",
-    "description": "ATK% 12.8% When the wielder's battle skill applies Solidification, target enemy suffers Cryo DMG Taken for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0020.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Llamada final",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0012.webp",
-    "domains": [
-      "Ciudad de Wuling",
       "Meseta de poder",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de PV",
-    "skillStats": "Medicante",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0012.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Constructor de fuertes",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0007.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Empalizada de Qingbo",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
-    "skillStats": "Inspirador",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0007.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Libertad para proselitizar",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0012.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Meseta de poder",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de efic. del trat.",
-    "skillStats": "Medicante",
-    "description": "When the wielder's battle skill provides HP treatment, the controlled operator is restored for another 96 + Will × 80.% HP. Effect only triggers once every 15 s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0012.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Monaihe",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0007.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Empalizada de Qingbo",
+      "Paso de Yinglung",
       "Piedra Marcadora"
     ],
     "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
-    "skillStats": "Inspirador",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0007.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "OBJ Identificador de Artes",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0014.webp",
-    "domains": [
-      "Meseta de poder",
-      "La Base"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de intensidad de Artes",
-    "skillStats": "Persecución",
-    "description": "When the wielder's combo skill applies Arts Burst or Physical Status, the entire team gains Heat DMG% and Electric DMG% + 12.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0014.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "'OBJ Filo de la ligereza",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0019.webp",
-    "domains": [
-      "Ciudad de Wuling",
-      "Meseta de poder",
-      "La Base",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de Ataque",
     "skillStats": "Flujo",
-    "description": "After the wielder's skill recovers SP, the entire team gains Heat DMG% and Electric DMG% 4.8% for 20 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0019.png",
+    "description": "DAÑ físico infligido +44.8%.Después de que la habilidad del portador recupere PH, el portador obtiene DAÑ físico infligido +14.0% mientras que los demás operadores del equipo obtienen DAÑ físico infligido +7.0% durante 30 s.Acumulaciones Máx. de efectos con el mismo nombre: 5. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0016.png",
     "weaponType": "Sword"
   },
   {
-    "name": "OBJ Carga Pesada",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0015.webp",
+    "name": "Memoria gloriosa",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0017.webp",
     "domains": [
+      "Ciudad de Wuling",
+      "Piedra Marcadora",
       "Veta de origen"
     ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de PV",
-    "skillStats": "Eficacia",
-    "description": "When the wielder applies Knocked Down or Weakened, the wielder gains DEF% 28.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0015.png",
-    "weaponType": "Claymore"
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de índice crít.",
+    "skillStats": "Crepúsculo",
+    "description": "ATQ +19.6%.Cuando la habilidad del portador aplica Vulnerabilidad, durante el siguiente lanzamiento de la máxima dentro de 30 s, el portador obtiene DAÑ infligido +33.6%.Acumulaciones Máx. por efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.5 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0017.png",
+    "weaponType": "Sword"
   },
   {
-    "name": "OBJ Cuerno afilado",
-    "rarity": "5",
-    "image": "/weapons/wpn_lance_0013.webp",
+    "name": "Visión magna",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0021.webp",
     "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
       "Meseta de poder",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
       "Piedra Marcadora"
     ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de DAÑ físico",
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de Ataque",
     "skillStats": "Imposición",
-    "description": "To enemies with Cryo Infliction or Solidification, the wielder gains DMG% 12.8% . After consuming Solidification, ATK 19.2% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0013.png",
-    "weaponType": "Lance"
+    "description": "Intensidad de Artes +84.Cuando el portador aplica Cristales de Originio o Solidificación, durante el siguiente lanzamiento de habilidad de batalla o máxima en 20 s, el portador obtiene DAÑ físico infligido +100.8%.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0021.png",
+    "weaponType": "Sword"
   },
   {
-    "name": "OBJ Velocitante",
-    "rarity": "5",
-    "image": "/weapons/wpn_pistol_0012.webp",
+    "name": "Lupina escarlata",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0022.webp",
     "domains": [
       "Ciudad de Wuling",
-      "La Base",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
-    "skillStats": "Detonación",
-    "description": "After the wielder consumes an Arts Infliction, the wielder gains Nature DMG% [ 8.% ×Stacks Consumed] for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0012.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Opus: El Viviente",
-    "rarity": "5",
-    "image": "/weapons/wpn_pistol_0006.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
-    "skillStats": "Imposición",
-    "description": "When the wielder applies an Arts Reaction, the wielder gains ATK% 12.% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0006.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Despedida racional",
-    "rarity": "5",
-    "image": "/weapons/wpn_pistol_0004.webp",
-    "domains": [
       "Meseta de poder",
-      "La Base",
-      "Piedra Marcadora"
+      "Parque científico de Originio"
     ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de DAÑ por calor",
-    "skillStats": "Persecución",
-    "description": "When the wielder's combo skill applies Arts Burst or Combusted, the wielder gains ATK% 25.6% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0004.png",
-    "weaponType": "Pistol"
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de índice crít.",
+    "skillStats": "Fractura",
+    "description": "ATQ +44.8%.Después de que la habilidad del portador inflige DAÑ crítico, el portador obtiene 1 acumulación de Sangre lupina, que otorga DAÑ físico y DAÑ por calor infligido +2.8%. Sangre lupina puede alcanzar 16 acumulaciones. Tras alcanzar 16 acumulaciones, el portador obtiene otro DAÑ físico y DAÑ por calor infligido +67.2% durante 20 s. Cuando termina la duración, se eliminan todas las acumulaciones de Sangre lupina.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0022.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Vista lejana",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0026.webp",
+    "domains": [
+      "La Base",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de atributo principal",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
+    "skillStats": "Asalto",
+    "description": "Al entrar en batalla, todo el equipo obtiene la mejora Lucha por un sueño, que otorga DAÑ infligido +14.0%, Intensidad de artes +28 y DEF +8.4% durante 20s. Cuando termina Lucha por un sueño, el portador restaura 122 PV a todo el equipo.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0026.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Buscadora del Lung oscuro",
@@ -761,15 +682,83 @@
     "image": "/weapons/wpn_claym_0011.webp",
     "domains": [
       "Ciudad de Wuling",
-      "La Base",
-      "Empalizada de Qingbo"
+      "Empalizada de Qingbo",
+      "La Base"
     ],
     "attributeStats": "Refuerzo de fuerza",
     "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
     "skillStats": "Detonación",
-    "description": "When the wielder applies an Arts Burst, the wielder gains ATK% 9.6% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "description": "Atributo principal +14.0%.Cuando el portador aplique una Ráfaga de artes, el portador obtiene ATQ +16.8% durante 30 s.Límite máximo de acumulaciones para efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0011.png",
     "weaponType": "Claymore"
+  },
+  {
+    "name": "Llamada final",
+    "rarity": "5",
+    "image": "/weapons/wpn_claym_0012.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Empalizada de Qingbo",
+      "Meseta de poder",
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de PV",
+    "skillStats": "Medicante",
+    "description": "Atributo secundario +14.0%.Efecto de Trat. de PV de habilidad de combo +56.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0012.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Canal antiguo",
+    "rarity": "5",
+    "image": "/weapons/wpn_claym_0014.webp",
+    "domains": [
+      "Meseta de poder",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
+    "skillStats": "Brutalidad",
+    "description": "Intensidad de artes +28.Después de que el portador consume acumulaciones de Vulnerabilidad, el portador obtiene DAÑ físico infligido +[14.0%×acumulaciones consumidas] durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0014.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "OBJ Carga Pesada",
+    "rarity": "5",
+    "image": "/weapons/wpn_claym_0015.webp",
+    "domains": [
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de PV",
+    "skillStats": "Eficacia",
+    "description": "Atributo secundario +14.0%.Cuando el portador aplique Derribado o Debilitado, el portador obtiene DEF +50.4% durante 15 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0015.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Errante salvaje",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0004.webp",
+    "domains": [
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de DAÑ eléc.",
+    "skillStats": "Imposición",
+    "description": "Intensidad de artes +28.Cuando el portador aplica Electrificación, el equipo obtiene DAÑ físico infligido y DAÑ eléctrico infligido +22.4% durante 15 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0004.png",
+    "weaponType": "Funnel"
   },
   {
     "name": "Estrofa de memoriales",
@@ -780,26 +769,216 @@
       "Piedra Marcadora"
     ],
     "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de ATQ",
     "skillStats": "Crepúsculo",
-    "description": "When the wielder casts an ultimate, operators whose elements differ from the wielder gain ATK% 12.8% for 20 s. Effects of the same name cannot stack.",
+    "description": "PV Máx. +28.0%.Cuando el portador lance una máxima, los operadores con elementos diferentes al del portador obtienen ATQ +22.4% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0005.png",
     "weaponType": "Funnel"
+  },
+  {
+    "name": "Monaihe",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0007.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Parque científico de Originio",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Inspirador",
+    "description": "Atributo principal +14.0%.Intensidad de artes +70.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0007.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Libertad para proselitizar",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0012.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Empalizada de Qingbo",
+      "Meseta de poder",
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de efic. del trat.",
+    "skillStats": "Medicante",
+    "description": "Atributo principal +14.0%.Cuando la habilidad de batalla del portador otorgue tratamiento de PV, se restaura al operador controlado otros [168 + Voluntad×1.4] PV.El efecto solo se activa una vez cada 15 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0012.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "OBJ Identificador de Artes",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0014.webp",
+    "domains": [
+      "La Base",
+      "Meseta de poder",
+      "Paso de Yinglung",
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de Intensidad de artes",
+    "skillStats": "Persecución",
+    "description": "PV Máx. +28.0%.Cuando la habilidad de combo del portador aplica Ráfaga de artes o un Estado físico, todo el equipo obtiene DAÑ por calor infligido y DAÑ eléctrico infligido +22.4% durante 15 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0014.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Justicia quimérica",
+    "rarity": "5",
+    "image": "/weapons/wpn_lance_0004.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Piedra Marcadora",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Brutalidad",
+    "description": "Índice crítico +8.4%.Cuando el portador aplique Vulnerabilidad a un enemigo sin acumulaciones de Vulnerabilidad, el portador obtiene ATQ +42.0% durante 15 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0004.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Tracción cohesiva",
+    "rarity": "5",
+    "image": "/weapons/wpn_lance_0006.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Área de pruebas"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de DAÑ eléc.",
+    "skillStats": "Supresión",
+    "description": "DAÑ de habilidad de combo infligido +28.0%.Cuando el portador lanza una habilidad de combo, durante el siguiente lanzamiento de habilidad de batalla en 30 s, el portador obtiene DAÑ eléctrico infligido +28.0%.Acumulaciones Máx. de los efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0006.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "OBJ Cuerno afilado",
+    "rarity": "5",
+    "image": "/weapons/wpn_lance_0013.webp",
+    "domains": [
+      "Meseta de poder",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Imposición",
+    "description": "Contra enemigos con Imposición criogénica o Solidificación, el portador obtiene DAÑ infligido +22.4%. Después de consumir Solidificación, ATQ +33.6% durante 15 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0013.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Despedida racional",
+    "rarity": "5",
+    "image": "/weapons/wpn_pistol_0004.webp",
+    "domains": [
+      "La Base",
+      "Meseta de poder",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de DAÑ por calor",
+    "skillStats": "Persecución",
+    "description": "DAÑ de habilidad de batalla +28.0%.Cuando la habilidad de combo del portador aplica una Ráfaga de artes o Quemado, el portador obtiene ATQ +44.8% durante 15 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0004.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Opus: El Viviente",
+    "rarity": "5",
+    "image": "/weapons/wpn_pistol_0006.webp",
+    "domains": [
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de artes",
+    "skillStats": "Imposición",
+    "description": "Índice crítico +8.4%.Cuando el portador aplique una Reacción a artes, el portador obtiene ATQ +21.0% durante 20 s.Límite Máx. de acumulaciones para efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0006.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "OBJ Velocitante",
+    "rarity": "5",
+    "image": "/weapons/wpn_pistol_0012.webp",
+    "domains": [
+      "Ciudad de Wuling",
+      "Empalizada de Qingbo",
+      "La Base"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Detonación",
+    "description": "ATQ +14.0%.Después de que el portador consume una Imposición de artes, el portador obtiene DAÑ por naturaleza infligido +[14.0%×acumulaciones consumidas] durante 20 s. Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0012.png",
+    "weaponType": "Pistol"
   },
   {
     "name": "Acero hendiente",
     "rarity": "5",
     "image": "/weapons/wpn_sword_0005.webp",
     "domains": [
+      "Empalizada de Qingbo",
       "Parque científico de Originio",
-      "Veta de origen",
-      "Empalizada de Qingbo"
+      "Paso de Yinglung",
+      "Valle Ocultaespadas",
+      "Veta de origen"
     ],
     "attributeStats": "Refuerzo de agilidad",
     "secondaryStats": "Refuerzo de DAÑ físico",
     "skillStats": "Combativo",
-    "description": "When the wielder deals a Physical Status, the wielder gains ATK% 12.% for 20 s. Max stacks for effects of the same name: 2 max stacks. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "description": "ATQ +14.0%.Cuando el portador aplique un Estado físico, el portador obtiene ATQ +21.0% durante 20 s.Límite Máx. de acumulaciones para efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.1 s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0005.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Constructor de fuertes",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0007.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Parque científico de Originio",
+      "Piedra Marcadora"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de Eficiencia de ganancia máxima",
+    "skillStats": "Inspirador",
+    "description": "ATQ +14.0%.Intensidad de artes +70.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0007.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Aspirante",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0015.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Piedra Marcadora",
+      "Veta de origen"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Crepúsculo",
+    "description": "DAÑ de máxima infligido +44.8%.Después de que el portador aplica Levantar, durante el siguiente lanzamiento de máxima en un plazo de 30 s, el portador obtiene DAÑ físico infligido +33.6%.Acumulaciones Máx. por efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado. El efecto solo se activa una vez cada 0.5 s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0015.png",
     "weaponType": "Sword"
   },
   {
@@ -807,156 +986,70 @@
     "rarity": "5",
     "image": "/weapons/wpn_sword_0018.webp",
     "domains": [
-      "Parque científico de Originio",
       "Meseta de poder",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
       "Piedra Marcadora"
     ],
     "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de ATQ",
     "skillStats": "Imposición",
-    "description": "After the wielder consumes an Arts Reaction, ATK + 12.% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
+    "description": "Atributo secundario +14.0%.Después de que el portador consuma una Reacción a artes, ATQ +21.0% durante 20 s.Límite máximo de acumulaciones para efectos con el mismo nombre: 2. La duración de cada acumulación se cuenta por separado.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0018.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Errante salvaje",
+    "name": "'OBJ Filo de la ligereza",
     "rarity": "5",
-    "image": "/weapons/wpn_funnel_0004.webp",
+    "image": "/weapons/wpn_sword_0019.webp",
     "domains": [
-      "Parque científico de Originio",
+      "Ciudad de Wuling",
+      "La Base",
+      "Meseta de poder",
+      "Paso de Yinglung",
       "Piedra Marcadora"
     ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de DAÑ eléc.",
-    "skillStats": "Imposición",
-    "description": "When the wielder applies Electrification, the team gains Physical DMG% and Electric DMG% + 12.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0004.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Asesino de Aggelos",
-    "rarity": "4",
-    "image": "/weapons/wpn_lance_0008.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base",
-      "Empalizada de Qingbo"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
-    "skillStats": "Supresión",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0008.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Medida contingente",
-    "rarity": "4",
-    "image": "/weapons/wpn_sword_0008.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Veta de origen",
-      "Empalizada de Qingbo"
-    ],
     "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de DAÑ físico",
-    "skillStats": "Supresión",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0008.png",
+    "secondaryStats": "Refuerzo de ATQ",
+    "skillStats": "Flujo",
+    "description": "Atributo secundario +14.0%.Después de que la habilidad del portador recupera PH, todo el equipo obtiene DAÑ por calor infligido y DAÑ eléctrico infligido +8.4% durante 20 s.Acumulaciones Máx. de efectos con el mismo nombre: 3. La duración de cada acumulación se cuenta por separado.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0019.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Roc fluorescente",
-    "rarity": "4",
-    "image": "/weapons/wpn_funnel_0003.webp",
+    "name": "Cazaletas 3.0",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0020.webp",
     "domains": [
-      "Parque científico de Originio",
-      "La Base"
-    ],
-    "attributeStats": "Refuerzo de voluntad",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Supresión",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0003.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Guardia aullador",
-    "rarity": "4",
-    "image": "/weapons/wpn_pistol_0002.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base"
-    ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Supresión",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0002.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Auto hipernova",
-    "rarity": "4",
-    "image": "/weapons/wpn_funnel_0001.webp",
-    "domains": [
-      "Parque científico de Originio",
       "Empalizada de Qingbo",
-      "Piedra Marcadora"
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "Área de pruebas"
     ],
-    "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
-    "skillStats": "Inspirador",
-    "description": "When the wielder's HP is above 80% , ATK 24.%",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0001.png",
-    "weaponType": "Funnel"
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de DAÑ crio.",
+    "skillStats": "Supresión",
+    "description": "ATQ +14.0%.Cuando la habilidad de batalla del portador aplica Solidificación, el enemigo objetivo sufre DAÑ criogénico recibido +19.6% durante 15 s.Los efectos con el mismo nombre no se pueden acumular.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0020.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Industria 0.1",
     "rarity": "4",
     "image": "/weapons/wpn_claym_0003.webp",
     "domains": [
+      "La Base",
       "Parque científico de Originio",
-      "La Base"
+      "Paso de Yinglung"
     ],
     "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de ATQ",
     "skillStats": "Supresión",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
+    "description": "Cuando la habilidad de batalla del portador golpea al enemigo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0003.png",
     "weaponType": "Claymore"
-  },
-  {
-    "name": "Largo camino",
-    "rarity": "4",
-    "image": "/weapons/wpn_pistol_0003.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "La Base",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de fuerza",
-    "secondaryStats": "Refuerzo de DAÑ de Artes",
-    "skillStats": "Persecución",
-    "description": "When the wielder casts a combo skill, the wielder gains ATK% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0003.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Baliza del explorador",
-    "rarity": "4",
-    "image": "/weapons/wpn_lance_0003.webp",
-    "domains": [
-      "Parque científico de Originio",
-      "Meseta de poder",
-      "Piedra Marcadora"
-    ],
-    "attributeStats": "Refuerzo de agilidad",
-    "secondaryStats": "Refuerzo de ataque",
-    "skillStats": "Inspirador",
-    "description": "When the wielder's HP is above 80%, ATK% 24.% .",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0003.png",
-    "weaponType": "Lance"
   },
   {
     "name": "Extinguidora",
@@ -964,30 +1057,154 @@
     "image": "/weapons/wpn_claym_0009.webp",
     "domains": [
       "Ciudad de Wuling",
+      "Empalizada de Qingbo",
       "Meseta de poder",
-      "Empalizada de Qingbo"
+      "ZE norte de Wuling",
+      "Área de pruebas"
     ],
     "attributeStats": "Refuerzo de voluntad",
     "secondaryStats": "Refuerzo de PV",
     "skillStats": "Triturador",
-    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK% 19.2% for 10 s. Effects of the same name cannot stack.",
+    "description": "Cuando el portador realice un Golpe final contra el enemigo, el portador obtiene ATQ +33.6% durante 10 s.Los efectos con el mismo nombre no se acumulan.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0009.png",
     "weaponType": "Claymore"
+  },
+  {
+    "name": "Auto hipernova",
+    "rarity": "4",
+    "image": "/weapons/wpn_funnel_0001.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Parque científico de Originio",
+      "Piedra Marcadora",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de artes",
+    "skillStats": "Inspirador",
+    "description": "Cuando los PV del portador están por encima de 80%, ATQ +42.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0001.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Roc fluorescente",
+    "rarity": "4",
+    "image": "/weapons/wpn_funnel_0003.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de ATQ",
+    "skillStats": "Supresión",
+    "description": "Cuando la habilidad de batalla del portador golpea al enemigo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0003.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Baliza del explorador",
+    "rarity": "4",
+    "image": "/weapons/wpn_lance_0003.webp",
+    "domains": [
+      "Meseta de poder",
+      "Parque científico de Originio",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de ATQ",
+    "skillStats": "Inspirador",
+    "description": "Cuando los PV del portador están por encima de 80%, ATQ +42.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0003.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Asesino de Aggelos",
+    "rarity": "4",
+    "image": "/weapons/wpn_lance_0008.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de voluntad",
+    "secondaryStats": "Refuerzo de artes",
+    "skillStats": "Supresión",
+    "description": "Cuando la habilidad de batalla del portador golpea al enemigo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0008.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Guardia aullador",
+    "rarity": "4",
+    "image": "/weapons/wpn_pistol_0002.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung"
+    ],
+    "attributeStats": "Refuerzo de intelecto",
+    "secondaryStats": "Refuerzo de ATQ",
+    "skillStats": "Supresión",
+    "description": "Cuando la habilidad de batalla del portador golpea al enemigo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0002.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Largo camino",
+    "rarity": "4",
+    "image": "/weapons/wpn_pistol_0003.webp",
+    "domains": [
+      "La Base",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de fuerza",
+    "secondaryStats": "Refuerzo de artes",
+    "skillStats": "Persecución",
+    "description": "Cuando el portador lance una habilidad de combo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0003.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Medida contingente",
+    "rarity": "4",
+    "image": "/weapons/wpn_sword_0008.webp",
+    "domains": [
+      "Empalizada de Qingbo",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
+    "attributeStats": "Refuerzo de agilidad",
+    "secondaryStats": "Refuerzo de DAÑ físico",
+    "skillStats": "Supresión",
+    "description": "Cuando la habilidad de batalla del portador golpea al enemigo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0008.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Marea ondulante",
     "rarity": "4",
     "image": "/weapons/wpn_sword_0009.webp",
     "domains": [
-      "Parque científico de Originio",
-      "Meseta de poder",
       "La Base",
-      "Piedra Marcadora"
+      "Meseta de poder",
+      "Parque científico de Originio",
+      "Paso de Yinglung",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas"
     ],
     "attributeStats": "Refuerzo de intelecto",
-    "secondaryStats": "Refuerzo de ataque",
+    "secondaryStats": "Refuerzo de ATQ",
     "skillStats": "Persecución",
-    "description": "When the wielder casts a combo skill, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
+    "description": "Cuando el portador lance una habilidad de combo, el portador obtiene ATQ +33.6% durante 20 s.Los efectos con el mismo nombre no se acumulan.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0009.png",
     "weaponType": "Sword"
   },
@@ -995,11 +1212,18 @@
     "name": "Darhoff 7",
     "rarity": "3",
     "image": "/weapons/wpn_claym_0010.webp",
-    "domains": [],
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Asalto",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Asalto",
+    "description": "ATQ +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0010.png",
     "weaponType": "Claymore"
   },
@@ -1007,11 +1231,18 @@
     "name": "Jiminy 12",
     "rarity": "3",
     "image": "/weapons/wpn_funnel_0002.webp",
-    "domains": [],
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Asalto",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Asalto",
+    "description": "ATQ +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0002.png",
     "weaponType": "Funnel"
   },
@@ -1019,11 +1250,18 @@
     "name": "Opero 77",
     "rarity": "3",
     "image": "/weapons/wpn_lance_0009.webp",
-    "domains": [],
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Asalto",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Asalto",
+    "description": "ATQ +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0009.png",
     "weaponType": "Lance"
   },
@@ -1031,11 +1269,18 @@
     "name": "Peco 5",
     "rarity": "3",
     "image": "/weapons/wpn_pistol_0001.webp",
-    "domains": [],
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Asalto",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Asalto",
+    "description": "ATQ +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0001.png",
     "weaponType": "Pistol"
   },
@@ -1043,11 +1288,18 @@
     "name": "Tarr 11",
     "rarity": "3",
     "image": "/weapons/wpn_sword_0003.webp",
-    "domains": [],
+    "domains": [
+      "Ciudad de Wuling",
+      "La Base",
+      "Piedra Marcadora",
+      "Valle Ocultaespadas",
+      "Veta de origen",
+      "ZE norte de Wuling"
+    ],
     "attributeStats": "Refuerzo de atributo principal",
-    "secondaryStats": "Asalto",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Asalto",
+    "description": "ATQ +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0003.png",
     "weaponType": "Sword"
   }

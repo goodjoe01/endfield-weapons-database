@@ -1,96 +1,206 @@
 [
   {
-    "name": "Artzy Tyrannical",
+    "name": "Exemplar",
     "rarity": "6",
-    "image": "/weapons/wpn_pistol_0010.webp",
+    "image": "/weapons/wpn_claym_0004.webp",
     "domains": [
-      "Wuling City",
       "Originium Science Park",
-      "Power Plateau"
+      "The Hub",
+      "Yinglung Pass"
     ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Critical Rate Boost",
-    "skillStats": "Fracture",
-    "description": "After the wielder scores a critical hit with a battle skill or combo skill, the wielder gains Cryo DMG% 22.4% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0010.png",
-    "weaponType": "Pistol"
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Suppression",
+    "description": "Physical DMG Dealt +28.0%.When the wielder's battle skill or ultimate hits the enemy, the wielder gains Physical DMG Dealt +28.0% for 30s.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0004.png",
+    "weaponType": "Claymore"
   },
   {
-    "name": "Brigad's Calling",
+    "name": "Former Finery",
     "rarity": "6",
-    "image": "/weapons/wpn_pistol_0011.webp",
+    "image": "/weapons/wpn_claym_0006.webp",
     "domains": [
-      "Wuling City",
-      "The Hub"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Detonate",
-    "description": "Cryo DMG% +16.0%.When the wielder applies Cryo Infliction via battle skills or ultimates, the wielder gains Cryo DMG% 32.% for 20s. When the wielder's battle skill or ultimate applies Arts Susceptibility, the target enemy suffers Arts DMG Taken 9.6% for 20s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0011.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Chivalric Virtues",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0008.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "Qingbo Stockade"
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "HP Boost",
+    "skillStats": "Efficacy",
+    "description": "Treatment Efficiency +28.0%.After a Protected operator takes DMG, the wielder restores the said operator's HP by [235 + Will×1.96].Effect only triggers once every 15s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0006.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Thunderberge",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0007.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Power Plateau",
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Wuling City"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "HP Boost",
     "skillStats": "Medicant",
-    "description": "After the wielder's skill provides HP treatment, the entire team gains ATK% 14.4% for 15 s. Effects of the same name cannot stack.",
+    "description": "Shield applied +67.2%.After the wielder's combo skill provides HP treatment, the controlled operator gains an additional [19.6% × Wielder's Max HP] Shield for 15s.Effect only triggers once every 15s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0007.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Sundered Prince",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0008.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Power Plateau",
+      "Wuling City"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Critical Rate Boost",
+    "skillStats": "Crusher",
+    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK +28.0% for 8s.If the wielder is also the controlled operator, double the ATK increase gained and buff the Final Strike so that it deals Stagger +33.6% to the enemy.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0008.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Khravengger",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0013.webp",
+    "domains": [
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Detonate",
+    "description": "Skill DMG Dealt +56.0% (for every skill).When the wielder's battle skill applies Cryo Infliction, the wielder gains Cryo DMG Dealt +28.0% for 15s. When the wielder deals combo skill DMG to an enemy with Cryo Infliction, the wielder gains Cryo DMG Dealt +56.0% for 15s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0013.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Phantom Pain",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0016.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Qingbo Stockade",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Arts Intensity Boost",
+    "skillStats": "Suppression",
+    "description": "Physical DMG Dealt +19.6%.When the wielder casts battle skills or combo skills, the wielder gains Physical DMG Dealt +15.4% for 20s.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0016.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Amaranthine Tassel",
+    "rarity": "6",
+    "image": "/weapons/wpn_claym_0017.webp",
+    "domains": [
+      "Originium Science Park",
+      "Sword Vault Dale",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Combative",
+    "description": "Physical DMG Dealt +44.8%.When the wielder applies Physical Susceptibility, the wielder gains Arts Intensity +84 for 20s. When the wielder applies Crush, the wielder gains Physical DMG Dealt +[25.2% + (8.4% × Max number of Vulnerability stacks consumed from one enemy)] for 30s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0017.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Opus: Etch Figure",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0006.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Originium Science Park",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Nature DMG Boost",
+    "skillStats": "Suppression",
+    "description": "ATK +19.6%.When the wielder's battle skill applies Nature Infliction, other operators in the team gain Arts DMG Dealt +14.0% for 15s. For every enemy suffering from Nature Infliction applied by the said battle skill, other operators in the team gain bonus Arts DMG Dealt +5.6%, up to a max of +16.8%.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0006.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Detonation Unit",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0008.webp",
+    "domains": [
+      "Origin Lodespring",
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Arts Intensity Boost",
+    "skillStats": "Detonate",
+    "description": "Secondary Attribute +28.0%.When the wielder applies an Arts Burst, target enemy suffers Arts DMG Taken +25.2% for 15s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0008.png",
     "weaponType": "Funnel"
   },
   {
-    "name": "Clannibal",
+    "name": "Oblivion",
     "rarity": "6",
-    "image": "/weapons/wpn_pistol_0009.webp",
+    "image": "/weapons/wpn_funnel_0009.webp",
     "domains": [
-      "Originium Science Park",
-      "Marker Stone"
+      "Marker Stone",
+      "Qingbo Stockade",
+      "Wuling City"
     ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Arts DMG Boost",
-    "skillStats": "Infliction",
-    "description": "After the wielder consumes an Arts Reaction, target enemy suffers Arts DMG Taken% 16.% (for the specified element) for 15 s. Each effect applies separately and does not stack with itself. Effect only triggers once every 25 s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0009.png",
-    "weaponType": "Pistol"
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Arts Boost",
+    "skillStats": "Twilight",
+    "description": "Critical Rate +14.0%.When the wielder casts an ultimate, the wielder gains Arts DMG Dealt +67.2% for 15s. When the wielder casts a combo skill, the wielder gains Arts DMG Dealt +33.6% for 15s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0009.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Chivalric Virtues",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0010.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Power Plateau",
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Wuling City"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "HP Boost",
+    "skillStats": "Medicant",
+    "description": "Treatment Efficiency +28.0%.After the wielder's skill provides HP treatment, the entire team gains ATK +25.2% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0010.png",
+    "weaponType": "Funnel"
   },
   {
     "name": "Delivery Guaranteed",
     "rarity": "6",
     "image": "/weapons/wpn_funnel_0011.webp",
     "domains": [
+      "Marker Stone",
       "Originium Science Park",
-      "The Hub",
-      "Marker Stone"
+      "The Hub"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "Ultimate Gain Efficiency Boost",
     "skillStats": "Pursuit",
-    "description": "After the wielder's combo skill applies Lifted, the team gains Arts DMG% 19.2% for 15 s. For every enemy Lifted, the team gains bonus Arts DMG% 5.6% , up to a max of 3 stacks. Effects of the same name cannot stack.",
+    "description": "Nature DMG Dealt +44.8%.After the wielder's combo skill applies Lifted, the team gains Arts DMG Dealt +33.6% for 15s. For every enemy Lifted, the team gains bonus Arts DMG Dealt +9.8%, up to a max of +29.4%.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0011.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Detonation Unit",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0010.webp",
-    "domains": [
-      "Originium Lodespring",
-      "The Hub",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Arts Intensity Boost",
-    "skillStats": "Detonate",
-    "description": "When the wielder applies an Arts Burst, target enemy suffers Arts DMG Taken% + 14.4% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0010.png",
     "weaponType": "Funnel"
   },
   {
@@ -98,105 +208,413 @@
     "rarity": "6",
     "image": "/weapons/wpn_funnel_0013.webp",
     "domains": [
-      "Originium Lodespring",
+      "North Wuling EZ",
+      "Origin Lodespring",
       "Power Plateau"
     ],
     "attributeStats": "Intellect Boost",
     "secondaryStats": "Treatment Efficiency Boost",
     "skillStats": "Infliction",
-    "description": "After the wielder consumes Corrosion, target enemy suffers Arts DMG Taken% 16.% for 25 s. Effects of the same name cannot stack.",
+    "description": "Secondary attribute +44.8%.After the wielder consumes Corrosion, target enemy suffers Arts DMG Taken +28.0% for 25s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0013.png",
     "weaponType": "Funnel"
   },
   {
-    "name": "Eminent Repute",
+    "name": "Lone Barge",
     "rarity": "6",
-    "image": "/weapons/wpn_sword_0013.webp",
-    "domains": [
-      "Originium Lodespring",
-      "Power Plateau",
-      "Marker Stone"
-    ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Physical DMG Boost",
-    "skillStats": "Brutality",
-    "description": "After the wielder consumes Vulnerability stack(s), the wielder gains ATK [ 8.% + 4.% ×Stacks Consumed] while other operators in the team gain half of this buff for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0013.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Exemplar",
-    "rarity": "6",
-    "image": "/weapons/wpn_claym_0004.webp",
+    "image": "/weapons/wpn_funnel_0015.webp",
     "domains": [
       "Originium Science Park",
-      "The Hub"
+      "The Hub",
+      "Yinglung Pass"
     ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "ATK Boost",
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Attack Boost",
     "skillStats": "Suppression",
-    "description": "When the wielder's battle skill or ultimate hits the enemy, the wielder gains Physical DMG% 16.% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0004.png",
-    "weaponType": "Claymore"
+    "description": "Electric DMG Dealt +44.8%.When the wielder's battle skill consumes Arts Reactions, the wielder gains Battle Skill Electric DMG Dealt +56.0% for 20s.This effect can reach a max of 2 stacks and can only trigger once every 0.1s. Duration of each stack is counted separately.After the wielder casts an ultimate, the wielder gains Battle Skill Electric DMG Dealt +112.0% for 25s.This effect cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0015.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Type 42: Solemn Phalanx",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0016.webp",
+    "domains": [
+      "Qingbo Stockade",
+      "The Hub",
+      "Wuling City"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Detonate",
+    "description": "ATK +44.8%.Wielder's Intellect ≥ Will: When the wielder applies Arts Infliction with their own skill, the wielder gains Arts DMG Dealt +56.0% for 20s; when the wielder applies Arts Susceptibility with their own skill, the wielder gains ATK +56.0% for 20s;Wielder's Will ＞ Intellect: When the wielder applies Arts Burst with their own skill, the target enemy suffers Arts DMG Taken +16.8% for 25s; when the wielder applies Arts Susceptibility with their own skill, the target enemy suffers Arts DMG Taken +16.8% for 25s.Effects of the same name cannot stack. The aforementioned attributes only include effects from the wielder's level, talents, potentials, and attribute bonuses provided by equipped gear and weapons.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0016.png",
+    "weaponType": "Funnel"
   },
   {
     "name": "Flickers in the Mist",
     "rarity": "6",
     "image": "/weapons/wpn_funnel_0017.webp",
     "domains": [
+      "Marker Stone",
       "Originium Science Park",
       "The Hub",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "Electric DMG Boost",
     "skillStats": "Efficacy",
-    "description": "When the wielder gainst Electric Amp, the wielder also gains Electric DMG Dealt 8.8% for 30s. Max Stacks for effects of the same name: 3. Duration of each stack is counted separately. This effect only triggers once every 0.1s",
+    "description": "ATK +19.6%.When the wielder gains Electric Amp, the wielder also gains Electric DMG Dealt +15.4% for 30s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0017.png",
     "weaponType": "Funnel"
+  },
+  {
+    "name": "Junction Point",
+    "rarity": "6",
+    "image": "/weapons/wpn_funnel_0018.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "The Hub"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Efficacy",
+    "description": "Nature DMG Dealt +19.6%.When the wielder applies Arts Susceptibility or Arts Infliction with a combo skill, the wielder gains ATK +16.8% while other operators in the team gain ATK +4.2%. Duration: 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0018.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Beacon of Duty",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0007.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "The Hub"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Efficacy",
+    "description": "Heat DMG Dealt +19.6%.When the wielder's skill applies Heat Infliction, the wielder gains Physical and Heat DMG Dealt +22.4% for 20s. When the wielder's skill applies Heat Susceptibility, the entire team gains Physical and Heat DMG Dealt +11.2% for 30s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0007.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Valiant",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0010.webp",
+    "domains": [
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Physical DMG Boost",
+    "skillStats": "Combative",
+    "description": "ATK +28.0%.After the wielder applies Physical Statuses, the wielder also deals another hit of Physical DMG equal to 336.0% of the wielder's ATK.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0010.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "JET",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0011.webp",
+    "domains": [
+      "Originium Science Park",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Suppression",
+    "description": "Arts DMG Dealt +33.6%.When the wielder casts a battle skill, the wielder gains Arts DMG Dealt +33.6% for 15s. When the wielder casts a combo skill, Arts DMG Dealt +33.6% for 15s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0011.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Mountain Bearer",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0012.webp",
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Sword Vault Dale",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Physical DMG Boost",
+    "skillStats": "Efficacy",
+    "description": "Against Vulnerable enemies, the wielder gains DMG Dealt +56.0%.When the wielder's battle skill applies Vulnerability, the wielder gains All Attributes +22.4% for 15s. When the wielder's battle skill applies Physical Susceptibility, the wielder gains All Attributes +22.4% for 15s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0012.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Blessing of Lustrous Carmine",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0015.webp",
+    "domains": [
+      "Marker Stone",
+      "Power Plateau",
+      "The Hub"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Heat DMG Boost",
+    "skillStats": "Flow",
+    "description": "Ultimate Gain Efficiency +50.4%.When the wielder's skill recovers SP, the entire team gains ATK +16.8% for 20s. When the wielder's skill applies Heat Infliction, the entire team gains Heat DMG Dealt +16.8% for 20s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0015.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Golden Age",
+    "rarity": "6",
+    "image": "/weapons/wpn_lance_0016.webp",
+    "domains": [],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Treatment Efficiency Boost",
+    "skillStats": "Pursuit",
+    "description": "Electric DMG Dealt +16.8%.When the wielder's combo skill deals DMG, the wielder gains Treatment Efficiency +11.2% for 15s. When the wielder's combo skill grants HP Treatment to other operators in the team, the entire team gains Arts DMG Dealt +14.0% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0016.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Navigator",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0005.webp",
+    "domains": [
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Cryo DMG Boost",
+    "skillStats": "Infliction",
+    "description": "Critical Rate +9.8%.When Solidification or Corrosion is applied to enemies, the wielder gains Cryo DMG Dealt and Nature DMG Dealt +9.8%, and Critical Rate +5.6% for 15s. If this effect is triggered by the wielder, double the increase gained.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0005.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Home Longing",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0007.webp",
+    "domains": [
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Qingbo Stockade",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Cryo DMG Boost",
+    "skillStats": "Suppression",
+    "description": "ATK +19.6%.For 20s after the wielder casts a combo skill, the wielder's next battle skill gains Cryo and Nature DMG Dealt +22.4%.Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0007.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Wedge",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0008.webp",
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Power Plateau",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Critical Rate Boost",
+    "skillStats": "Infliction",
+    "description": "Arts DMG Dealt +33.6%.When the wielder casts a battle skill, the wielder gains Arts DMG Dealt +22.4% for 15s. When the wielder's battle skill applies an Arts Reaction, the wielder gains Arts DMG Dealt +44.8% for 15s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0008.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Clannibal",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0009.webp",
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Originium Science Park",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Arts Boost",
+    "skillStats": "Infliction",
+    "description": "Arts DMG +33.6%.After the wielder consumes an Arts Reaction, target enemy suffers Arts DMG Taken +28.0% (for the specified element) for 15s.Each effect applies separately and does not stack with itself. Effect only triggers once every 25s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0009.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Artzy Tyrannical",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0010.webp",
+    "domains": [
+      "Originium Science Park",
+      "Power Plateau",
+      "Wuling City"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Critical Rate Boost",
+    "skillStats": "Fracture",
+    "description": "Cryo DMG Dealt +44.8%.After the wielder scores a critical hit with a battle skill or combo skill, the wielder gains Cryo DMG Dealt +39.2% for 30s.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0010.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Brigand's Calling",
+    "rarity": "6",
+    "image": "/weapons/wpn_pistol_0011.webp",
+    "domains": [
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Detonate",
+    "description": "Cryo DMG Dealt +44.8%.When the wielder applies Cryo Infliction via battle skills or ultimates, the wielder gains Cryo DMG Dealt +56.0% for 20s. When the wielder's battle skill or ultimate applies Arts Susceptibility, the target enemy suffers Arts DMG Taken +16.8% for 20s.The two effects apply separately and do not stack with themselves.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0011.png",
+    "weaponType": "Pistol"
   },
   {
     "name": "Forgeborn Scathe",
     "rarity": "6",
     "image": "/weapons/wpn_sword_0006.webp",
     "domains": [
-      "Wuling City",
-      "Marker Stone"
+      "Marker Stone",
+      "Wuling City"
     ],
     "attributeStats": "Intellect Boost",
-    "secondaryStats": "ATK Boost",
+    "secondaryStats": "Attack Boost",
     "skillStats": "Twilight",
-    "description": "When the wielder casts an ultimate, the wielder gains Basic Attack DMG% 120.00% for 20 s. Effects of the same name cannot stack.",
+    "description": "Heat DMG Dealt +44.8%.When the wielder casts an ultimate, the wielder gains Basic Attack DMG Dealt +210.0% for 20.0s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0006.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Former Finery",
+    "name": "Umbral Torch",
     "rarity": "6",
-    "image": "/weapons/wpn_claym_0006.webp",
+    "image": "/weapons/wpn_sword_0010.webp",
     "domains": [
-      "Originium Lodespring"
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Power Plateau"
     ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "HP Boost",
-    "skillStats": "Efficacy",
-    "description": "After a Protected operator takes DMG, the wielder restores the said operator's HP by [ 134.4 + Will× 112.00% ]. Effect only triggers once every 15 s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0006.png",
-    "weaponType": "Claymore"
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Heat DMG Boost",
+    "skillStats": "Infliction",
+    "description": "ATK +19.6%.Whenever Combustion or Corrosion is applied to an enemy, the wielder gains Heat and Nature DMG Dealt +22.4% for 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0010.png",
+    "weaponType": "Sword"
   },
   {
-    "name": "Glorius Memory",
+    "name": "Rapid Ascent",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0011.webp",
+    "domains": [
+      "Marker Stone",
+      "Origin Lodespring",
+      "Wuling City"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Critical Rate Boost",
+    "skillStats": "Twilight",
+    "description": "Battle skills and ultimates gain Physical DMG Dealt +42.0%.Against Staggered enemies, battle skills and ultimates also gain DMG Dealt +98.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0011.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Thermite Cutter",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0012.webp",
+    "domains": [
+      "Marker Stone",
+      "Power Plateau",
+      "The Hub",
+      "Wuling City",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Flow",
+    "description": "ATK +28.0%.After the wielder's skill recovers SP or grants a Link state, the entire team gains ATK +14.0% for 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0012.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Eminent Repute",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0013.webp",
+    "domains": [
+      "Marker Stone",
+      "Origin Lodespring",
+      "Power Plateau",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Physical DMG Boost",
+    "skillStats": "Brutality",
+    "description": "ATK +28.0%.After the wielder consumes Vulnerability stack(s), the wielder gains ATK +[14.0% + 7.0%×Stacks Consumed] while other operators in the team gain half of this buff for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0013.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "White Night Nova",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0014.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Power Plateau",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Main Attribute Boost",
+    "secondaryStats": "Arts Intensity Boost",
+    "skillStats": "Infliction",
+    "description": "Arts DMG Dealt +33.6%.After the wielder applies Combustion or Electrification, the wielder gains Arts DMG Dealt +33.6% and Arts Intensity +70 for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0014.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Never Rest",
+    "rarity": "6",
+    "image": "/weapons/wpn_sword_0016.webp",
+    "domains": [
+      "Marker Stone",
+      "Power Plateau",
+      "The Hub",
+      "Wuling City",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Attack Boost",
+    "skillStats": "Flow",
+    "description": "Physical DMG Dealt +44.8%.After the wielder's skill recovers SP, the wielder gains Physical DMG Dealt +14.0% while other operators in the team gain Physical DMG Dealt +7.0% for 30s.Max stacks for effects of the same name: 5. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0016.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Glorious Memory",
     "rarity": "6",
     "image": "/weapons/wpn_sword_0017.webp",
     "domains": [
-      "Wuling City",
-      "Originium Lodespring",
-      "Marker Stone"
+      "Marker Stone",
+      "Origin Lodespring",
+      "Wuling City"
     ],
     "attributeStats": "Agility Boost",
     "secondaryStats": "Critical Rate Boost",
     "skillStats": "Twilight",
-    "description": "ATK +7.0%. When the wielder's skill applies Vulnerability, during the next ultimate cast within 30s, the wielder gains DMG% 19.2% .",
+    "description": "ATK +19.6%.When the wielder's skill applies Vulnerability, during the next ultimate cast within 30s, the wielder gains DMG Dealt +33.6%.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.5s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0017.png",
     "weaponType": "Sword"
   },
@@ -205,346 +623,212 @@
     "rarity": "6",
     "image": "/weapons/wpn_sword_0021.webp",
     "domains": [
+      "Marker Stone",
       "Originium Science Park",
       "Power Plateau",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Agility Boost",
-    "secondaryStats": "ATK Boost",
+    "secondaryStats": "Attack Boost",
     "skillStats": "Infliction",
-    "description": "When the wielder applies Originium Seal or Solidification, during the next battle skill or ultimate cast within 20 s, the wielder gains Physical DMG% 57.6% . Effects of the same name cannot stack.",
+    "description": "Arts Intensity +84.When the wielder applies Originium Crystals or Solidification, during the next battle skill or ultimate cast within 20s, the wielder gains Physical DMG Dealt +100.8%.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0021.png",
     "weaponType": "Sword"
-  },
-  {
-    "name": "Home Longing",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0007.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "The Hub",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "Cryo DMG Boost",
-    "skillStats": "Suppression",
-    "description": "ATK +7.0%.For 20s after the wielder casts a combo skill, the wielder's next battle skill gains Cryo and Nature DMG Dealt 12.8% .",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0007.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "JET",
-    "rarity": "6",
-    "image": "/weapons/wpn_lance_0011.webp",
-    "domains": [
-      "Originium Science Park",
-      "The Hub"
-    ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder casts a battle skill, the wielder gains Arts DMG% 19.2% for 15 s. When the wielder casts a combo skill, Arts DMG% 19.2% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0011.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Khravengger",
-    "rarity": "6",
-    "image": "/weapons/wpn_claym_0013.webp",
-    "domains": [
-      "Wuling City",
-      "The Hub"
-    ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Detonate",
-    "description": "When the wielder's battle skill applies Cryo Infliction, the wielder gains Cryo DMG% 16.% for 15 s. When the wielder deals combo skill DMG to an enemy with Cryo Infliction, the wielder gains Cryo DMG% 32.% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0013.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Lone Barge",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0015.webp",
-    "domains": [
-      "Originium Science Park",
-      "The Hub"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill consumes Arts Reactions, the wielder gains Battle Skill Eletric DMG Dealt 32.% for 20s. This effect can reach 2 stacks. Duration of each stack counted separately. This effect only triggers once every 0.1s. After the wielder casts an ultimate the wielder gains Battle Skill Eletric DMG Dealt 64.% for 25s. This effect cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0015.png",
-    "weaponType": "Funnel"
   },
   {
     "name": "Lupine Scarlet",
     "rarity": "6",
     "image": "/weapons/wpn_sword_0022.webp",
     "domains": [
-      "Wuling City",
       "Originium Science Park",
-      "Power Plateau"
+      "Power Plateau",
+      "Wuling City"
     ],
     "attributeStats": "Agility Boost",
     "secondaryStats": "Critical Rate Boost",
     "skillStats": "Fracture",
-    "description": "After the wielder's skill deals Critical DMG, the wielder gains 1 stack of Wolven Blood that grants Physical and Heat DMG% + 1.6% . Wolven Blood can reach 16 stacks. After reaching 16 stacks, the wielder gains another Physical and Heat DMG% + 38.4% for 20s. After the duration ends, all Wolven Blood stacks are removed.",
+    "description": "ATK +44.8%.After the wielder's skill deals Critical DMG, the wielder gains 1 stack of Wolven Blood that grants Physical and Heat DMG Dealt +2.8%. Wolven Blood can reach 16 stacks. After reaching 16 stacks, the wielder gains another Physical and Heat DMG Dealt +67.2% for 20s. After the duration ends, all Wolven Blood stacks are removed.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0022.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Mountain Bearer",
+    "name": "Farsight",
     "rarity": "6",
-    "image": "/weapons/wpn_lance_0012.webp",
+    "image": "/weapons/wpn_sword_0026.webp",
     "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "Marker Stone"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "Physical DMG Boost",
-    "skillStats": "Efficacy",
-    "description": "Against Vulnerable enemies, the wielder gains DMG% 32.% . When the wielder's battle skill applies Vulnerability, the wielder gains All Attributes 12.8% for 15 s. When the wielder's battle skill applies Physical Susceptibility, the wielder gains All Attributes 12.8% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0012.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Navigator",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0005.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Cryo DMG Boost",
-    "skillStats": "Infliction",
-    "description": "When Solidification or Corrosion is applied to enemies, the wielder gains Cryo DMG% and Nature DMG% 5.6% and Critical Rate% 3.2% for 15 s. If this effect is triggered by the wielder, double the increase gained. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0005.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Never Rest",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0016.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "The Hub",
-      "Marker Stone"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Flow",
-    "description": "After the wielder's skill recovers SP, the wielder gains Physical DMG% 8.% while other operators in the team gain Physical DMG% 4.% for 30s. Max stacks for effects of the same name: Max 5. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0016.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Oblivion",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0009.webp",
-    "domains": [
-      "Wuling City",
-      "Qingbo Stockade",
-      "Marker Stone"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Arts DMG Boost",
-    "skillStats": "Twilight",
-    "description": "When the wielder casts an ultimate, the wielder gains Arts DMG% 38.4% for 15 s. When the wielder casts a combo skill, the wielder gains Arts DMG% 19.2% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0009.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Opus: Etch Figure",
-    "rarity": "6",
-    "image": "/weapons/wpn_funnel_0006.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
       "The Hub"
     ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "Nature DMG Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill applies Nature Infliction, other operators in the team gain Arts DMG% 8.% for 15 s. For every enemy suffering from Nature Infliction applied by the said battle skill, other operators in the team gain bonus Arts DMG% 3.2% , up to a max of 3 stacks. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0006.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Rapid Ascent",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0011.webp",
-    "domains": [
-      "Wuling City",
-      "Originium Lodespring",
-      "Marker Stone"
-    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Critical Rate Boost",
-    "skillStats": "Twilight",
-    "description": "Battle skills and ultimates gain Physical DMG% 24.% Against Staggered enemies, battle skills and ultimates also gain DMG% 56.%",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0011.png",
+    "secondaryStats": "Arts Intensity Boost",
+    "skillStats": "Assault",
+    "description": "When entering battle, the entire team gains the Dream Striving buff that grants DMG Dealt +14.0%, Arts Intensity +28, and DEF +8.4% for 20s. When Dream Striving ends, the wielder restores the entire team for 122 HP.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0026.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Sundered Prince",
-    "rarity": "6",
-    "image": "/weapons/wpn_claym_0008.webp",
+    "name": "Seeker of Dark Lung",
+    "rarity": "5",
+    "image": "/weapons/wpn_claym_0011.webp",
     "domains": [
-      "Wuling City",
-      "Power Plateau"
+      "Qingbo Stockade",
+      "The Hub",
+      "Wuling City"
     ],
     "attributeStats": "Strength Boost",
-    "secondaryStats": "Critical Rate Boost",
-    "skillStats": "Crusher",
-    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK% 16.% for 8 s. If the wielder is also the controlled operator, double the ATK increase gained and buff the Final Strike so that it deals bonus Stagger% 19.2% to the enemy. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0008.png",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Detonate",
+    "description": "Main Attribute +14.0%.When the wielder applies an Arts Burst, the wielder gains ATK +16.8% for 30s.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0011.png",
     "weaponType": "Claymore"
   },
   {
-    "name": "Thermite Cutter",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0012.webp",
+    "name": "Finishing Call",
+    "rarity": "5",
+    "image": "/weapons/wpn_claym_0012.webp",
     "domains": [
-      "Wuling City",
+      "North Wuling EZ",
       "Power Plateau",
-      "The Hub",
-      "Marker Stone"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Flow",
-    "description": "After the wielder's skill recovers SP or grants a Link state, the entire team gains ATK% 8.% for 20 s. Max stacks for effects of the same name: Max Stack 2. Duration of each stack is counted separately.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0012.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Thunderberge",
-    "rarity": "6",
-    "image": "/weapons/wpn_claym_0007.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "Qingbo Stockade"
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Wuling City"
     ],
     "attributeStats": "Strength Boost",
     "secondaryStats": "HP Boost",
     "skillStats": "Medicant",
-    "description": "After the wielder's combo skill provides HP treatment, the controlled operator gains an additional [ 11.2% ×Wielder's Max HP] Shield for 15 s. Effect only triggers once every 15s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0007.png",
+    "description": "Secondary Attribute +14.0%.Combo skill HP treatment effect +56.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0012.png",
     "weaponType": "Claymore"
-  },
-  {
-    "name": "Umbral Torch",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0010.webp",
-    "domains": [
-      "Originium Lodespring",
-      "Power Plateau",
-      "Marker Stone"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Heat DMG Boost",
-    "skillStats": "Infliction",
-    "description": "Whenever Combustion or Corrosion is applied to an enemy, the wielder gains Heat and Nature DMG% 12.8% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0010.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Valiant",
-    "rarity": "6",
-    "image": "/weapons/wpn_lance_0010.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "Physical DMG Boost",
-    "skillStats": "Combative",
-    "description": "After the wielder applies Physical Statuses, the wielder also deals another hit of Physical DMG equal to 192.00% of the wielder's ATK.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0010.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Wedge",
-    "rarity": "6",
-    "image": "/weapons/wpn_pistol_0008.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "Power Plateau",
-      "Marker Stone"
-    ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Critical Rate Boost",
-    "skillStats": "Infliction",
-    "description": "When the wielder casts a battle skill, the wielder gains Arts DMG% 12.8% for 15 s. When the wielder's battle skill applies an Arts Reaction, the wielder gains Arts DMG% 25.6% for 15 s. The two effects apply separately and do not stack with themselves.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0008.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "White Night Nova",
-    "rarity": "6",
-    "image": "/weapons/wpn_sword_0014.webp",
-    "domains": [
-      "Originium Lodespring",
-      "Power Plateau"
-    ],
-    "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Arts Intensity Boost",
-    "skillStats": "Infliction",
-    "description": "After the wielder applies Combustion or Electrification, the wielder gains Arts DMG% 19.2% and Arts Intensity 40 for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0014.png",
-    "weaponType": "Sword"
   },
   {
     "name": "Ancient Canal",
     "rarity": "5",
     "image": "/weapons/wpn_claym_0014.webp",
     "domains": [
-      "Originium Lodespring",
-      "Power Plateau"
+      "Origin Lodespring",
+      "Power Plateau",
+      "Yinglung Pass"
     ],
     "attributeStats": "Strength Boost",
     "secondaryStats": "Arts Intensity Boost",
     "skillStats": "Brutality",
-    "description": "After the wielder consumes Vulnerability stack(s), the wielder gains Physical DMG% +[ 8.% ×Stacks Consumed] for 20 s. Effects of the same name cannot stack.",
+    "description": "Arts Intensity +28.After the wielder consumes Vulnerability stack(s), the wielder gains Physical DMG Dealt +[14.0%×Stacks Consumed] for 20s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0014.png",
     "weaponType": "Claymore"
   },
   {
-    "name": "Aspirant",
+    "name": "OBJ Heavy Burden",
     "rarity": "5",
-    "image": "/weapons/wpn_sword_0015.webp",
+    "image": "/weapons/wpn_claym_0015.webp",
     "domains": [
-      "Originium Lodespring",
-      "Qingbo Stockade",
-      "Marker Stone"
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale"
     ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "Physical DMG Boost",
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "HP Boost",
+    "skillStats": "Efficacy",
+    "description": "Secondary Attribute +14.0%.When the wielder applies Knocked Down or Weakened, the wielder gains DEF +50.4% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0015.png",
+    "weaponType": "Claymore"
+  },
+  {
+    "name": "Wild Wanderer",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0004.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Electric DMG Boost",
+    "skillStats": "Infliction",
+    "description": "Arts Intensity +28.When the wielder applies Electrification, the team gains Physical DMG Dealt and Electric DMG Dealt +22.4% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0004.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Stanza of Memorials",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0005.webp",
+    "domains": [
+      "Marker Stone",
+      "Wuling City"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "ATK Boost",
     "skillStats": "Twilight",
-    "description": "After the wielder applies Lifted, during the next ultimate cast within 30 s, the wielder gains Physical DMG% 19.2% . Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.5s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0015.png",
-    "weaponType": "Sword"
+    "description": "Max HP +28.0%.When the wielder casts an ultimate, operators whose elements differ from the wielder gain ATK +22.4% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0005.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Monaihe",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0007.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "Qingbo Stockade"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Inspiring",
+    "description": "Main Attribute +14.0%.Arts Intensity +70.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0007.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Freedom to Proselytize",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0012.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Power Plateau",
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Wuling City"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Treatment Efficiency Boost",
+    "skillStats": "Medicant",
+    "description": "Main Attribute +14.0%.When the wielder's battle skill provides HP treatment, the controlled operator is restored for another [168 + Will×1.4] HP.Effect only triggers once every 15s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0012.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "OBJ Arts Identifier",
+    "rarity": "5",
+    "image": "/weapons/wpn_funnel_0014.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Power Plateau",
+      "Sword Vault Dale",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Arts Intensity Boost",
+    "skillStats": "Pursuit",
+    "description": "Max HP +28.0%.When the wielder's combo skill applies Arts Burst or Physical Status, the entire team gains Heat DMG Dealt and Electric DMG Dealt +22.4% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0014.png",
+    "weaponType": "Funnel"
   },
   {
     "name": "Chimeric Justice",
     "rarity": "5",
     "image": "/weapons/wpn_lance_0004.webp",
     "domains": [
-      "Wuling City",
-      "Marker Stone"
+      "Marker Stone",
+      "Wuling City"
     ],
     "attributeStats": "Strength Boost",
     "secondaryStats": "Ultimate Gain Efficiency Boost",
     "skillStats": "Brutality",
-    "description": "When the wielder applies Vulnerability to an enemy with no Vulnerability stacks, the wielder gains ATK% 24.% for 15 s. Effects of the same name cannot stack.",
+    "description": "Critical Rate +8.4%.When the wielder applies Vulnerability to an enemy with no Vulnerability stacks, the wielder gains ATK +42.0% for 15s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0004.png",
     "weaponType": "Lance"
   },
@@ -554,174 +838,52 @@
     "image": "/weapons/wpn_lance_0006.webp",
     "domains": [
       "Originium Science Park",
+      "Qingbo Stockade",
       "The Hub",
-      "Qingbo Stockade"
+      "Yinglung Pass"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "Electric DMG Boost",
     "skillStats": "Suppression",
-    "description": "When the wielder casts a combo skill, during the next battle skill cast within 30 s, the wielder gains Electric DMG% 16.% . Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
+    "description": "Combo Skill DMG Dealt +28.0%.When the wielder casts a combo skill, during the next battle skill cast within 30s, the wielder gains Electric DMG Dealt +28.0%.Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0006.png",
     "weaponType": "Lance"
-  },
-  {
-    "name": "Finchaser 3.0",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0020.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "The Hub",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "Cryo DMG Boost",
-    "skillStats": "Suppression",
-    "description": "ATK% 12.8% When the wielder's battle skill applies Solidification, target enemy suffers Cryo DMG Taken for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0020.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Finishing Call",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0012.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "HP Boost",
-    "skillStats": "Medicant",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0012.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Fortmaker",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0007.webp",
-    "domains": [
-      "Originium Science Park",
-      "Qingbo Stockade",
-      "Marker Stone"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Ultimate Gain Efficiency Boost",
-    "skillStats": "Inspiring",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0007.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "Freedom to Proselytize",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0012.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "Treatment Efficiency Boost",
-    "skillStats": "Medicant",
-    "description": "When the wielder's battle skill provides HP treatment, the controlled operator is restored for another 96 + Will × 80.% HP. Effect only triggers once every 15 s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0012.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Monaihe",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0007.webp",
-    "domains": [
-      "Originium Science Park",
-      "Qingbo Stockade",
-      "Marker Stone"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "Ultimate Gain Efficiency Boost",
-    "skillStats": "Inspiring",
-    "description": "",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0007.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "OBJ Arts Identifier",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0014.webp",
-    "domains": [
-      "Power Plateau",
-      "The Hub"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Arts Intensity Boost",
-    "skillStats": "Pursuit",
-    "description": "When the wielder's combo skill applies Arts Burst or Physical Status, the entire team gains Heat DMG% and Electric DMG% + 12.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0014.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "OBJ Edge of Lightness",
-    "rarity": "5",
-    "image": "/weapons/wpn_sword_0019.webp",
-    "domains": [
-      "Wuling City",
-      "Power Plateau",
-      "The Hub",
-      "Marker Stone"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Flow",
-    "description": "After the wielder's skill recovers SP, the entire team gains Heat DMG% and Electric DMG% 4.8% for 20 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0019.png",
-    "weaponType": "Sword"
-  },
-  {
-    "name": "OBJ Heavy Burden",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0015.webp",
-    "domains": [
-      "Originium Lodespring"
-    ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "HP Boost",
-    "skillStats": "Efficacy",
-    "description": "When the wielder applies Knocked Down or Weakened, the wielder gains DEF% 28.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0015.png",
-    "weaponType": "Claymore"
   },
   {
     "name": "OBJ Razorhorn",
     "rarity": "5",
     "image": "/weapons/wpn_lance_0013.webp",
     "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
       "Originium Science Park",
-      "Originium Lodespring",
       "Power Plateau",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "Physical DMG Boost",
     "skillStats": "Infliction",
-    "description": "To enemies with Cryo Infliction or Solidification, the wielder gains DMG% 12.8% . After consuming Solidification, ATK 19.2% for 15 s. Effects of the same name cannot stack.",
+    "description": "To enemies with Cryo Infliction or Solidification, the wielder gains DMG Dealt +22.4%. After consuming Solidification, ATK +33.6% for 15s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0013.png",
     "weaponType": "Lance"
   },
   {
-    "name": "OBJ Velocitous",
+    "name": "Rational Farewell",
     "rarity": "5",
-    "image": "/weapons/wpn_pistol_0012.webp",
+    "image": "/weapons/wpn_pistol_0004.webp",
     "domains": [
-      "Wuling City",
-      "The Hub",
-      "Qingbo Stockade"
+      "Marker Stone",
+      "North Wuling EZ",
+      "Power Plateau",
+      "Sword Vault Dale",
+      "The Hub"
     ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "Ultimate Gain Efficiency Boost",
-    "skillStats": "Detonate",
-    "description": "After the wielder consumes an Arts Infliction, the wielder gains Nature DMG% [ 8.% ×Stacks Consumed] for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0012.png",
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Heat DMG Boost",
+    "skillStats": "Pursuit",
+    "description": "Battle Skill DMG +28.0%.When the wielder's combo skill applies Arts Burst or Combusted, the wielder gains ATK +44.8% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0004.png",
     "weaponType": "Pistol"
   },
   {
@@ -729,77 +891,82 @@
     "rarity": "5",
     "image": "/weapons/wpn_pistol_0006.webp",
     "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
       "Originium Science Park",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Agility Boost",
-    "secondaryStats": "Arts DMG Boost",
+    "secondaryStats": "Arts Boost",
     "skillStats": "Infliction",
-    "description": "When the wielder applies an Arts Reaction, the wielder gains ATK% 12.% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "description": "Critical Rate +8.4%.When the wielder applies an Arts Reaction, the wielder gains ATK +21.0% for 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0006.png",
     "weaponType": "Pistol"
   },
   {
-    "name": "Rational Farewell",
+    "name": "OBJ Velocitous",
     "rarity": "5",
-    "image": "/weapons/wpn_pistol_0004.webp",
+    "image": "/weapons/wpn_pistol_0012.webp",
     "domains": [
-      "Power Plateau",
+      "Qingbo Stockade",
       "The Hub",
-      "Marker Stone"
+      "Wuling City"
     ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "Heat DMG Boost",
-    "skillStats": "Pursuit",
-    "description": "When the wielder's combo skill applies Arts Burst or Combusted, the wielder gains ATK% 25.6% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0004.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Seeker of Dark Lung",
-    "rarity": "5",
-    "image": "/weapons/wpn_claym_0011.webp",
-    "domains": [
-      "Wuling City",
-      "The Hub",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Strength Boost",
+    "attributeStats": "Agility Boost",
     "secondaryStats": "Ultimate Gain Efficiency Boost",
     "skillStats": "Detonate",
-    "description": "When the wielder applies an Arts Burst, the wielder gains ATK% 9.6% for 30 s. Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0011.png",
-    "weaponType": "Claymore"
-  },
-  {
-    "name": "Stanza of Memorials",
-    "rarity": "5",
-    "image": "/weapons/wpn_funnel_0005.webp",
-    "domains": [
-      "Wuling City",
-      "Marker Stone"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Twilight",
-    "description": "When the wielder casts an ultimate, operators whose elements differ from the wielder gain ATK% 12.8% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0005.png",
-    "weaponType": "Funnel"
+    "description": "ATK +14.0%.After the wielder consumes an Arts Infliction, the wielder gains Nature DMG Dealt +[14.0%×Stacks Consumed] for 20s. Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0012.png",
+    "weaponType": "Pistol"
   },
   {
     "name": "Sundering Steel",
     "rarity": "5",
     "image": "/weapons/wpn_sword_0005.webp",
     "domains": [
+      "Origin Lodespring",
       "Originium Science Park",
-      "Originium Lodespring",
-      "Qingbo Stockade"
+      "Qingbo Stockade",
+      "Sword Vault Dale",
+      "Yinglung Pass"
     ],
     "attributeStats": "Agility Boost",
     "secondaryStats": "Physical DMG Boost",
     "skillStats": "Combative",
-    "description": "When the wielder deals a Physical Status, the wielder gains ATK% 12.% for 20 s. Max stacks for effects of the same name: 2 max stacks. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
+    "description": "ATK +14.0%.When the wielder deals a Physical Status, the wielder gains ATK +21.0% for 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately. Effect only triggers once every 0.1s.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0005.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Fortmaker",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0007.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "Qingbo Stockade"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Ultimate Gain Efficiency Boost",
+    "skillStats": "Inspiring",
+    "description": "ATK +14.0%.Arts Intensity +70.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0007.png",
+    "weaponType": "Sword"
+  },
+  {
+    "name": "Aspirant",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0015.webp",
+    "domains": [
+      "Marker Stone",
+      "Origin Lodespring",
+      "Qingbo Stockade"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Physical DMG Boost",
+    "skillStats": "Twilight",
+    "description": "Ultimate DMG Dealt +44.8%.After the wielder applies Lift, during the next ultimate cast within 30s, the wielder gains Physical DMG Dealt +33.6%.Max stacks for effects of the same name: 3. Duration of each stack is counted separately. Effect only triggers once every 0.5s.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0015.png",
     "weaponType": "Sword"
   },
   {
@@ -807,109 +974,53 @@
     "rarity": "5",
     "image": "/weapons/wpn_sword_0018.webp",
     "domains": [
+      "Marker Stone",
       "Originium Science Park",
       "Power Plateau",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Agility Boost",
     "secondaryStats": "ATK Boost",
     "skillStats": "Infliction",
-    "description": "After the wielder consumes an Arts Reaction, ATK + 12.% for 20 s. Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
+    "description": "Secondary Attribute +14.0%.After the wielder consumes an Arts Reaction, ATK +21.0% for 20s.Max stacks for effects of the same name: 2. Duration of each stack is counted separately.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0018.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Wild Wanderer",
+    "name": "OBJ Edge of Lightness",
     "rarity": "5",
-    "image": "/weapons/wpn_funnel_0004.webp",
+    "image": "/weapons/wpn_sword_0019.webp",
     "domains": [
-      "Originium Science Park",
-      "Marker Stone"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Electric DMG Boost",
-    "skillStats": "Infliction",
-    "description": "When the wielder applies Electrification, the team gains Physical DMG% and Electric DMG% + 12.8% for 15 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0004.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Aggeloslayer",
-    "rarity": "4",
-    "image": "/weapons/wpn_lance_0008.webp",
-    "domains": [
-      "Originium Science Park",
+      "Marker Stone",
+      "Power Plateau",
       "The Hub",
-      "Qingbo Stockade"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "Arts DMG Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0008.png",
-    "weaponType": "Lance"
-  },
-  {
-    "name": "Contingent Measure",
-    "rarity": "4",
-    "image": "/weapons/wpn_sword_0008.webp",
-    "domains": [
-      "Originium Science Park",
-      "Originium Lodespring",
-      "Qingbo Stockade"
+      "Wuling City",
+      "Yinglung Pass"
     ],
     "attributeStats": "Agility Boost",
-    "secondaryStats": "Physical DMG Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0008.png",
+    "secondaryStats": "ATK Boost",
+    "skillStats": "Flow",
+    "description": "Secondary Attribute +14.0%.After the wielder's skill recovers SP, the entire team gains Heat DMG Dealt and Electric DMG Dealt +8.4% for 20s.Max stacks for effects of the same name: 3. Duration of each stack is counted separately.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0019.png",
     "weaponType": "Sword"
   },
   {
-    "name": "Fluorescent Roc",
-    "rarity": "4",
-    "image": "/weapons/wpn_funnel_0003.webp",
+    "name": "Finchaser 3.0",
+    "rarity": "5",
+    "image": "/weapons/wpn_sword_0020.webp",
     "domains": [
-      "Originium Science Park",
-      "The Hub"
-    ],
-    "attributeStats": "Will Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0003.png",
-    "weaponType": "Funnel"
-  },
-  {
-    "name": "Howling Guard",
-    "rarity": "4",
-    "image": "/weapons/wpn_pistol_0002.webp",
-    "domains": [
-      "Originium Science Park",
-      "The Hub"
-    ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Suppression",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0002.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Hypernova Auto",
-    "rarity": "4",
-    "image": "/weapons/wpn_funnel_0001.webp",
-    "domains": [
+      "Origin Lodespring",
       "Originium Science Park",
       "Qingbo Stockade",
-      "Marker Stone"
+      "The Hub",
+      "Yinglung Pass"
     ],
-    "attributeStats": "Intellect Boost",
-    "secondaryStats": "Arts DMG Boost",
-    "skillStats": "Inspiring",
-    "description": "When the wielder's HP is above 80% , ATK 24.%",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0001.png",
-    "weaponType": "Funnel"
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Cryo DMG Boost",
+    "skillStats": "Suppression",
+    "description": "ATK +14.0%.When the wielder's battle skill applies Solidification, target enemy suffers Cryo DMG Taken +19.6% for 15s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0020.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Industry 0.1",
@@ -917,77 +1028,169 @@
     "image": "/weapons/wpn_claym_0003.webp",
     "domains": [
       "Originium Science Park",
-      "The Hub"
+      "The Hub",
+      "Yinglung Pass"
     ],
     "attributeStats": "Strength Boost",
     "secondaryStats": "ATK Boost",
     "skillStats": "Suppression",
-    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
+    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0003.png",
     "weaponType": "Claymore"
-  },
-  {
-    "name": "Long Road",
-    "rarity": "4",
-    "image": "/weapons/wpn_pistol_0003.webp",
-    "domains": [
-      "Originium Science Park",
-      "The Hub",
-      "Marker Stone"
-    ],
-    "attributeStats": "Strength Boost",
-    "secondaryStats": "Arts DMG Boost",
-    "skillStats": "Pursuit",
-    "description": "When the wielder casts a combo skill, the wielder gains ATK% for 20 s. Effects of the same name cannot stack.",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0003.png",
-    "weaponType": "Pistol"
-  },
-  {
-    "name": "Pathfinder's Beacon",
-    "rarity": "4",
-    "image": "/weapons/wpn_lance_0003.webp",
-    "domains": [
-      "Originium Science Park",
-      "Power Plateau",
-      "Marker Stone"
-    ],
-    "attributeStats": "Agility Boost",
-    "secondaryStats": "ATK Boost",
-    "skillStats": "Inspiring",
-    "description": "When the wielder's HP is above 80%, ATK% 24.% .",
-    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0003.png",
-    "weaponType": "Lance"
   },
   {
     "name": "Quencher",
     "rarity": "4",
     "image": "/weapons/wpn_claym_0009.webp",
     "domains": [
-      "Wuling City",
+      "North Wuling EZ",
       "Power Plateau",
-      "Qingbo Stockade"
+      "Qingbo Stockade",
+      "Wuling City"
     ],
     "attributeStats": "Will Boost",
     "secondaryStats": "HP Boost",
     "skillStats": "Crusher",
-    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK% 19.2% for 10 s. Effects of the same name cannot stack.",
+    "description": "When the wielder performs a Final Strike on the enemy, the wielder gains ATK +33.6% for 10s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0009.png",
     "weaponType": "Claymore"
+  },
+  {
+    "name": "Hypernova Auto",
+    "rarity": "4",
+    "image": "/weapons/wpn_funnel_0001.webp",
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Originium Science Park",
+      "Qingbo Stockade"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "Arts Boost",
+    "skillStats": "Inspiring",
+    "description": "When the wielder's HP is above 80%, ATK +42.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0001.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Fluorescent Roc",
+    "rarity": "4",
+    "image": "/weapons/wpn_funnel_0003.webp",
+    "domains": [
+      "Originium Science Park",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "ATK Boost",
+    "skillStats": "Suppression",
+    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0003.png",
+    "weaponType": "Funnel"
+  },
+  {
+    "name": "Pathfinder's Beacon",
+    "rarity": "4",
+    "image": "/weapons/wpn_lance_0003.webp",
+    "domains": [
+      "Marker Stone",
+      "Originium Science Park",
+      "Power Plateau",
+      "Sword Vault Dale"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "ATK Boost",
+    "skillStats": "Inspiring",
+    "description": "When the wielder's HP is above 80%, ATK +42.0%.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0003.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Aggeloslayer",
+    "rarity": "4",
+    "image": "/weapons/wpn_lance_0008.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Originium Science Park",
+      "Qingbo Stockade",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Will Boost",
+    "secondaryStats": "Arts Boost",
+    "skillStats": "Suppression",
+    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0008.png",
+    "weaponType": "Lance"
+  },
+  {
+    "name": "Howling Guard",
+    "rarity": "4",
+    "image": "/weapons/wpn_pistol_0002.webp",
+    "domains": [
+      "Originium Science Park",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Intellect Boost",
+    "secondaryStats": "ATK Boost",
+    "skillStats": "Suppression",
+    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0002.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Long Road",
+    "rarity": "4",
+    "image": "/weapons/wpn_pistol_0003.webp",
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Originium Science Park",
+      "The Hub",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Strength Boost",
+    "secondaryStats": "Arts Boost",
+    "skillStats": "Pursuit",
+    "description": "When the wielder casts a combo skill, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0003.png",
+    "weaponType": "Pistol"
+  },
+  {
+    "name": "Prominent Edge",
+    "rarity": "4",
+    "image": "/weapons/wpn_sword_0008.webp",
+    "domains": [
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Originium Science Park",
+      "Qingbo Stockade",
+      "Yinglung Pass"
+    ],
+    "attributeStats": "Agility Boost",
+    "secondaryStats": "Physical DMG Boost",
+    "skillStats": "Suppression",
+    "description": "When the wielder's battle skill hits the enemy, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
+    "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0008.png",
+    "weaponType": "Sword"
   },
   {
     "name": "Wave Tide",
     "rarity": "4",
     "image": "/weapons/wpn_sword_0009.webp",
     "domains": [
+      "Marker Stone",
       "Originium Science Park",
       "Power Plateau",
+      "Sword Vault Dale",
       "The Hub",
-      "Marker Stone"
+      "Yinglung Pass"
     ],
     "attributeStats": "Intellect Boost",
     "secondaryStats": "ATK Boost",
     "skillStats": "Pursuit",
-    "description": "When the wielder casts a combo skill, the wielder gains ATK% 19.2% for 20 s. Effects of the same name cannot stack.",
+    "description": "When the wielder casts a combo skill, the wielder gains ATK +33.6% for 20s.Effects of the same name cannot stack.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0009.png",
     "weaponType": "Sword"
   },
@@ -995,11 +1198,18 @@
     "name": "Darhoff 7",
     "rarity": "3",
     "image": "/weapons/wpn_claym_0010.webp",
-    "domains": [],
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City"
+    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Assault",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Assault",
+    "description": "ATK +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_claym_0010.png",
     "weaponType": "Claymore"
   },
@@ -1007,11 +1217,18 @@
     "name": "Jiminy 12",
     "rarity": "3",
     "image": "/weapons/wpn_funnel_0002.webp",
-    "domains": [],
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City"
+    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Assault",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Assault",
+    "description": "ATK +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_funnel_0002.png",
     "weaponType": "Funnel"
   },
@@ -1019,11 +1236,18 @@
     "name": "Opero 77",
     "rarity": "3",
     "image": "/weapons/wpn_lance_0009.webp",
-    "domains": [],
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City"
+    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Assault",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Assault",
+    "description": "ATK +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_lance_0009.png",
     "weaponType": "Lance"
   },
@@ -1031,11 +1255,18 @@
     "name": "Peco 5",
     "rarity": "3",
     "image": "/weapons/wpn_pistol_0001.webp",
-    "domains": [],
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City"
+    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Assault",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Assault",
+    "description": "ATK +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_pistol_0001.png",
     "weaponType": "Pistol"
   },
@@ -1043,11 +1274,18 @@
     "name": "Tarr 11",
     "rarity": "3",
     "image": "/weapons/wpn_sword_0003.webp",
-    "domains": [],
+    "domains": [
+      "Marker Stone",
+      "North Wuling EZ",
+      "Origin Lodespring",
+      "Sword Vault Dale",
+      "The Hub",
+      "Wuling City"
+    ],
     "attributeStats": "Main Attribute Boost",
-    "secondaryStats": "Assault",
-    "skillStats": "",
-    "description": "",
+    "secondaryStats": "",
+    "skillStats": "Assault",
+    "description": "ATK +34.",
     "imageCloud": "https://raw.githubusercontent.com/catalystzzz/images/refs/heads/main/wpn_sword_0003.png",
     "weaponType": "Sword"
   }
