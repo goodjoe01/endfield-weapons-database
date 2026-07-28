@@ -60,7 +60,7 @@ export function WeaponCard({ weapon, onMaxedChange, isFarmingMode, isSelected, o
                   alt={weapon.name}
                   fill
                   className="relative z-1 object-cover"
-                  loading="eager"
+                  loading="lazy"
                   onError={() => setImageError(true)}
                 />
               ) : (

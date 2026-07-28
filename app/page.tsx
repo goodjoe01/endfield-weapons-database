@@ -13,6 +13,7 @@ import { WeaponTable } from '@/components/weapon-table';
 import { FarmingPlanner } from '@/components/farming-planner';
 import { FarmingPlannerMobile } from '@/components/farming-planner-mobile';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { WeaponGridSkeleton } from '@/components/weapon-card-skeleton';
 import { Layout, Grid3x3, List, Pin } from 'lucide-react';
 
 export default function WeaponsPage() {
@@ -117,9 +118,17 @@ export default function WeaponsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-muted-foreground">Loading weapons database...</p>
-      </div>
+      <main className="min-h-screen bg-background flex flex-col">
+        <header className="bg-background border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-6 pb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-1 sm:mb-4">{t('header.title')}</h1>
+            <p className="hidden sm:block text-muted-foreground mb-6">{t('header.description')}</p>
+          </div>
+        </header>
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-6 flex-1 w-full">
+          <WeaponGridSkeleton />
+        </div>
+      </main>
     );
   }
 
